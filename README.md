@@ -1,6 +1,6 @@
 # Wearable Infection Detection: Sampling Schedules Under Modelled Energy Budgets
 
-A retrospective study of wearable heart-rate sampling schedules under modelled energy budgets. The primary comparison did not demonstrate an advantage for fixed-clock nighttime sampling over evenly spaced sampling.
+I conducted a retrospective study of wearable heart-rate sampling schedules under modelled energy budgets: I designed the study, wrote the protocol and the amendments that governed it, and ran the analysis. The primary comparison did not demonstrate an advantage for fixed-clock nighttime sampling over evenly spaced sampling. I am publishing the research materials and results here, in stages.
 
 The initial research and primary E3 analysis were completed by 4 September 2026, as documented in the project records. Formal evidence preparation, documentation, reproducibility verification, and public release began on 19 September 2026. The target is to complete the evidence package by 28 September, with final verification and handoff by 29 September. Any further analysis is documented with its actual dates, methods, and results. Completion will be reported after verification.
 
@@ -8,7 +8,7 @@ The initial research and primary E3 analysis were completed by 4 September 2026,
 
 Resting heart rate often rises before the symptoms of an infection appear, which is why consumer wearables have been studied as early-warning tools ([Mishra et al., 2020](https://doi.org/10.1038/s41551-020-00640-6); [Alavi et al., 2022](https://doi.org/10.1038/s41591-021-01593-2)). Measuring heart rate continuously costs energy, so a low-power device would sample in short bursts. If only a small share of the day can be sampled, does it matter *when* the samples are taken?
 
-The study compared schedules held to the same modelled energy budget: about 5% of the energy of continuous sampling, which the model converts into seven ten-minute bursts a day. The primary question was whether placing those bursts in a fixed nighttime window (00:00–06:59 local clock time) gives better retrospective warning before symptom onset than spacing them evenly across the day. Nighttime was a candidate because measurements at night may be less disturbed by activity, meals, and posture; the design did not test why timing might matter.
+I compared schedules held to the same modelled energy budget: about 5% of the energy of continuous sampling, which the model converts into seven ten-minute bursts a day. My primary question was whether placing those bursts in a fixed nighttime window (00:00–06:59 local clock time) gives better retrospective warning before symptom onset than spacing them evenly across the day. Nighttime was a candidate because measurements at night may be less disturbed by activity, meals, and posture; the design did not test why timing might matter.
 
 ## What this repository is
 
@@ -59,7 +59,7 @@ docs/
                                  amendment A4: modelled energy replaces bench measurement
   modelled_energy_parameter_provenance.md
                                  frozen energy parameters with their sources
-  PROTOCOL_INDEX.md              what the original protocol fixed, and what replaced each rule
+  PROTOCOL_INDEX.md              what the baseline protocol fixed, and what replaced each rule
   METHODS_GUIDE.md               final rules traced to the amendment that set them
   ENERGY_SCOPE.md                what the modelled energy budget does and does not establish
   RESEARCH_SUMMARY.md            plain-language summary
@@ -93,7 +93,7 @@ Details and sources: [results and limitations](docs/RESULTS_AND_LIMITATIONS.md).
 
 Citation metadata (`CITATION.cff`) will be added once release information exists. Until then, please cite:
 
-> Hassan Jalal. *Wearable Infection Detection: Sampling Schedules Under Modelled Energy Budgets* (research evidence archive). GitHub, 2026. https://github.com/hassanjalal789/wearable-infection-sampling-study
+> Hassan Jalal. *Wearable Infection Detection: Sampling Schedules Under Modelled Energy Budgets* (research materials and results). GitHub, 2026. https://github.com/hassanjalal789/wearable-infection-sampling-study
 
 Please also cite the dataset papers:
 
@@ -104,5 +104,5 @@ Please also cite the dataset papers:
 
 - **Research and publication:** Hassan Jalal. See the [contribution statement](docs/CONTRIBUTIONS.md), which also records informal advice and AI assistance.
 - **Data:** the Stanford study teams behind the Phase 1 and Phase 2 datasets cited above. Their use here does not imply affiliation with or endorsement by those teams.
-- **Upstream software:** code used for reproduction checks keeps its original authors and licences; notices will be published with the data-availability guide.
+- **Upstream software:** code used for reproduction checks keeps its own authors and licences; notices will be published with the data-availability guide.
 - **Licence:** no licence has been selected for this project's own files yet. See [licensing status](docs/PUBLICATION_NOTES.md#licensing-status).
