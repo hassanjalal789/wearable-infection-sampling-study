@@ -1,6 +1,6 @@
 # Energy scope: what "energy-matched" means in this study
 
-*Publication-stage guide, written on 19 September 2026. It explains the energy quantity the executed study used, what that quantity does not establish, and how the programme written into amendment A4 differs from what was actually run. The amendment, the parameter provenance record and the historical hardware protocol are published unchanged alongside it; this guide is new explanatory writing and is not part of the historical record.*
+*Publication-stage guide, written on 19 September 2026 for research I designed and conducted. It explains the energy quantity the executed study used, what that quantity does not establish, and how the programme written into amendment A4 differs from what was actually run. The amendment, the parameter provenance record and the historical hardware protocol are published unchanged alongside it; this guide is new explanatory writing and is not part of the historical record.*
 
 ## The short version
 

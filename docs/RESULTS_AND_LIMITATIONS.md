@@ -1,6 +1,6 @@
 # Results and limitations
 
-*Initial version, 17 September 2026. Values are transcribed from the archived output of the corrected primary run (`primary_e3_run_83cc8d1`) and were checked against those files during publication preparation. The archived result files are not yet published and linked here; nothing has been rerun yet.*
+*Initial version, 17 September 2026. Values are transcribed from the archived output of the corrected primary run I executed (`primary_e3_run_83cc8d1`) and were checked against those files during publication preparation. The archived result files are not yet published and linked here; nothing has been rerun yet.*
 
 ## Primary result (confirmatory)
 
@@ -39,7 +39,7 @@ The archived results digest also states that every reported H1 sensitivity estim
 
 ## Observations from publication review
 
-These are publication-stage tabulations and code observations made while preparing this archive. They were not part of the original analysis plan and do not change the archived results.
+These are publication-stage tabulations and code observations made while preparing this archive. They were not part of my analysis plan and do not change the archived results.
 
 1. **Continuous sampling did no better.** Among the 30 H1-evaluable participants, the continuous reference S1 alerted for 19 (median warning 14 days, IQR 8–19), the same count as S3 and one fewer than S2. Tabulated from the archived participant-level output, which is not published.
 2. **Long warning times and no chance benchmark.** Median warnings among alerted participants ranged from 9 to 15.5 days across schedules, while the source studies reported alerts a few days before symptom onset ([Mishra et al., 2020](https://doi.org/10.1038/s41551-020-00640-6); [Alavi et al., 2022](https://doi.org/10.1038/s41591-021-01593-2)). Thresholds were calibrated to allow up to two alert-days per person-month, so some alerts inside a 21-day window are expected even without an infection signal. No negative-control analysis, such as applying the same rules to periods without infection, was run. Whether the detections and warning times reflect infection-related change is therefore unresolved.
@@ -49,7 +49,7 @@ These are publication-stage tabulations and code observations made while prepari
 ## Design and interpretation limitations
 
 - **Sample size.** 30 evaluable pairs; intervals are wide. The pre-outcome power simulation was run for the 38-participant cohort, but the primary comparisons had 30 evaluable pairs.
-- **Retrospective data.** Consumer-wearable records collected for other studies, with the original studies' infection and onset information. This is not a prospective or clinical evaluation, and nothing here supports diagnostic use.
+- **Retrospective data.** Consumer-wearable records collected for other studies, with the source studies' infection and onset information. This is not a prospective or clinical evaluation, and nothing here supports diagnostic use.
 - **Modelled energy.** Amendment [A4](prereg-v1.2-amendment-A4-no-hardware.md) replaced the planned bench measurements with a parameterised energy model. The [historical hardware protocol](../hardware/measurement_protocol.md) was not executed; the [energy scope guide](ENERGY_SCOPE.md) sets out what the modelled budget does and does not establish. The budget therefore describes modelled schedule-attributable rail-level energy, not measured battery savings.
 - **Clock window, not sleep.** S3 uses 00:00–06:59 local clock time for everyone, not recorded sleep.
 - **Corrections before inspection.** The first primary run was superseded after a Phase 2 step-data correction (amendment A6), made before scientific outcomes were inspected according to the archived records. The superseded output is kept separate and is not combined with the corrected results.

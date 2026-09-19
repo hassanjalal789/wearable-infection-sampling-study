@@ -1,10 +1,10 @@
 # Protocol index
 
-*Publication-stage guide, written on 18 September 2026. The protocol it describes — [`prereg-v1.1.md`](prereg-v1.1.md) — is published exactly as it was preserved, with its original filename, wording, status marker, and unfilled placeholders.*
+*Publication-stage guide, written on 18 September 2026. The protocol it describes — [`prereg-v1.1.md`](prereg-v1.1.md) — is the baseline protocol I wrote during the research, published exactly as I preserved it, with its filename, wording, status marker, and unfilled placeholders unchanged.*
 
 ## What this document is, and what it is not
 
-`prereg-v1.1.md` is the study's baseline protocol. It was written as a local Markdown file and kept in a local Git repository. It was never deposited with an external registry, and the Git tag its own §0.2 requires before analysis (`prereg-v1`) was never created. Its header still reads **"DRAFT, NOT FROZEN"**, and fields such as `Frozen on`, `Commit at freeze`, `Author`, and the eligible sample size remain placeholders.
+`prereg-v1.1.md` is the study's baseline protocol. I wrote it as a local Markdown file and kept it in a local Git repository. It was never deposited with an external registry, and the Git tag its own §0.2 requires before analysis (`prereg-v1`) was never created. Its header still reads **"DRAFT, NOT FROZEN"**, and fields such as `Frozen on`, `Commit at freeze`, `Author`, and the eligible sample size remain placeholders.
 
 It is therefore a preserved local design document, not an independently timestamped public preregistration. Publishing it here records what was planned and when it was superseded; it does not turn it into a registration. See [publication notes](PUBLICATION_NOTES.md) for the publication-history disclosure.
 

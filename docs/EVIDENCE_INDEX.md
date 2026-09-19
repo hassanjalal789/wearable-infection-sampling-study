@@ -1,6 +1,6 @@
 # Evidence index
 
-*Publication-stage guide, written on 19 September 2026. It maps the claims this repository makes to the files that support them, and says where the support stops. It is extended as further material is published.*
+*Publication-stage guide, written on 19 September 2026 for research I designed and conducted. It maps the claims this repository makes to the files that support them, and says where the support stops. It is extended as further material is published.*
 
 ## How to read this index
 
@@ -40,14 +40,14 @@ A claim is **supported** when a published file in this repository contains the e
 
 | Claim | Supporting file | Limit |
 |---|---|---|
-| Roles, advice received, and AI assistance | [`CONTRIBUTIONS.md`](CONTRIBUTIONS.md) | Roles are as confirmed by the author. The preserved records document what was run; they cannot establish who performed each step. |
-| What is published, what is excluded, and how privacy is handled | [`PUBLICATION_NOTES.md`](PUBLICATION_NOTES.md), [`../evidence/PUBLICATION_MANIFEST.csv`](../evidence/PUBLICATION_MANIFEST.csv) | Detailed redaction mappings are kept privately with the original evidence. |
-| Every archived document here is byte-identical to its preserved original | Publication check, 19 September 2026: seven documents compared byte for byte | The check establishes content identity with the preserved copy, not the authorship or date of that copy. |
+| Roles, advice received, and AI assistance | [`CONTRIBUTIONS.md`](CONTRIBUTIONS.md) | The roles listed are as I confirmed them. The preserved records document what was run; they cannot establish who performed each step. |
+| What is published, what is excluded, and how privacy is handled | [`PUBLICATION_NOTES.md`](PUBLICATION_NOTES.md), [`../evidence/PUBLICATION_MANIFEST.csv`](../evidence/PUBLICATION_MANIFEST.csv) | Detailed redaction mappings are kept privately with the research evidence. |
+| Every archived document here is byte-identical to the version I preserved during the research | Publication check, 19 September 2026: seven documents compared byte for byte | The check establishes content identity with the version I preserved; it does not by itself date when I wrote that version. |
 
 ## Outstanding for this publication
 
 - The test suite has not been rerun; the archived report of 159 passing tests is historical until it is.
 - No figure has been regenerated, and no aggregate table has been recomputed from raw data.
-- The full raw-data analysis has not been rerun; the original runner requires an ancestry this repository does not have, which will be documented with the code.
+- The full raw-data analysis has not been rerun; the analysis runner requires an ancestry this repository does not have, which will be documented with the code.
 - Reproduction of upstream algorithms was mixed in the archived work, and no negative-control analysis exists.
 - Overlap between participants in the two dataset releases could not be determined.

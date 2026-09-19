@@ -1,12 +1,12 @@
 # Methods guide
 
-*Publication-stage guide, written on 18 September 2026 and extended on 19 September 2026. It states the rules the executed study actually followed and names the preserved document that established each one. The protocol and amendments themselves are published unchanged; this guide is new explanatory writing and is not part of the historical record.*
+*Publication-stage guide, written on 18 September 2026 and extended on 19 September 2026, for research I designed and conducted. It states the rules the executed study actually followed and names the document I wrote that established each one. The protocol and amendments themselves are published unchanged; this guide is new explanatory writing and is not part of the historical record.*
 
 ## How to read the amendment chain
 
 | Layer | Document | Role |
 |---|---|---|
-| Baseline | [`prereg-v1.1.md`](prereg-v1.1.md) | The original design, still marked "DRAFT, NOT FROZEN". Superseded in the sections listed below. See the [protocol index](PROTOCOL_INDEX.md). |
+| Baseline | [`prereg-v1.1.md`](prereg-v1.1.md) | My baseline design, still marked "DRAFT, NOT FROZEN". Superseded in the sections listed below. See the [protocol index](PROTOCOL_INDEX.md). |
 | A1 | [`prereg-v1.2-amendment.md`](prereg-v1.2-amendment.md) | Replaces §9, §5.b, §7.1–7.5, §8.1–8.4 and §15 of v1.1 **in full**. Its own header is titled "amendment A1 — prereg v1.1 → v1.2". |
 | A2 | [`prereg-v1.2-amendment-A2.md`](prereg-v1.2-amendment-A2.md) | Implementation-audit patches. A2 supplements A1, and where both touch the same section A2 takes precedence (stated in A2's header). |
 | A3 | [`prereg-v1.2-amendment-A3.md`](prereg-v1.2-amendment-A3.md) | Implementation patches 1–7, including a correction dated 1 September 2026 to the baseline rule. |

@@ -2,19 +2,19 @@
 
 *Hassan Jalal · initial version, 17 September 2026 · drafted with AI assistance ([contributions](CONTRIBUTIONS.md))*
 
-This summary is for readers without statistical training. The study is complete; its supporting files are being published in stages.
+This summary describes a study I designed and conducted, written for readers without statistical training. The study is complete; I am publishing its supporting files in stages.
 
 ## The question
 
 Resting heart rate often rises in the days before an infection causes symptoms, and smartwatch studies have used this to raise early alerts ([Mishra et al., 2020](https://doi.org/10.1038/s41551-020-00640-6); [Alavi et al., 2022](https://doi.org/10.1038/s41591-021-01593-2)). A low-power wearable cannot measure all the time, so it would take short measurements. If a device can measure for only a small part of each day, does the timing of those measurements affect how early an infection can be flagged?
 
-Night-time measurements might be cleaner, because they are less disturbed by exercise, meals, and posture. The main comparison asked whether concentrating measurements in a fixed night-time window gives better early warning than spreading the same amount evenly across the day.
+Night-time measurements might be cleaner, because they are less disturbed by exercise, meals, and posture. In my main comparison I asked whether concentrating measurements in a fixed night-time window gives better early warning than spreading the same amount evenly across the day.
 
 ## The data
 
-No new data were collected. The study reused two public datasets from Stanford research teams (Phase 1 and Phase 2) containing heart-rate and step records from consumer wearables, with information about infections and symptom onset ([Mishra et al., 2020](https://doi.org/10.1038/s41551-020-00640-6); [Alavi et al., 2022](https://doi.org/10.1038/s41591-021-01593-2)).
+I collected no new data. I reused two public datasets from Stanford research teams (Phase 1 and Phase 2) containing heart-rate and step records from consumer wearables, with information about infections and symptom onset ([Mishra et al., 2020](https://doi.org/10.1038/s41551-020-00640-6); [Alavi et al., 2022](https://doi.org/10.1038/s41591-021-01593-2)).
 
-After the study's eligibility rules were applied, the cohort contained 38 participants: 10 from Phase 1 and 28 from Phase 2. A comparison between two schedules was made for a participant only when both schedules left enough usable data to set that person's alert threshold. That was true for 30 of the 38 participants in every main comparison, so the main results are based on 30 people.
+After I applied the study's eligibility rules, the cohort contained 38 participants: 10 from Phase 1 and 28 from Phase 2. A comparison between two schedules was made for a participant only when both schedules left enough usable data to set that person's alert threshold. That was true for 30 of the 38 participants in every main comparison, so the main results are based on 30 people.
 
 ## The design
 
@@ -43,7 +43,7 @@ The main comparison was night-time sampling (S3) against evenly spaced sampling 
 
 Within this dataset, energy model, and detection method, choosing a night-time window did not improve retrospective early warning. This does not show that timing can never matter. It shows that this particular timing strategy, tested this way, did not demonstrate an advantage.
 
-The results also raise a question for future work. Continuous sampling alerted for 19 of the same 30 people, no more than the sparse schedules, and the typical warning of about two weeks is longer than the few days reported by the original dataset studies. The study did not include a check of how often alerts would occur by chance, so it cannot show how much of the alerting reflects infection rather than normal day-to-day variation.
+The results also raise a question for future work. Continuous sampling alerted for 19 of the same 30 people, no more than the sparse schedules, and the typical warning of about two weeks is longer than the few days reported by the source dataset studies. I did not include a check of how often alerts would occur by chance, so it cannot show how much of the alerting reflects infection rather than normal day-to-day variation.
 
 ## Limitations
 
@@ -57,4 +57,4 @@ More detail is in [Results and limitations](RESULTS_AND_LIMITATIONS.md).
 
 ## Role
 
-Hassan Jalal formed the research question after discussing the general idea with an IT teacher, directed the protocol, its amendments, and the analysis workflow, ran or directed the analyses, interpreted the results, and wrote up the findings. AI tools assisted with drafting, editing, coding, debugging, and organising materials under Hassan Jalal's direction. See the [contribution statement](CONTRIBUTIONS.md) for details.
+I formed the research question after discussing the general idea with an IT teacher, directed the protocol, its amendments, and the analysis workflow, ran or directed the analyses, interpreted the results, and wrote up the findings. AI tools assisted with drafting, editing, coding, debugging, and organising materials under my direction. See the [contribution statement](CONTRIBUTIONS.md) for details.
