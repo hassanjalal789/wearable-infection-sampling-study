@@ -1,0 +1,36 @@
+# Python environments, caches, and build output
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+*.egg-info/
+build/
+dist/
+
+# Operating-system and editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Raw data and archives are obtained from the original sources, not committed
+data_raw/
+data_processed/
+*.zip
+*.tar
+*.tar.gz
+*.parquet
+
+# Local outputs from reruns (publish curated results explicitly instead)
+results/local_*/
+
+# Private notes and credentials
+private/
+*.key
+*.pem
+.env
+
