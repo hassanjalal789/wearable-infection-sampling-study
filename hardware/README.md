@@ -1,8 +1,8 @@
 # Historical hardware protocol — planned, superseded, never executed
 
-*Publication-stage note, written on 19 September 2026. The protocol beside it is published unchanged; this note is new explanatory writing and is not part of the historical record.*
+*Publication-stage note, written on 19 September 2026. The protocol beside it is one I wrote earlier in the project and is published unchanged; this note is new explanatory writing and is not part of the historical record.*
 
-[`measurement_protocol.md`](measurement_protocol.md) specifies bench measurements of wearable power — rail-level idle, wake, PPG settle, acquisition, accelerometer, trigger-evaluation, BLE and logging energy — that this study **planned and then cancelled**. None of them were carried out. The file is published because it records what was intended and because it defines the accounting boundary the surviving energy model still uses, not because it reports any measurement.
+[`measurement_protocol.md`](measurement_protocol.md) specifies bench measurements of wearable power — rail-level idle, wake, PPG settle, acquisition, accelerometer, trigger-evaluation, BLE and logging energy — that I **planned and then cancelled**. None of them were carried out. The file is published because it records what was intended and because it defines the accounting boundary the surviving energy model still uses, not because it reports any measurement.
 
 ## Status
 
