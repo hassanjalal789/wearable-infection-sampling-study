@@ -23,8 +23,9 @@ I compared schedules held to the same modelled energy budget: about 5% of the en
 1. [Research summary](docs/RESEARCH_SUMMARY.md) — the study in plain language.
 2. [Contribution statement](docs/CONTRIBUTIONS.md) — confirmed roles, advice received, and AI assistance.
 3. [Methods guide](docs/METHODS_GUIDE.md) — the rules the executed study followed, each traced to the document that set it.
-4. [Results and limitations](docs/RESULTS_AND_LIMITATIONS.md) — the main result and what constrains it.
-5. [Evidence index](docs/EVIDENCE_INDEX.md) — which file supports which claim, and where the evidence stops.
+4. [Research timeline](docs/RESEARCH_TIMELINE.md) — when the design, execution, correction and sensitivity work happened, and which parts came before the result was known.
+5. [Results and limitations](docs/RESULTS_AND_LIMITATIONS.md) — the main result and what constrains it.
+6. [Evidence index](docs/EVIDENCE_INDEX.md) — which file supports which claim, and where the evidence stops.
 
 Reproduction instructions are not yet published. No command is listed here until it has been run successfully for this publication in a documented environment.
 
@@ -57,11 +58,19 @@ docs/
   prereg-v1.2-amendment-A3.md    amendment A3: implementation patches, corrected baseline rule
   prereg-v1.2-amendment-A4-no-hardware.md
                                  amendment A4: modelled energy replaces bench measurement
+  prereg-v1.2-amendment-A5-runner-operationalization.md
+                                 amendment A5: runner, evaluability, executed window
+  prereg-v1.2-amendment-A6-phase2-sparse-step-semantics.md
+                                 amendment A6: Phase-2 step semantics; supersedes the first run
+  prereg-v1.2-amendment-A7-sensitivity-operationalization.md
+                                 amendment A7: sensitivities, operationalised after the result
+  PRE_OUTCOME_CHECKPOINT.md      state of the work before any outcome was inspected
   modelled_energy_parameter_provenance.md
                                  frozen energy parameters with their sources
   PROTOCOL_INDEX.md              what the baseline protocol fixed, and what replaced each rule
   METHODS_GUIDE.md               final rules traced to the amendment that set them
   ENERGY_SCOPE.md                what the modelled energy budget does and does not establish
+  RESEARCH_TIMELINE.md           order of design, execution, correction and release
   RESEARCH_SUMMARY.md            plain-language summary
   RESULTS_AND_LIMITATIONS.md     main result and known limitations
   EVIDENCE_INDEX.md              claims mapped to supporting files and evidence limits
@@ -72,9 +81,11 @@ hardware/
   README.md                      why it is published and what it does not show
 evidence/
   PUBLICATION_MANIFEST.csv       disposition of each research artifact group
+  TIMELINE_FACTS.md              each chronology fact traced to a preserved record
+  EXECUTION_EXCERPTS.md          run configuration, frozen rules, participant counts
 ```
 
-Not yet published: amendments A5–A7 and the pre-outcome checkpoint, the research timeline, data-availability guidance and third-party notices, analysis code (`src/`) and configuration (`configs/`), tests (`tests/`) and historical environment records (`environment/`), aggregate results and figures (`results/`), and the reproducibility and validation records (`evidence/`). The [manifest](evidence/PUBLICATION_MANIFEST.csv) lists each group and its status.
+Not yet published: data-availability guidance and third-party notices, analysis code (`src/`) and configuration (`configs/`), tests (`tests/`) and historical environment records (`environment/`), aggregate results and figures (`results/`), and the remaining reproducibility and validation records. The [manifest](evidence/PUBLICATION_MANIFEST.csv) lists each group and its status.
 
 **Source data.** The study used the public Stanford COVID-19 wearables datasets described by [Mishra et al. (2020)](https://doi.org/10.1038/s41551-020-00640-6) (Phase 1) and [Alavi et al. (2022)](https://doi.org/10.1038/s41591-021-01593-2) (Phase 2). Raw heart-rate and step records are not redistributed here. Access routes and archive details will be documented in a data-availability guide, which is not yet published.
 
@@ -84,7 +95,7 @@ Not yet published: amendments A5–A7 and the pre-outcome checkpoint, the resear
 - **Modelled, not measured, energy.** The budget does not demonstrate battery savings on any real device; see the [energy scope guide](docs/ENERGY_SCOPE.md).
 - **Schedule definitions.** S3 is a fixed clock window, not each person's sleep. The evenly spaced schedule S2 starts at midnight, so 3 of its 7 bursts also fall inside 00:00–06:59; H1 therefore compares 7 nighttime bursts with 3 nighttime plus 4 daytime bursts. S3r and S6 use a whole day's step data and could not run in real time.
 - **Unresolved signal question.** Continuous sampling produced alerts for 19 of the same 30 participants, no more than the sparse schedules, and no negative-control analysis was run. How far the alerts reflect infection rather than chance under the alert budget is unresolved.
-- **Timing of the analysis plan.** Several protocol files remain marked draft, and the sensitivity-analysis details were operationalised after the primary result was seen.
+- **Timing of the analysis plan.** Several protocol files remain marked draft, and the sensitivity-analysis details were operationalised after the primary result was seen; amendment A7 carries that label in its own header. The analysis also ran twice: a first execution was superseded by a Phase-2 step-encoding correction made before any outcome was inspected, and only the corrected run is reported. See the [research timeline](docs/RESEARCH_TIMELINE.md).
 - **Other uncertainty.** Reproduction of upstream algorithms was mixed, and overlap between participants in the two dataset releases could not be determined.
 
 Details and sources: [results and limitations](docs/RESULTS_AND_LIMITATIONS.md).
