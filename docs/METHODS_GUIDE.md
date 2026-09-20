@@ -11,7 +11,9 @@
 | A2 | [`prereg-v1.2-amendment-A2.md`](prereg-v1.2-amendment-A2.md) | Implementation-audit patches. A2 supplements A1, and where both touch the same section A2 takes precedence (stated in A2's header). |
 | A3 | [`prereg-v1.2-amendment-A3.md`](prereg-v1.2-amendment-A3.md) | Implementation patches 1–7, including a correction dated 1 September 2026 to the baseline rule. |
 | A4 | [`prereg-v1.2-amendment-A4-no-hardware.md`](prereg-v1.2-amendment-A4-no-hardware.md) | Replaces planned bench measurement with a modelled energy design, published with the [parameter provenance record](modelled_energy_parameter_provenance.md) and the [energy scope guide](ENERGY_SCOPE.md). |
-| A5–A7 | Not yet published | Runner operationalisation (A5), Phase-2 step semantics (A6) and post-primary sensitivity operationalisation (A7). The sections below that depend on them say so. |
+| A5 | [`prereg-v1.2-amendment-A5-runner-operationalization.md`](prereg-v1.2-amendment-A5-runner-operationalization.md) | Freezes the runner: raw-archive normalisation, calendar skeleton and missingness, threshold calibration, the presymptomatic outcome, the paired hierarchical outcome, and the execution guard. Prospective: written before any schedule-performance outcome was generated. |
+| A6 | [`prereg-v1.2-amendment-A6-phase2-sparse-step-semantics.md`](prereg-v1.2-amendment-A6-phase2-sparse-step-semantics.md) | Corrects Phase-2 step semantics after outputs existed but before any scientific outcome was inspected. Supersedes the first run. |
+| A7 | [`prereg-v1.2-amendment-A7-sensitivity-operationalization.md`](prereg-v1.2-amendment-A7-sensitivity-operationalization.md) | Operationalises the sensitivity analyses **after** the primary result was known. Sensitivity-only; it cannot reopen the closed gate. |
 
 All of these are local design documents, not an external registration; several are still marked draft. Nothing here changes the archived results.
 
@@ -19,7 +21,7 @@ All of these are local design documents, not an external registration; several a
 
 **Final rule.** Pre-symptomatic detection is a first qualifying alert on a day in **[onset − 21, onset − 1]**, so a warning is at least one day. An alert on the onset day itself is *same-day detection*: it does not count toward the primary endpoint and is tabulated separately. For comparison with the source studies, an at-or-before statistic over [onset − 21, onset] is reported, explicitly labelled as such. Warning time is measured from the earliest qualifying alert to onset, and a participant with no qualifying alert is a non-detection handled by the paired comparison rather than by imputing a zero warning.
 
-**Where it comes from.** A1, "Replaces §9 — Primary endpoint". v1.1 §9 had used the onset-inclusive window [onset − 21, onset], which admits a zero-day "pre-symptomatic" warning; A1 records that as the reason for the change. The runner specification A5 (not yet published) implements the narrowed window and evaluates the onset day separately, and the archived run manifest records the same window.
+**Where it comes from.** A1, "Replaces §9 — Primary endpoint". v1.1 §9 had used the onset-inclusive window [onset − 21, onset], which admits a zero-day "pre-symptomatic" warning; A1 records that as the reason for the change. The runner specification [A5](prereg-v1.2-amendment-A5-runner-operationalization.md) §A5.6 implements the narrowed window and evaluates the onset day separately as a descriptive at-or-before endpoint, and both archived run manifests record the same window — see the [execution excerpts](../evidence/EXECUTION_EXCERPTS.md).
 
 **Also from A1.** The paired difference in warning days is estimated on the detected-under-both subgroup only, with its interval bootstrapped over that subgroup, and is treated as descriptive: it is an outcome-dependent subgroup, so the confirmatory quantity remains θ from the hierarchical comparison, which uses every evaluable paired participant.
 
@@ -34,7 +36,7 @@ Device is never inferred to satisfy a downstream filter: `device_map.csv` record
 
 `C_p^src` counts analysable source days strictly before onset − 28 that fall outside **every** infection exclusion window, using the onset date where present and the diagnosis date for asymptomatic episodes (A2.1, A3.5). "Analysable" is the source-level definition from v1.1 §3.1 — at least two hours of observed minutes in each of the night and day windows — and depends only on the archive, never on a schedule.
 
-**What this produced.** A source-defined cohort of 38 participants (10 Phase 1, 28 Phase 2). The archived rule record shows the pre-specified 0.80 retention floor was not met at any candidate minimum and that the fallback minimum of 28 days was used; that record and the participant-flow file are not yet published. See [results and limitations](RESULTS_AND_LIMITATIONS.md) for the step from 38 participants to the 30 evaluable pairs.
+**What this produced.** A source-defined cohort of 38 participants (10 Phase 1, 28 Phase 2). The archived rule record shows the pre-specified 0.80 retention floor was not met at any candidate minimum and that the fallback minimum of 28 days was used. Both that rule record and the participant-flow counts are quoted in the [execution excerpts](../evidence/EXECUTION_EXCERPTS.md); the underlying files are listed in the [publication manifest](../evidence/PUBLICATION_MANIFEST.csv). See [results and limitations](RESULTS_AND_LIMITATIONS.md) for the step from 38 participants to the 30 evaluable pairs.
 
 ## 3. Calibration availability, pairing, and evaluability
 
@@ -54,7 +56,7 @@ These three ideas are easy to confuse, so the final rules are set out separately
 
 **Thresholds always meet the budget.** The threshold grid runs from 1.0 to 6.0 and ends with a terminal **+∞**, which produces no alerts and is always admissible. Each participant takes the smallest threshold whose achieved calibration alert rate is within the budget, or +∞ if none is, and the calibration routine asserts that the achieved rate is within budget before returning. Whether the threshold was finite and whether calibration saturated are reported per participant, and the frequency of infinite thresholds is treated as a headline diagnostic (A3.3). The earlier behaviour clamped at 6.0 and kept participants whose realised alert rate exceeded the budget, which would have broken the equal-budget condition the comparison rests on.
 
-**Evaluability** — whether an arm has any z-defined day inside the outcome window, and what happens when it does not — is set by the runner specification A5, which is not yet published.
+**Evaluability** — whether an arm has any z-defined day inside the outcome window, and what happens when it does not — is set by the runner specification [A5](prereg-v1.2-amendment-A5-runner-operationalization.md). A5.4 keeps a scheduled day with zero delivered heart-rate data present as an expected but unevaluable day rather than dropping it silently, preserves partially observed presymptomatic windows with their unavailable days intact, and marks a participant-arm with no z-defined day anywhere in [onset − 21, onset − 1] as **unevaluable** rather than forcing it to a non-detection. A5.7 carries the same principle into the pair: if calibration or the whole outcome window is unevaluable for either arm, the pair is marked unavailable instead of being pushed into a win, loss or tie.
 
 ## 4. Corrected baseline rule
 
@@ -95,13 +97,44 @@ A1 replaces §15: cross-schedule dependence is not identifiable from a single co
 
 In the executed study H1 was not rejected, so the sequence closed and the remaining contrasts are estimation-only. The numbers are in [results and limitations](RESULTS_AND_LIMITATIONS.md).
 
-## 8. Still to be published
+## 8. The sparse-step correction and the superseded run
+
+The executed analysis ran twice, and only the second run is authoritative. This matters enough to state in the methods rather than leave to the changelog.
+
+The first frozen execution completed normally. Before any win/loss/tie count, detection rate, warning time, p-value, effect size or hypothesis conclusion was inspected, a quality-control audit found behaviour that could not be right: only 5 of 38 participant-arms met the calibration floor even for the continuous reference arm, 33 of 38 had no z-defined presymptomatic day even for that arm, three burst arms had a median of zero scheduled event-window minutes, and 28 of 38 exceeded the 40% unavailability threshold for the matched comparison.
+
+An outcome-blind diagnostic of the raw inputs located the cause. Phase 1 step records contain explicit zero-step minutes; Phase 2 step records contain no explicit zeros at all, despite dense heart-rate coverage. Since rest is defined as a recorded step count of zero, the rest state was being read very differently across the two source releases — an artefact of how each archive encodes its data, not of schedule placement.
+
+A6 confines the fix to that encoding difference. For Phase 2 only, `steps = 0` is inferred for a minute when at least one heart-rate observation exists in that minute and no explicit step record covers it. Explicit records always win over inference, an explicit missing value stays unknown, a minute with neither heart rate nor steps stays unknown, and Phase 1 is untouched because its stream already records zeros. A6.3 lists what the correction deliberately leaves frozen: the 38-participant cohort, CENTRAL E3, the seven ten-minute bursts, the schedule definitions, the detector, the baseline, the threshold grid and fallback, the alert budget, `C_floor`, the endpoint, the hierarchical outcome and the gatekeeping. A6.5 required regression tests before re-execution, including that explicit nonzero records survive and explicit missing values stay unknown.
+
+Two consequences carry through this repository. The superseded run's directory is retained unchanged and is not eligible for confirmatory inference, so none of its outputs appear in any result reported here. And the correction was selected on input-encoding evidence alone: no scientific outcome performance was used to choose it, which is what keeps the corrected run's confirmatory status intact.
+
+## 9. Sensitivity analyses, operationalised after the result
+
+[A7](prereg-v1.2-amendment-A7-sensitivity-operationalization.md) is the one document in the chain written after the primary outcome was known, and it says so in its own header. H1 had not rejected, so the fixed sequence had closed; A7 states that it cannot alter, reopen or reinterpret that gate, and that sensitivity results are estimation-only — point estimates and 95% BCa intervals, with no sensitivity p-value used for inference.
+
+A7.3 supplies the piece A3.9 had required but left underspecified: the realised-sample-count-conditioned matched analysis. The conditioning variable is delivered heart-rate-observed minutes, and the thinning is deterministic and evenly spaced across each arm's own delivered minutes, applied symmetrically on all days. It never moves observations between times of day and never selects minutes using heart-rate values or outcomes.
+
+A7.6 is the part worth reading closely, because it records what was **not** run and why:
+
+| Planned analysis | Disposition |
+|---|---|
+| Detection-proportion-only endpoint | Not triggered; final N = 38 ≥ 15 |
+| Budget-infeasible exclusion | Vacuous under the +∞ fallback; the corrected run had zero saturated arms |
+| Delivered-energy hardware accounting | Superseded by A4's modelled-energy design; delivered minutes stay descriptive |
+| LOW / HIGH energy scenarios | E3 resolves to the same seven ten-minute bursts in all three, so the schedule masks are identical and outcomes would not differ |
+| Sleep-defined nocturnal window; sensor-degradation ablation | Exploratory; not needed to adjudicate the primary null |
+| Discrete-time survival | The baseline protocol specified no reproducible link function, covariate parameterization or estimand, so it is not invented after the outcome reveal |
+
+The last row is the one that constrains interpretation most: an analysis that was named but never specified is left unrun and labelled, rather than reconstructed once the answer was known.
+
+## 10. Still to be published
 
 | Topic | Document |
 |---|---|
-| Runner operationalisation, including evaluability and the executed window | A5 |
-| Phase-2 step-data semantics and the superseded first run | A6 |
-| Post-primary sensitivity operationalisation, and which planned analyses were not run | A7 |
 | Detector, calibration and runner source code | `src/` |
+| Configurations, tests and historical environment records | `configs/`, `tests/`, `environment/` |
+| Aggregate result tables, digests and figures | `results/`, `figures/` |
+| Data availability, upstream pins and third-party notices | Not yet published |
 
 This guide is extended as those artifacts appear. No day-by-day publication timetable is published in this repository.
