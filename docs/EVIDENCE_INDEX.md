@@ -22,6 +22,19 @@ A claim is **supported** when a published file in this repository contains the e
 | The order of design, energy freeze, execution, correction and sensitivity work | [`RESEARCH_TIMELINE.md`](RESEARCH_TIMELINE.md), [`../evidence/TIMELINE_FACTS.md`](../evidence/TIMELINE_FACTS.md) | Dates come from document headers and the preserved audit trail. The audit trail fixes order, not wall-clock time; facts that could not be established are listed as unestablished. |
 | Run configuration, the frozen calibration rule, and participant-flow counts | [`../evidence/EXECUTION_EXCERPTS.md`](../evidence/EXECUTION_EXCERPTS.md) | Configuration, decision rules and counts only. No per-participant record, and no output of the superseded run. |
 
+## Data and cohort
+
+| Claim | Supporting file | Limit |
+|---|---|---|
+| The two archives analysed, identified by size and SHA-256 | [`DATA_AND_COHORT.md`](DATA_AND_COHORT.md#1-source-data) | Taken from the preserved inventory manifests. The archives are not redistributed, and the download addresses were not re-checked for this publication. |
+| Every CSV member of both archives matched a known schema (280 and 4,246) | [`schema_phase1.json`](../results/schema_phase1.json), [`schema_phase2.json`](../results/schema_phase2.json) | Counts only. The per-file inventories name participants and are withheld. |
+| Every infection candidate's device came from a recorded source; none was guessed | [`device_coverage_check.json`](../results/device_coverage_check.json), [`device_map_summary.json`](../results/device_map_summary.json), [`build_device_map.py`](../src/build_device_map.py) | The per-participant device map is withheld. The Phase 1 Fitbit assignment rests on a published statement about a defined set of participants. |
+| Onset dates came from the papers' supplementary data, never from the physiological signal | [`DATA_AND_COHORT.md`](DATA_AND_COHORT.md#1-source-data), [`find_onset_labels.md`](../src/find_onset_labels.md) | The source count was taken from the withheld label file; the labels are not published. |
+| 116 candidates, 49 pre-calibration eligible, 38 in the cohort after the 28-day fallback minimum | [`participant_flow.json`](../results/participant_flow.json), [`calibration_rule.json`](../results/calibration_rule.json), [`build_cohort.py`](../src/build_cohort.py) | Aggregate counts; cohort membership is withheld. The step from 38 to 30 is explained in [results and limitations](RESULTS_AND_LIMITATIONS.md). |
+| The cohort selection cannot see any schedule-performance quantity | [`build_cohort.py`](../src/build_cohort.py) | Shown by the module's imports, not by a rerun. |
+| Night and day source coverage in three populations | [`coverage_diagnostic.json`](../results/coverage_diagnostic.json), [`coverage_diagnostic.py`](../src/coverage_diagnostic.py) | Describes data availability, not schedule performance. |
+| Overlap between the two releases is undeterminable | [`overlap_investigation.json`](../results/overlap_investigation.json), [`check_overlap.py`](../src/check_overlap.py) | Both archives carry dates outside the published study windows, so no series comparison was run. |
+
 ## Energy
 
 | Claim | Supporting file | Limit |
@@ -56,3 +69,4 @@ A claim is **supported** when a published file in this repository contains the e
 - The full raw-data analysis has not been rerun; the analysis runner requires an ancestry this repository does not have, which will be documented with the code.
 - Reproduction of upstream algorithms was mixed in the archived work, and no negative-control analysis exists.
 - Overlap between participants in the two dataset releases could not be determined.
+- The data and cohort stage has not been re-run for publication; its published outputs are the preserved ones.

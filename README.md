@@ -23,9 +23,10 @@ I compared schedules held to the same modelled energy budget: about 5% of the en
 1. [Research summary](docs/RESEARCH_SUMMARY.md) — the study in plain language.
 2. [Contribution statement](docs/CONTRIBUTIONS.md) — confirmed roles, advice received, and AI assistance.
 3. [Methods guide](docs/METHODS_GUIDE.md) — the rules the executed study followed, each traced to the document that set it.
-4. [Research timeline](docs/RESEARCH_TIMELINE.md) — when the design, execution, correction and sensitivity work happened, and which parts came before the result was known.
-5. [Results and limitations](docs/RESULTS_AND_LIMITATIONS.md) — the main result and what constrains it.
-6. [Evidence index](docs/EVIDENCE_INDEX.md) — which file supports which claim, and where the evidence stops.
+4. [Data and cohort guide](docs/DATA_AND_COHORT.md) — the exact archives analysed, how each device and cohort decision was made, and what is withheld.
+5. [Research timeline](docs/RESEARCH_TIMELINE.md) — when the design, execution, correction and sensitivity work happened, and which parts came before the result was known.
+6. [Results and limitations](docs/RESULTS_AND_LIMITATIONS.md) — the main result and what constrains it.
+7. [Evidence index](docs/EVIDENCE_INDEX.md) — which file supports which claim, and where the evidence stops.
 
 Reproduction instructions are not yet published. No command is listed here until it has been run successfully for this publication in a documented environment.
 
@@ -51,8 +52,9 @@ Published so far:
 ```text
 README.md                        this overview
 CHANGELOG.md                     publication changes by date
+run_phase1.sh                    acquisition, inventory and cohort pipeline
 docs/
-  prereg-v1.1.md                 original baseline protocol (draft marker retained)
+  prereg-v1.1.md                 baseline protocol (draft marker retained)
   prereg-v1.2-amendment.md       amendment A1: endpoint, calibration, schedules, energy, power
   prereg-v1.2-amendment-A2.md    amendment A2: cohort, calibration availability, device provenance
   prereg-v1.2-amendment-A3.md    amendment A3: implementation patches, corrected baseline rule
@@ -65,17 +67,41 @@ docs/
   prereg-v1.2-amendment-A7-sensitivity-operationalization.md
                                  amendment A7: sensitivities, operationalised after the result
   PRE_OUTCOME_CHECKPOINT.md      state of the work before any outcome was inspected
+  DATA_ACQUISITION_BLOCKED.md    record of the first, failed archive download
+  upstream_commits.json, upstream_commits.txt
+                                 upstream repositories pinned by commit
   modelled_energy_parameter_provenance.md
                                  frozen energy parameters with their sources
   PROTOCOL_INDEX.md              what the baseline protocol fixed, and what replaced each rule
   METHODS_GUIDE.md               final rules traced to the amendment that set them
   ENERGY_SCOPE.md                what the modelled energy budget does and does not establish
   RESEARCH_TIMELINE.md           order of design, execution, correction and release
+  DATA_AND_COHORT.md             data sources, inventory, device provenance, cohort
   RESEARCH_SUMMARY.md            plain-language summary
   RESULTS_AND_LIMITATIONS.md     main result and known limitations
   EVIDENCE_INDEX.md              claims mapped to supporting files and evidence limits
   CONTRIBUTIONS.md               confirmed contributions and assistance
   PUBLICATION_NOTES.md           how this archive is being published
+  THIRD_PARTY_NOTICES.md         upstream repositories, datasets and licences
+src/
+  zip_inventory.py               archive inventory: checksums, schemas, native resolution
+  phase1_inventory.py            per-file schema discovery and minute-bin coverage
+  build_device_map.py            device assignment with a recorded source
+  check_device_coverage.py       device check scoped to infection candidates
+  build_cohort.py                two-phase cohort construction
+  calibration_resolution.py      calibration-days rule and alert-rate resolution
+  coverage_diagnostic.py         night-versus-day source coverage
+  check_overlap.py               overlap investigation between the two releases
+  find_onset_labels.md           procedure for sourcing symptom-onset dates
+results/
+  schema_phase1.json, schema_phase2.json
+                                 every CSV member matched a known schema
+  device_map_summary.json        device assignments by release and source
+  device_coverage_check.json     all 116 infection candidates resolved
+  participant_flow.json          counts from candidates to the final cohort
+  calibration_rule.json          calibration-days rule as frozen, with its fallback
+  coverage_diagnostic.json       night and day coverage in three populations
+  overlap_investigation.json     overlap verdict and why it is undeterminable
 hardware/
   measurement_protocol.md        historical bench protocol, superseded and never executed
   README.md                      why it is published and what it does not show
@@ -85,9 +111,9 @@ evidence/
   EXECUTION_EXCERPTS.md          run configuration, frozen rules, participant counts
 ```
 
-Not yet published: data-availability guidance and third-party notices, analysis code (`src/`) and configuration (`configs/`), tests (`tests/`) and historical environment records (`environment/`), aggregate results and figures (`results/`), and the remaining reproducibility and validation records. The [manifest](evidence/PUBLICATION_MANIFEST.csv) lists each group and its status.
+Not yet published: the energy, schedule, detector and runner code and its configuration (`configs/`), tests (`tests/`) and historical environment records (`environment/`), the primary-run and sensitivity results and figures, and the remaining reproducibility and validation records. The [manifest](evidence/PUBLICATION_MANIFEST.csv) lists each group and its status.
 
-**Source data.** The study used the public Stanford COVID-19 wearables datasets described by [Mishra et al. (2020)](https://doi.org/10.1038/s41551-020-00640-6) (Phase 1) and [Alavi et al. (2022)](https://doi.org/10.1038/s41591-021-01593-2) (Phase 2). Raw heart-rate and step records are not redistributed here. Access routes and archive details will be documented in a data-availability guide, which is not yet published.
+**Source data.** The study used the public Stanford COVID-19 wearables datasets described by [Mishra et al. (2020)](https://doi.org/10.1038/s41551-020-00640-6) (Phase 1) and [Alavi et al. (2022)](https://doi.org/10.1038/s41591-021-01593-2) (Phase 2). Raw heart-rate and step records are not redistributed here. The [data and cohort guide](docs/DATA_AND_COHORT.md) identifies the exact archives analysed and explains what is withheld.
 
 ## Limitations
 
@@ -115,5 +141,5 @@ Please also cite the dataset papers:
 
 - **Research and publication:** Hassan Jalal. See the [contribution statement](docs/CONTRIBUTIONS.md), which also records informal advice and AI assistance.
 - **Data:** the Stanford study teams behind the Phase 1 and Phase 2 datasets cited above. Their use here does not imply affiliation with or endorsement by those teams.
-- **Upstream software:** code used for reproduction checks keeps its own authors and licences; notices will be published with the data-availability guide.
+- **Upstream software:** code used for reproduction checks keeps its own authors and licences; see the [third-party notices](docs/THIRD_PARTY_NOTICES.md).
 - **Licence:** no licence has been selected for this project's own files yet. See [licensing status](docs/PUBLICATION_NOTES.md#licensing-status).

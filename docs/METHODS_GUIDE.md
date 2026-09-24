@@ -38,6 +38,8 @@ Device is never inferred to satisfy a downstream filter: `device_map.csv` record
 
 **What this produced.** A source-defined cohort of 38 participants (10 Phase 1, 28 Phase 2). The archived rule record shows the pre-specified 0.80 retention floor was not met at any candidate minimum and that the fallback minimum of 28 days was used. Both that rule record and the participant-flow counts are quoted in the [execution excerpts](../evidence/EXECUTION_EXCERPTS.md); the underlying files are listed in the [publication manifest](../evidence/PUBLICATION_MANIFEST.csv). See [results and limitations](RESULTS_AND_LIMITATIONS.md) for the step from 38 participants to the 30 evaluable pairs.
 
+The code, aggregate outputs and data sources behind this stage are set out in the [data and cohort guide](DATA_AND_COHORT.md).
+
 ## 3. Calibration availability, pairing, and evaluability
 
 These three ideas are easy to confuse, so the final rules are set out separately.
@@ -135,6 +137,5 @@ The last row is the one that constrains interpretation most: an analysis that wa
 | Detector, calibration and runner source code | `src/` |
 | Configurations, tests and historical environment records | `configs/`, `tests/`, `environment/` |
 | Aggregate result tables, digests and figures | `results/`, `figures/` |
-| Data availability, upstream pins and third-party notices | Not yet published |
 
 This guide is extended as those artifacts appear. No day-by-day publication timetable is published in this repository.

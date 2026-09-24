@@ -1,0 +1,22 @@
+{
+  "WearableDetection": {
+    "url": "https://github.com/mwgrassgreen/WearableDetection",
+    "requested": "38955bc0",
+    "head": "38955bc09e14b446452c01e87e6f525e99e8be6e"
+  },
+  "Alarm": {
+    "url": "https://github.com/mwgrassgreen/Alarm",
+    "requested": "1770dd0d",
+    "head": "1770dd0d2f620940e93ec82f8a5ba48b9fde9658"
+  },
+  "AnomalyDetect": {
+    "url": "https://github.com/gireeshkbogu/AnomalyDetect",
+    "requested": "1484183d",
+    "head": "1484183d203ffd1ffce6974a0dbdc66a7c9e0bf3"
+  },
+  "wearable-infection": {
+    "url": "https://github.com/StanfordBioinformatics/wearable-infection",
+    "requested": "99b3bd79",
+    "head": "99b3bd7937e72d42c2670c7a259d9f9f8728dc06"
+  }
+}

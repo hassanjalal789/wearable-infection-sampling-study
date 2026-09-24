@@ -2,6 +2,15 @@
 
 Publication changes by date (Asia/Karachi). These are publication dates. The research chronology is described in the documentation, not here.
 
+## 2026-09-24 — Data sources and cohort methods
+
+- **Published:** the [data and cohort guide](docs/DATA_AND_COHORT.md) and [third-party notices](docs/THIRD_PARTY_NOTICES.md); the acquisition record [`DATA_ACQUISITION_BLOCKED.md`](docs/DATA_ACQUISITION_BLOCKED.md) and the [upstream commit pins](docs/upstream_commits.json); the acquisition, inventory, device-provenance, cohort, coverage, overlap and calibration code in `src/` with [`run_phase1.sh`](run_phase1.sh); and eight aggregate outputs in `results/`.
+- **Purpose:** let a reader identify the exact archives analysed, see how each device assignment and cohort exclusion was made, and follow the count from 116 infection candidates to the 38-person cohort and 30 evaluable pairs.
+- **Provenance:** the twenty-one archived files are byte-identical to the versions I preserved during the research process; I have not retrospectively edited them for publication. The guide, the notices and the additions to the overview, methods guide, evidence index and manifest were written later for this repository.
+- **Withheld:** onset labels, device maps, cohort membership, per-participant calibration days and coverage, per-file inventories and manifests, native-resolution tables, the quarantine list and a Phase 2 timestamp audit, because each names participants. The raw archives, the papers' supplementary files and the upstream repositories are not redistributed.
+- **Validation:** all twenty-one archived files hashed at the read-only source and in the publication copy, with identical results; every result file screened for participant identifiers and local paths before selection; the code and documents run through the privacy scan, with every match reviewed; each upstream licence read at its pinned commit; every count in the guide checked against the output file it cites.
+- **Limitations:** this stage was not re-run for publication, and overlap between the two releases remains undetermined. Earlier script versions kept before fixes, the energy, schedule, detector and runner code, tests, environment records, and the primary-run and sensitivity results are not yet published.
+
 ## 2026-09-20 — Complete methods and research chronology
 
 - **Published:** amendments [A5](docs/prereg-v1.2-amendment-A5-runner-operationalization.md), [A6](docs/prereg-v1.2-amendment-A6-phase2-sparse-step-semantics.md) and [A7](docs/prereg-v1.2-amendment-A7-sensitivity-operationalization.md) and the [pre-outcome checkpoint](docs/PRE_OUTCOME_CHECKPOINT.md); a new [research timeline](docs/RESEARCH_TIMELINE.md); a [timeline fact file](evidence/TIMELINE_FACTS.md) tracing each chronology fact to a preserved record; and [execution excerpts](evidence/EXECUTION_EXCERPTS.md) giving run configuration, the frozen calibration rule and participant-flow counts.
