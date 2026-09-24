@@ -2,6 +2,14 @@
 
 Publication changes by date (Asia/Karachi). These are publication dates. The research chronology is described in the documentation, not here.
 
+## 2026-09-24 — Modelled energy and sampling implementations
+
+- **Published:** the energy model [`energy_model.py`](src/energy_model.py), the budget-to-burst matching code [`modelled_energy_match.py`](src/modelled_energy_match.py), the frozen scenario configuration [`modelled_energy_scenarios.json`](configs/modelled_energy_scenarios.json), the pre-outcome feasibility audit [`modelled_energy_match_audit.json`](results/modelled_energy_match_audit.json), the schedule engine [`schedules.py`](src/schedules.py), and a new [energy and schedules guide](docs/ENERGY_AND_SCHEDULES.md).
+- **Purpose:** let a reader check how the E3 budget became seven ten-minute bursts under every energy scenario, and where each schedule places those bursts.
+- **Provenance:** the five archived files are byte-identical to the versions I preserved during the research process; I have not retrospectively edited them for publication. The guide and the additions to the overview, methods guide, evidence index and manifest were written later for this repository.
+- **Validation:** all five archived files hashed against the versions I preserved; the feasibility audit recomputed from the published code and configuration, with byte-for-byte identical output; all eleven parameters in each scenario, every burst count and every matching error in the guide checked against the configuration and audit; the E3 start times in the guide produced by calling the published schedule module; privacy scan with every match reviewed.
+- **Limitations:** energy is modelled for a reference architecture, not measured; no battery life is reported. S3r and S6 are counterfactual and could not run in real time. The tests that exercise these modules are not yet published.
+
 ## 2026-09-24 — Data sources and cohort methods
 
 - **Published:** the [data and cohort guide](docs/DATA_AND_COHORT.md) and [third-party notices](docs/THIRD_PARTY_NOTICES.md); the acquisition record [`DATA_ACQUISITION_BLOCKED.md`](docs/DATA_ACQUISITION_BLOCKED.md) and the [upstream commit pins](docs/upstream_commits.json); the acquisition, inventory, device-provenance, cohort, coverage, overlap and calibration code in `src/` with [`run_phase1.sh`](run_phase1.sh); and eight aggregate outputs in `results/`.

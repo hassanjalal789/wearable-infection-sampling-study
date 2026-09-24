@@ -24,9 +24,10 @@ I compared schedules held to the same modelled energy budget: about 5% of the en
 2. [Contribution statement](docs/CONTRIBUTIONS.md) — confirmed roles, advice received, and AI assistance.
 3. [Methods guide](docs/METHODS_GUIDE.md) — the rules the executed study followed, each traced to the document that set it.
 4. [Data and cohort guide](docs/DATA_AND_COHORT.md) — the exact archives analysed, how each device and cohort decision was made, and what is withheld.
-5. [Research timeline](docs/RESEARCH_TIMELINE.md) — when the design, execution, correction and sensitivity work happened, and which parts came before the result was known.
-6. [Results and limitations](docs/RESULTS_AND_LIMITATIONS.md) — the main result and what constrains it.
-7. [Evidence index](docs/EVIDENCE_INDEX.md) — which file supports which claim, and where the evidence stops.
+5. [Energy and schedules guide](docs/ENERGY_AND_SCHEDULES.md) — how the modelled budget became seven ten-minute bursts, and where each schedule places them.
+6. [Research timeline](docs/RESEARCH_TIMELINE.md) — when the design, execution, correction and sensitivity work happened, and which parts came before the result was known.
+7. [Results and limitations](docs/RESULTS_AND_LIMITATIONS.md) — the main result and what constrains it.
+8. [Evidence index](docs/EVIDENCE_INDEX.md) — which file supports which claim, and where the evidence stops.
 
 Reproduction instructions are not yet published. No command is listed here until it has been run successfully for this publication in a documented environment.
 
@@ -53,6 +54,8 @@ Published so far:
 README.md                        this overview
 CHANGELOG.md                     publication changes by date
 run_phase1.sh                    acquisition, inventory and cohort pipeline
+configs/
+  modelled_energy_scenarios.json frozen energy parameters for LOW, CENTRAL and HIGH
 docs/
   prereg-v1.1.md                 baseline protocol (draft marker retained)
   prereg-v1.2-amendment.md       amendment A1: endpoint, calibration, schedules, energy, power
@@ -77,6 +80,7 @@ docs/
   ENERGY_SCOPE.md                what the modelled energy budget does and does not establish
   RESEARCH_TIMELINE.md           order of design, execution, correction and release
   DATA_AND_COHORT.md             data sources, inventory, device provenance, cohort
+  ENERGY_AND_SCHEDULES.md        modelled energy, burst matching, schedule placement
   RESEARCH_SUMMARY.md            plain-language summary
   RESULTS_AND_LIMITATIONS.md     main result and known limitations
   EVIDENCE_INDEX.md              claims mapped to supporting files and evidence limits
@@ -93,6 +97,9 @@ src/
   coverage_diagnostic.py         night-versus-day source coverage
   check_overlap.py               overlap investigation between the two releases
   find_onset_labels.md           procedure for sourcing symptom-onset dates
+  energy_model.py                modelled schedule-attributable rail-level energy
+  modelled_energy_match.py       budget-to-burst matching and feasibility audit
+  schedules.py                   the seven sampling schedules and M1 matching
 results/
   schema_phase1.json, schema_phase2.json
                                  every CSV member matched a known schema
@@ -102,6 +109,8 @@ results/
   calibration_rule.json          calibration-days rule as frozen, with its fallback
   coverage_diagnostic.json       night and day coverage in three populations
   overlap_investigation.json     overlap verdict and why it is undeterminable
+  modelled_energy_match_audit.json
+                                 burst counts and matching error for every budget and scenario
 hardware/
   measurement_protocol.md        historical bench protocol, superseded and never executed
   README.md                      why it is published and what it does not show
@@ -111,7 +120,7 @@ evidence/
   EXECUTION_EXCERPTS.md          run configuration, frozen rules, participant counts
 ```
 
-Not yet published: the energy, schedule, detector and runner code and its configuration (`configs/`), tests (`tests/`) and historical environment records (`environment/`), the primary-run and sensitivity results and figures, and the remaining reproducibility and validation records. The [manifest](evidence/PUBLICATION_MANIFEST.csv) lists each group and its status.
+Not yet published: the detector and runner code, tests (`tests/`) and historical environment records (`environment/`), the primary-run and sensitivity results and figures, and the remaining reproducibility and validation records. The [manifest](evidence/PUBLICATION_MANIFEST.csv) lists each group and its status.
 
 **Source data.** The study used the public Stanford COVID-19 wearables datasets described by [Mishra et al. (2020)](https://doi.org/10.1038/s41551-020-00640-6) (Phase 1) and [Alavi et al. (2022)](https://doi.org/10.1038/s41591-021-01593-2) (Phase 2). Raw heart-rate and step records are not redistributed here. The [data and cohort guide](docs/DATA_AND_COHORT.md) identifies the exact archives analysed and explains what is withheld.
 

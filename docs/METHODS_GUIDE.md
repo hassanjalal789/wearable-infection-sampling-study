@@ -85,11 +85,13 @@ A3.2 made the M1 matching exact: the placement routine became feasibility-aware,
 
 As noted in the [protocol index](PROTOCOL_INDEX.md), the 10-minute burst length and the per-day budget apply to these burst-based arms; S1 keeps all observed minutes as the continuous reference and is not energy-matched.
 
+The placement code and the exact E3 start times of each arm are set out in the [energy and schedules guide](ENERGY_AND_SCHEDULES.md#5-the-schedules).
+
 ## 6. Energy assumptions
 
 A1 replaces §8.1–8.4: the acquisition term is defined as a whole-system increment, the two energy quantities are never mixed, and the supply architecture is documented rather than assumed. A2.4 fixes the energy boundary definitions. The decisive change — replacing planned bench measurement with a modelled, schedule-attributable rail-level quantity — is amendment [A4](prereg-v1.2-amendment-A4-no-hardware.md), now published with the [parameter provenance record](modelled_energy_parameter_provenance.md) and the [superseded hardware protocol](../hardware/measurement_protocol.md).
 
-The [energy scope guide](ENERGY_SCOPE.md) sets out what that quantity is, what it does not establish, and one distinction worth carrying into the results: A4.6 planned to repeat the schedule comparison under LOW, CENTRAL and HIGH parameterizations, but the pre-outcome feasibility audit found that E3 resolves to the same seven bursts in all three, so the schedules are identical across them and a single CENTRAL outcome analysis was run. Separate LOW and HIGH outcome analyses were never performed and none is reported here.
+The [energy scope guide](ENERGY_SCOPE.md) sets out what that quantity is, what it does not establish, and one distinction worth carrying into the results: A4.6 planned to repeat the schedule comparison under LOW, CENTRAL and HIGH parameterizations, but the pre-outcome feasibility audit found that E3 resolves to the same seven bursts in all three, so the schedules are identical across them and a single CENTRAL outcome analysis was run. Separate LOW and HIGH outcome analyses were never performed and none is reported here. The model, its eleven frozen parameters per scenario, and the feasibility audit are explained in the [energy and schedules guide](ENERGY_AND_SCHEDULES.md).
 
 ## 7. Testing hierarchy
 
@@ -134,8 +136,8 @@ The last row is the one that constrains interpretation most: an analysis that wa
 
 | Topic | Document |
 |---|---|
-| Detector, calibration and runner source code | `src/` |
-| Configurations, tests and historical environment records | `configs/`, `tests/`, `environment/` |
+| Detector and runner source code | `src/` |
+| Tests and historical environment records | `tests/`, `environment/` |
 | Aggregate result tables, digests and figures | `results/`, `figures/` |
 
 This guide is extended as those artifacts appear. No day-by-day publication timetable is published in this repository.

@@ -1,0 +1,672 @@
+{
+  "status": "PRE_OUTCOME_ENERGY_MATCH_AUDIT",
+  "tolerance_fraction": 0.05,
+  "burst_minutes": 10,
+  "scenarios": {
+    "LOW": {
+      "S1_reference_J": 5953.847487999999,
+      "budgets": {
+        "E1": {
+          "fraction_of_S1": 0.2,
+          "target_J": 1190.7694976,
+          "arms": {
+            "S2": {
+              "N": 29,
+              "achieved_J": 1199.1145519999998,
+              "target_J": 1190.7694976,
+              "relative_error": 0.007008119049756623,
+              "abs_relative_error": 0.007008119049756623,
+              "status": "FEASIBLE_WITHIN_5PCT"
+            },
+            "S3": {
+              "N": 29,
+              "achieved_J": 1199.1145519999998,
+              "target_J": 1190.7694976,
+              "relative_error": 0.007008119049756623,
+              "abs_relative_error": 0.007008119049756623,
+              "status": "FEASIBLE_WITHIN_5PCT"
+            },
+            "S5": {
+              "N": 29,
+              "achieved_J": 1199.1145519999998,
+              "target_J": 1190.7694976,
+              "relative_error": 0.007008119049756623,
+              "abs_relative_error": 0.007008119049756623,
+              "status": "FEASIBLE_WITHIN_5PCT"
+            },
+            "S4": {
+              "N": 29,
+              "achieved_J": 1201.4390719999997,
+              "target_J": 1190.7694976,
+              "relative_error": 0.008960234891391083,
+              "abs_relative_error": 0.008960234891391083,
+              "status": "FEASIBLE_WITHIN_5PCT"
+            },
+            "S3r": {
+              "N": 29,
+              "achieved_J": 1201.4390719999997,
+              "target_J": 1190.7694976,
+              "relative_error": 0.008960234891391083,
+              "abs_relative_error": 0.008960234891391083,
+              "status": "FEASIBLE_WITHIN_5PCT"
+            },
+            "S6": {
+              "N": 29,
+              "achieved_J": 1201.4390719999997,
+              "target_J": 1190.7694976,
+              "relative_error": 0.008960234891391083,
+              "abs_relative_error": 0.008960234891391083,
+              "status": "FEASIBLE_WITHIN_5PCT"
+            }
+          }
+        },
+        "E2": {
+          "fraction_of_S1": 0.1,
+          "target_J": 595.3847488,
+          "arms": {
+            "S2": {
+              "N": 14,
+              "achieved_J": 578.8939819999999,
+              "target_J": 595.3847488,
+              "relative_error": -0.027697664129350374,
+              "abs_relative_error": 0.027697664129350374,
+              "status": "FEASIBLE_WITHIN_5PCT"
+            },
+            "S3": {
+              "N": 14,
+              "achieved_J": 578.8939819999999,
+              "target_J": 595.3847488,
+              "relative_error": -0.027697664129350374,
+              "abs_relative_error": 0.027697664129350374,
+              "status": "FEASIBLE_WITHIN_5PCT"
+            },
+            "S5": {
+              "N": 14,
+              "achieved_J": 578.8939819999999,
+              "target_J": 595.3847488,
+              "relative_error": -0.027697664129350374,
+              "abs_relative_error": 0.027697664129350374,
+              "status": "FEASIBLE_WITHIN_5PCT"
+            },
+            "S4": {
+              "N": 14,
+              "achieved_J": 581.515502,
+              "target_J": 595.3847488,
+              "relative_error": -0.023294595348560043,
+              "abs_relative_error": 0.023294595348560043,
+              "status": "FEASIBLE_WITHIN_5PCT"
+            },
+            "S3r": {
+              "N": 14,
+              "achieved_J": 581.515502,
+              "target_J": 595.3847488,
+              "relative_error": -0.023294595348560043,
+              "abs_relative_error": 0.023294595348560043,
+              "status": "FEASIBLE_WITHIN_5PCT"
+            },
+            "S6": {
+              "N": 14,
+              "achieved_J": 581.515502,
+              "target_J": 595.3847488,
+              "relative_error": -0.023294595348560043,
+              "abs_relative_error": 0.023294595348560043,
+              "status": "FEASIBLE_WITHIN_5PCT"
+            }
+          }
+        },
+        "E3": {
+          "fraction_of_S1": 0.05,
+          "target_J": 297.6923744,
+          "arms": {
+            "S2": {
+              "N": 7,
+              "achieved_J": 289.457716,
+              "target_J": 297.6923744,
+              "relative_error": -0.027661637005640394,
+              "abs_relative_error": 0.027661637005640394,
+              "status": "FEASIBLE_WITHIN_5PCT"
+            },
+            "S3": {
+              "N": 7,
+              "achieved_J": 289.457716,
+              "target_J": 297.6923744,
+              "relative_error": -0.027661637005640394,
+              "abs_relative_error": 0.027661637005640394,
+              "status": "FEASIBLE_WITHIN_5PCT"
+            },
+            "S5": {
+              "N": 7,
+              "achieved_J": 289.457716,
+              "target_J": 297.6923744,
+              "relative_error": -0.027661637005640394,
+              "abs_relative_error": 0.027661637005640394,
+              "status": "FEASIBLE_WITHIN_5PCT"
+            },
+            "S4": {
+              "N": 7,
+              "achieved_J": 292.217836,
+              "target_J": 297.6923744,
+              "relative_error": -0.018389918153039586,
+              "abs_relative_error": 0.018389918153039586,
+              "status": "FEASIBLE_WITHIN_5PCT"
+            },
+            "S3r": {
+              "N": 7,
+              "achieved_J": 292.217836,
+              "target_J": 297.6923744,
+              "relative_error": -0.018389918153039586,
+              "abs_relative_error": 0.018389918153039586,
+              "status": "FEASIBLE_WITHIN_5PCT"
+            },
+            "S6": {
+              "N": 7,
+              "achieved_J": 292.217836,
+              "target_J": 297.6923744,
+              "relative_error": -0.018389918153039586,
+              "abs_relative_error": 0.018389918153039586,
+              "status": "FEASIBLE_WITHIN_5PCT"
+            }
+          }
+        },
+        "E4": {
+          "fraction_of_S1": 0.02,
+          "target_J": 119.07694975999999,
+          "arms": {
+            "S2": {
+              "N": 3,
+              "achieved_J": 124.065564,
+              "target_J": 119.07694975999999,
+              "relative_error": 0.04189403784741352,
+              "abs_relative_error": 0.04189403784741352,
+              "status": "FEASIBLE_WITHIN_5PCT"
+            },
+            "S3": {
+              "N": 3,
+              "achieved_J": 124.065564,
+              "target_J": 119.07694975999999,
+              "relative_error": 0.04189403784741352,
+              "abs_relative_error": 0.04189403784741352,
+              "status": "FEASIBLE_WITHIN_5PCT"
+            },
+            "S5": {
+              "N": 3,
+              "achieved_J": 124.065564,
+              "target_J": 119.07694975999999,
+              "relative_error": 0.04189403784741352,
+              "abs_relative_error": 0.04189403784741352,
+              "status": "FEASIBLE_WITHIN_5PCT"
+            },
+            "S4": {
+              "N": 3,
+              "achieved_J": 126.904884,
+              "target_J": 119.07694975999999,
+              "relative_error": 0.0657384511089445,
+              "abs_relative_error": 0.0657384511089445,
+              "status": "DISCRETE_GRANULARITY_INFEASIBLE"
+            },
+            "S3r": {
+              "N": 3,
+              "achieved_J": 126.904884,
+              "target_J": 119.07694975999999,
+              "relative_error": 0.0657384511089445,
+              "abs_relative_error": 0.0657384511089445,
+              "status": "DISCRETE_GRANULARITY_INFEASIBLE"
+            },
+            "S6": {
+              "N": 3,
+              "achieved_J": 126.904884,
+              "target_J": 119.07694975999999,
+              "relative_error": 0.0657384511089445,
+              "abs_relative_error": 0.0657384511089445,
+              "status": "DISCRETE_GRANULARITY_INFEASIBLE"
+            }
+          }
+        }
+      }
+    },
+    "CENTRAL": {
+      "S1_reference_J": 7537.7807250000005,
+      "budgets": {
+        "E1": {
+          "fraction_of_S1": 0.2,
+          "target_J": 1507.5561450000002,
+          "arms": {
+            "S2": {
+              "N": 29,
+              "achieved_J": 1519.0670249999998,
+              "target_J": 1507.5561450000002,
+              "relative_error": 0.00763545692024592,
+              "abs_relative_error": 0.00763545692024592,
+              "status": "FEASIBLE_WITHIN_5PCT"
+            },
+            "S3": {
+              "N": 29,
+              "achieved_J": 1519.0670249999998,
+              "target_J": 1507.5561450000002,
+              "relative_error": 0.00763545692024592,
+              "abs_relative_error": 0.00763545692024592,
+              "status": "FEASIBLE_WITHIN_5PCT"
+            },
+            "S5": {
+              "N": 29,
+              "achieved_J": 1519.0670249999998,
+              "target_J": 1507.5561450000002,
+              "relative_error": 0.00763545692024592,
+              "abs_relative_error": 0.00763545692024592,
+              "status": "FEASIBLE_WITHIN_5PCT"
+            },
+            "S4": {
+              "N": 29,
+              "achieved_J": 1523.863377,
+              "target_J": 1507.5561450000002,
+              "relative_error": 0.010816998129114186,
+              "abs_relative_error": 0.010816998129114186,
+              "status": "FEASIBLE_WITHIN_5PCT"
+            },
+            "S3r": {
+              "N": 29,
+              "achieved_J": 1523.863377,
+              "target_J": 1507.5561450000002,
+              "relative_error": 0.010816998129114186,
+              "abs_relative_error": 0.010816998129114186,
+              "status": "FEASIBLE_WITHIN_5PCT"
+            },
+            "S6": {
+              "N": 29,
+              "achieved_J": 1523.863377,
+              "target_J": 1507.5561450000002,
+              "relative_error": 0.010816998129114186,
+              "abs_relative_error": 0.010816998129114186,
+              "status": "FEASIBLE_WITHIN_5PCT"
+            }
+          }
+        },
+        "E2": {
+          "fraction_of_S1": 0.1,
+          "target_J": 753.7780725000001,
+          "arms": {
+            "S2": {
+              "N": 14,
+              "achieved_J": 733.45365,
+              "target_J": 753.7780725000001,
+              "relative_error": -0.02696340374109263,
+              "abs_relative_error": 0.02696340374109263,
+              "status": "FEASIBLE_WITHIN_5PCT"
+            },
+            "S3": {
+              "N": 14,
+              "achieved_J": 733.45365,
+              "target_J": 753.7780725000001,
+              "relative_error": -0.02696340374109263,
+              "abs_relative_error": 0.02696340374109263,
+              "status": "FEASIBLE_WITHIN_5PCT"
+            },
+            "S5": {
+              "N": 14,
+              "achieved_J": 733.45365,
+              "target_J": 753.7780725000001,
+              "relative_error": -0.02696340374109263,
+              "abs_relative_error": 0.02696340374109263,
+              "status": "FEASIBLE_WITHIN_5PCT"
+            },
+            "S4": {
+              "N": 14,
+              "achieved_J": 738.844002,
+              "target_J": 753.7780725000001,
+              "relative_error": -0.019812290971093605,
+              "abs_relative_error": 0.019812290971093605,
+              "status": "FEASIBLE_WITHIN_5PCT"
+            },
+            "S3r": {
+              "N": 14,
+              "achieved_J": 738.844002,
+              "target_J": 753.7780725000001,
+              "relative_error": -0.019812290971093605,
+              "abs_relative_error": 0.019812290971093605,
+              "status": "FEASIBLE_WITHIN_5PCT"
+            },
+            "S6": {
+              "N": 14,
+              "achieved_J": 738.844002,
+              "target_J": 753.7780725000001,
+              "relative_error": -0.019812290971093605,
+              "abs_relative_error": 0.019812290971093605,
+              "status": "FEASIBLE_WITHIN_5PCT"
+            }
+          }
+        },
+        "E3": {
+          "fraction_of_S1": 0.05,
+          "target_J": 376.88903625000006,
+          "arms": {
+            "S2": {
+              "N": 7,
+              "achieved_J": 366.834075,
+              "target_J": 376.88903625000006,
+              "relative_error": -0.026678837224997864,
+              "abs_relative_error": 0.026678837224997864,
+              "status": "FEASIBLE_WITHIN_5PCT"
+            },
+            "S3": {
+              "N": 7,
+              "achieved_J": 366.834075,
+              "target_J": 376.88903625000006,
+              "relative_error": -0.026678837224997864,
+              "abs_relative_error": 0.026678837224997864,
+              "status": "FEASIBLE_WITHIN_5PCT"
+            },
+            "S5": {
+              "N": 7,
+              "achieved_J": 366.834075,
+              "target_J": 376.88903625000006,
+              "relative_error": -0.026678837224997864,
+              "abs_relative_error": 0.026678837224997864,
+              "status": "FEASIBLE_WITHIN_5PCT"
+            },
+            "S4": {
+              "N": 7,
+              "achieved_J": 372.501627,
+              "target_J": 376.88903625000006,
+              "relative_error": -0.011641116689554698,
+              "abs_relative_error": 0.011641116689554698,
+              "status": "FEASIBLE_WITHIN_5PCT"
+            },
+            "S3r": {
+              "N": 7,
+              "achieved_J": 372.501627,
+              "target_J": 376.88903625000006,
+              "relative_error": -0.011641116689554698,
+              "abs_relative_error": 0.011641116689554698,
+              "status": "FEASIBLE_WITHIN_5PCT"
+            },
+            "S6": {
+              "N": 7,
+              "achieved_J": 372.501627,
+              "target_J": 376.88903625000006,
+              "relative_error": -0.011641116689554698,
+              "abs_relative_error": 0.011641116689554698,
+              "status": "FEASIBLE_WITHIN_5PCT"
+            }
+          }
+        },
+        "E4": {
+          "fraction_of_S1": 0.02,
+          "target_J": 150.7556145,
+          "arms": {
+            "S2": {
+              "N": 3,
+              "achieved_J": 157.337175,
+              "target_J": 150.7556145,
+              "relative_error": 0.043657150162059066,
+              "abs_relative_error": 0.043657150162059066,
+              "status": "FEASIBLE_WITHIN_5PCT"
+            },
+            "S3": {
+              "N": 3,
+              "achieved_J": 157.337175,
+              "target_J": 150.7556145,
+              "relative_error": 0.043657150162059066,
+              "abs_relative_error": 0.043657150162059066,
+              "status": "FEASIBLE_WITHIN_5PCT"
+            },
+            "S5": {
+              "N": 3,
+              "achieved_J": 157.337175,
+              "target_J": 150.7556145,
+              "relative_error": 0.043657150162059066,
+              "abs_relative_error": 0.043657150162059066,
+              "status": "FEASIBLE_WITHIN_5PCT"
+            },
+            "S4": {
+              "N": 3,
+              "achieved_J": 163.163127,
+              "target_J": 150.7556145,
+              "relative_error": 0.08230215863701718,
+              "abs_relative_error": 0.08230215863701718,
+              "status": "DISCRETE_GRANULARITY_INFEASIBLE"
+            },
+            "S3r": {
+              "N": 3,
+              "achieved_J": 163.163127,
+              "target_J": 150.7556145,
+              "relative_error": 0.08230215863701718,
+              "abs_relative_error": 0.08230215863701718,
+              "status": "DISCRETE_GRANULARITY_INFEASIBLE"
+            },
+            "S6": {
+              "N": 3,
+              "achieved_J": 163.163127,
+              "target_J": 150.7556145,
+              "relative_error": 0.08230215863701718,
+              "abs_relative_error": 0.08230215863701718,
+              "status": "DISCRETE_GRANULARITY_INFEASIBLE"
+            }
+          }
+        }
+      }
+    },
+    "HIGH": {
+      "S1_reference_J": 9247.96716,
+      "budgets": {
+        "E1": {
+          "fraction_of_S1": 0.2,
+          "target_J": 1849.5934320000001,
+          "arms": {
+            "S2": {
+              "N": 29,
+              "achieved_J": 1868.70564,
+              "target_J": 1849.5934320000001,
+              "relative_error": 0.010333194133011814,
+              "abs_relative_error": 0.010333194133011814,
+              "status": "FEASIBLE_WITHIN_5PCT"
+            },
+            "S3": {
+              "N": 29,
+              "achieved_J": 1868.70564,
+              "target_J": 1849.5934320000001,
+              "relative_error": 0.010333194133011814,
+              "abs_relative_error": 0.010333194133011814,
+              "status": "FEASIBLE_WITHIN_5PCT"
+            },
+            "S5": {
+              "N": 29,
+              "achieved_J": 1868.70564,
+              "target_J": 1849.5934320000001,
+              "relative_error": 0.010333194133011814,
+              "abs_relative_error": 0.010333194133011814,
+              "status": "FEASIBLE_WITHIN_5PCT"
+            },
+            "S4": {
+              "N": 28,
+              "achieved_J": 1821.8921999999998,
+              "target_J": 1849.5934320000001,
+              "relative_error": -0.014976930346279671,
+              "abs_relative_error": 0.014976930346279671,
+              "status": "FEASIBLE_WITHIN_5PCT"
+            },
+            "S3r": {
+              "N": 28,
+              "achieved_J": 1821.8921999999998,
+              "target_J": 1849.5934320000001,
+              "relative_error": -0.014976930346279671,
+              "abs_relative_error": 0.014976930346279671,
+              "status": "FEASIBLE_WITHIN_5PCT"
+            },
+            "S6": {
+              "N": 28,
+              "achieved_J": 1821.8921999999998,
+              "target_J": 1849.5934320000001,
+              "relative_error": -0.014976930346279671,
+              "abs_relative_error": 0.014976930346279671,
+              "status": "FEASIBLE_WITHIN_5PCT"
+            }
+          }
+        },
+        "E2": {
+          "fraction_of_S1": 0.1,
+          "target_J": 924.7967160000001,
+          "arms": {
+            "S2": {
+              "N": 14,
+              "achieved_J": 903.2432399999999,
+              "target_J": 924.7967160000001,
+              "relative_error": -0.023306177051779398,
+              "abs_relative_error": 0.023306177051779398,
+              "status": "FEASIBLE_WITHIN_5PCT"
+            },
+            "S3": {
+              "N": 14,
+              "achieved_J": 903.2432399999999,
+              "target_J": 924.7967160000001,
+              "relative_error": -0.023306177051779398,
+              "abs_relative_error": 0.023306177051779398,
+              "status": "FEASIBLE_WITHIN_5PCT"
+            },
+            "S5": {
+              "N": 14,
+              "achieved_J": 903.2432399999999,
+              "target_J": 924.7967160000001,
+              "relative_error": -0.023306177051779398,
+              "abs_relative_error": 0.023306177051779398,
+              "status": "FEASIBLE_WITHIN_5PCT"
+            },
+            "S4": {
+              "N": 14,
+              "achieved_J": 922.7343599999999,
+              "target_J": 924.7967160000001,
+              "relative_error": -0.002230064147416555,
+              "abs_relative_error": 0.002230064147416555,
+              "status": "FEASIBLE_WITHIN_5PCT"
+            },
+            "S3r": {
+              "N": 14,
+              "achieved_J": 922.7343599999999,
+              "target_J": 924.7967160000001,
+              "relative_error": -0.002230064147416555,
+              "abs_relative_error": 0.002230064147416555,
+              "status": "FEASIBLE_WITHIN_5PCT"
+            },
+            "S6": {
+              "N": 14,
+              "achieved_J": 922.7343599999999,
+              "target_J": 924.7967160000001,
+              "relative_error": -0.002230064147416555,
+              "abs_relative_error": 0.002230064147416555,
+              "status": "FEASIBLE_WITHIN_5PCT"
+            }
+          }
+        },
+        "E3": {
+          "fraction_of_S1": 0.05,
+          "target_J": 462.39835800000003,
+          "arms": {
+            "S2": {
+              "N": 7,
+              "achieved_J": 452.69411999999994,
+              "target_J": 462.39835800000003,
+              "relative_error": -0.020986748400175115,
+              "abs_relative_error": 0.020986748400175115,
+              "status": "FEASIBLE_WITHIN_5PCT"
+            },
+            "S3": {
+              "N": 7,
+              "achieved_J": 452.69411999999994,
+              "target_J": 462.39835800000003,
+              "relative_error": -0.020986748400175115,
+              "abs_relative_error": 0.020986748400175115,
+              "status": "FEASIBLE_WITHIN_5PCT"
+            },
+            "S5": {
+              "N": 7,
+              "achieved_J": 452.69411999999994,
+              "target_J": 462.39835800000003,
+              "relative_error": -0.020986748400175115,
+              "abs_relative_error": 0.020986748400175115,
+              "status": "FEASIBLE_WITHIN_5PCT"
+            },
+            "S4": {
+              "N": 7,
+              "achieved_J": 473.15543999999994,
+              "target_J": 462.39835800000003,
+              "relative_error": 0.023263668250309566,
+              "abs_relative_error": 0.023263668250309566,
+              "status": "FEASIBLE_WITHIN_5PCT"
+            },
+            "S3r": {
+              "N": 7,
+              "achieved_J": 473.15543999999994,
+              "target_J": 462.39835800000003,
+              "relative_error": 0.023263668250309566,
+              "abs_relative_error": 0.023263668250309566,
+              "status": "FEASIBLE_WITHIN_5PCT"
+            },
+            "S6": {
+              "N": 7,
+              "achieved_J": 473.15543999999994,
+              "target_J": 462.39835800000003,
+              "relative_error": 0.023263668250309566,
+              "abs_relative_error": 0.023263668250309566,
+              "status": "FEASIBLE_WITHIN_5PCT"
+            }
+          }
+        },
+        "E4": {
+          "fraction_of_S1": 0.02,
+          "target_J": 184.9593432,
+          "arms": {
+            "S2": {
+              "N": 3,
+              "achieved_J": 195.23748,
+              "target_J": 184.9593432,
+              "relative_error": 0.05556970857582488,
+              "abs_relative_error": 0.05556970857582488,
+              "status": "DISCRETE_GRANULARITY_INFEASIBLE"
+            },
+            "S3": {
+              "N": 3,
+              "achieved_J": 195.23748,
+              "target_J": 184.9593432,
+              "relative_error": 0.05556970857582488,
+              "abs_relative_error": 0.05556970857582488,
+              "status": "DISCRETE_GRANULARITY_INFEASIBLE"
+            },
+            "S5": {
+              "N": 3,
+              "achieved_J": 195.23748,
+              "target_J": 184.9593432,
+              "relative_error": 0.05556970857582488,
+              "abs_relative_error": 0.05556970857582488,
+              "status": "DISCRETE_GRANULARITY_INFEASIBLE"
+            },
+            "S4": {
+              "N": 3,
+              "achieved_J": 216.25320000000002,
+              "target_J": 184.9593432,
+              "relative_error": 0.1691931656902641,
+              "abs_relative_error": 0.1691931656902641,
+              "status": "DISCRETE_GRANULARITY_INFEASIBLE"
+            },
+            "S3r": {
+              "N": 3,
+              "achieved_J": 216.25320000000002,
+              "target_J": 184.9593432,
+              "relative_error": 0.1691931656902641,
+              "abs_relative_error": 0.1691931656902641,
+              "status": "DISCRETE_GRANULARITY_INFEASIBLE"
+            },
+            "S6": {
+              "N": 3,
+              "achieved_J": 216.25320000000002,
+              "target_J": 184.9593432,
+              "relative_error": 0.1691931656902641,
+              "abs_relative_error": 0.1691931656902641,
+              "status": "DISCRETE_GRANULARITY_INFEASIBLE"
+            }
+          }
+        }
+      }
+    }
+  },
+  "primary_E3_all_scenarios_feasible": true,
+  "primary_E3_failures": []
+}

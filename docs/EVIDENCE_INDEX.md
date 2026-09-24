@@ -41,9 +41,18 @@ A claim is **supported** when a published file in this repository contains the e
 |---|---|---|
 | The study reports modelled schedule-attributable rail-level energy, not measured energy | [`prereg-v1.2-amendment-A4-no-hardware.md`](prereg-v1.2-amendment-A4-no-hardware.md) | The amendment is the decision record; it is not a measurement. |
 | The parameter values, their sources, and the LOW/CENTRAL/HIGH scenarios | [`modelled_energy_parameter_provenance.md`](modelled_energy_parameter_provenance.md) | Datasheet values and declared engineering assumptions. The duration assumptions are explicitly unmeasured. |
-| Those eleven parameters match the configuration the analysis actually read | Publication check, 19 September 2026: 33 comparisons across the three scenarios, all equal | The configuration file itself is **not yet published**, so the check cannot yet be repeated from this repository. |
+| Those eleven parameters match the configuration the analysis actually read | [`modelled_energy_scenarios.json`](../configs/modelled_energy_scenarios.json); publication check, 19 September 2026: 33 comparisons across the three scenarios, all equal | The configuration is byte-identical to the version I preserved during the research, so the comparison can now be repeated from this repository. |
 | The bench protocol was planned and never executed | [`../hardware/measurement_protocol.md`](../hardware/measurement_protocol.md) with its [note](../hardware/README.md) | Supported by A4.1, the protocol's own empty replication record, and the absence of any measurement output in the preserved hardware folder. |
-| E3 resolves to seven ten-minute bursts in all three scenarios, so one central outcome analysis was run | [`ENERGY_SCOPE.md`](ENERGY_SCOPE.md) | The feasibility audit it quotes is **not yet published**. Separate LOW and HIGH outcome analyses were never performed. |
+| E3 resolves to seven ten-minute bursts in all three scenarios, so one central outcome analysis was run | [`modelled_energy_match_audit.json`](../results/modelled_energy_match_audit.json), [`modelled_energy_match.py`](../src/modelled_energy_match.py), [`ENERGY_AND_SCHEDULES.md`](ENERGY_AND_SCHEDULES.md#4-from-budget-to-bursts), [`ENERGY_SCOPE.md`](ENERGY_SCOPE.md) | Recomputed from the published code and configuration on 24 September 2026; the output was byte-for-byte identical to the archived audit. Matching is to whole bursts within ±5%. Separate LOW and HIGH outcome analyses were never performed. |
+| Each energy term is an increment above platform idle, idle is charged once, and the accelerometer is not counted twice | [`energy_model.py`](../src/energy_model.py), [`ENERGY_AND_SCHEDULES.md`](ENERGY_AND_SCHEDULES.md#2-the-model) | Shown by the code and its stated boundary definitions. It is a model of a reference architecture, not a measurement; the battery-life functions in the module were never used. |
+
+## Sampling schedules
+
+| Claim | Supporting file | Limit |
+|---|---|---|
+| How each arm places its bursts, and that every mask is deterministic apart from the seeded S5 | [`schedules.py`](../src/schedules.py), [`ENERGY_AND_SCHEDULES.md`](ENERGY_AND_SCHEDULES.md#5-the-schedules) | The tests that exercise the module are **not yet published**. |
+| S3 is a fixed clock window, and S2 places three of its seven bursts inside that window | [`schedules.py`](../src/schedules.py) | Follows directly from the fixed strides at N = 7; S3 is not each participant's sleep. |
+| S3r and S6 are counterfactual constructs matched at the same burst count each day | [`schedules.py`](../src/schedules.py), [`METHODS_GUIDE.md`](METHODS_GUIDE.md#5-schedules-and-matched-controls) | They read a whole day's rest pattern in advance and could not run in real time. |
 
 ## Results
 
