@@ -91,7 +91,7 @@ Everything in this module is deterministic. The only randomness is S5's, and it 
 
 On 24 September 2026 I re-ran the matching audit's calculation from the published code and configuration, in a fresh Python 3.13 environment. The recomputed audit, serialised the way the module writes it, is byte-for-byte identical to the archived record. I did not regenerate the archived file; the published copy is the preserved one. The published code, configuration and audit file each hash identically to the versions I preserved during the research.
 
-The schedule module is exercised by the historical test suite, which is not yet published; its publication and the results of running it are recorded separately.
+The energy and schedule modules are exercised by the historical test suite. Its run for this publication is recorded in the [pipeline and tests guide](PIPELINE_AND_TESTS.md#4-the-test-suite).
 
 ## 7. What this does not establish
 

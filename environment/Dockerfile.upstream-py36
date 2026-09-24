@@ -1,0 +1,15 @@
+# Era-matched environment for AnomalyDetect (RHRAD / HROS-AD).
+# The repo pins python 3.6.8, numpy 1.18.5, pandas 1.0.4, statsmodels 0.11.0,
+# sklearn 0.23.1.  statsmodels >= 0.12 removed seasonal_decompose(freq=), and
+# pandas >= 2.0 removed rolling's nuisance-column dropping, so the script cannot
+# run unmodified on a modern interpreter.  We match the era instead of editing
+# the file -- Gate A requires the upstream source to stay byte-identical.
+FROM python:3.6.15-slim
+RUN pip install --no-cache-dir \
+      numpy==1.18.5 pandas==1.0.4 statsmodels==0.11.0 scikit-learn==0.23.1 \
+      matplotlib==3.3.4 seaborn==0.11.1
+WORKDIR /work
+# docker run --rm -v "$PWD:/work" upstream-py36 \
+#   python scripts/hrosad_offline.py --heart_rate data/AHYIJDV_hr.csv \
+#   --steps data/AHYIJDV_steps.csv --myphd_id AHYIJDV \
+#   --anomalies out.csv --figure out.pdf

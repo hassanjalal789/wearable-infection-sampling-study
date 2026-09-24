@@ -136,8 +136,6 @@ The last row is the one that constrains interpretation most: an analysis that wa
 
 | Topic | Document |
 |---|---|
-| Detector and runner source code | `src/` |
-| Tests and historical environment records | `tests/`, `environment/` |
 | Aggregate result tables, digests and figures | `results/`, `figures/` |
 
-This guide is extended as those artifacts appear. No day-by-day publication timetable is published in this repository.
+The detector, runner, statistics and tests are explained in the [pipeline and tests guide](PIPELINE_AND_TESTS.md). This guide is extended as the remaining artifacts appear. No day-by-day publication timetable is published in this repository.

@@ -50,9 +50,21 @@ A claim is **supported** when a published file in this repository contains the e
 
 | Claim | Supporting file | Limit |
 |---|---|---|
-| How each arm places its bursts, and that every mask is deterministic apart from the seeded S5 | [`schedules.py`](../src/schedules.py), [`ENERGY_AND_SCHEDULES.md`](ENERGY_AND_SCHEDULES.md#5-the-schedules) | The tests that exercise the module are **not yet published**. |
+| How each arm places its bursts, and that every mask is deterministic apart from the seeded S5 | [`schedules.py`](../src/schedules.py), [`ENERGY_AND_SCHEDULES.md`](ENERGY_AND_SCHEDULES.md#5-the-schedules), [`test_schedules.py`](../tests/test_schedules.py) | Exercised by the published tests on synthetic days; see the [verification log](../evidence/VERIFICATION_LOG.md). |
 | S3 is a fixed clock window, and S2 places three of its seven bursts inside that window | [`schedules.py`](../src/schedules.py) | Follows directly from the fixed strides at N = 7; S3 is not each participant's sleep. |
 | S3r and S6 are counterfactual constructs matched at the same burst count each day | [`schedules.py`](../src/schedules.py), [`METHODS_GUIDE.md`](METHODS_GUIDE.md#5-schedules-and-matched-controls) | They read a whole day's rest pattern in advance and could not run in real time. |
+
+## Pipeline and tests
+
+| Claim | Supporting file | Limit |
+|---|---|---|
+| The detector's baseline reads only data from before the day it scores, and a day with no heart-rate data is unevaluable rather than negative | [`tod_z.py`](../src/tod_z.py), [`test_causality.py`](../tests/test_causality.py), [`test_missing_days.py`](../tests/test_missing_days.py) | Shown by the code and by tests on synthetic data, not by re-running the source data. |
+| Every calibrated threshold keeps the calibration alert rate within 2 alert-days per person-month, and a schedule below 16 calibration days is not calibrated | [`tod_z.py`](../src/tod_z.py), [`primary_e3_experiment.py`](../src/primary_e3_experiment.py), [`PIPELINE_AND_TESTS.md`](PIPELINE_AND_TESTS.md#1-from-source-minutes-to-a-paired-result) | The per-participant calibration outputs are withheld because they name participants. |
+| θ, the exact sign test, the BCa interval and the fixed-sequence gate were computed as described | [`reveal_primary_e3_confirmatory_results_fixed.py`](../evidence/scripts/reveal_primary_e3_confirmatory_results_fixed.py), [`verify_test_equivalence.py`](../src/verify_test_equivalence.py) | The script expects the project in a home-folder path and reads withheld participant-level outputs, so it cannot be run from this repository. |
+| The runner refuses a real run without the energy-freeze ancestry, a committed runner and a clean working tree | [`primary_e3_experiment.py`](../src/primary_e3_experiment.py), [`VERIFICATION_LOG.md`](../evidence/VERIFICATION_LOG.md) | The guard was exercised here and stopped as designed; the full raw-data run cannot be performed from this repository. |
+| The published test suite passes | [`VERIFICATION_LOG.md`](../evidence/VERIFICATION_LOG.md), [`PIPELINE_AND_TESTS.md`](PIPELINE_AND_TESTS.md#4-the-test-suite) | 156 passed on 24 September 2026. Synthetic inputs and published aggregates only; 25 historical tests await their modules. |
+| The suite stood at 131, 140 and 159 passing tests at points during the research | [`provenance.txt`](../environment/provenance.txt), [`PRE_OUTCOME_CHECKPOINT.md`](PRE_OUTCOME_CHECKPOINT.md), [`audit_pytest.txt`](../evidence/audit/audit_pytest.txt) | Historical reports, not re-executed at those points. |
+| The published chronology cites readable records and is internally consistent | [`validate_chronology.py`](../src/validate_chronology.py), [`timeline_facts.json`](../evidence/timeline_facts.json), [`test_validate_chronology.py`](../tests/test_validate_chronology.py) | New code for this repository. It checks support and consistency, not whether a record is true. |
 
 ## Results
 
@@ -73,9 +85,9 @@ A claim is **supported** when a published file in this repository contains the e
 
 ## Outstanding for this publication
 
-- The test suite has not been rerun; the archived report of 159 passing tests is historical until it is.
+- The published test suite passes (156 tests, 24 September 2026); 25 historical tests await the modules they exercise.
 - No figure has been regenerated, and no aggregate table has been recomputed from raw data.
-- The full raw-data analysis has not been rerun; the analysis runner requires an ancestry this repository does not have, which will be documented with the code.
+- The full raw-data analysis has not been re-run; the runner requires a project history and withheld inputs this repository does not have, as the [pipeline and tests guide](PIPELINE_AND_TESTS.md#3-what-cannot-be-re-run-from-this-repository) explains.
 - Reproduction of upstream algorithms was mixed in the archived work, and no negative-control analysis exists.
 - Overlap between participants in the two dataset releases could not be determined.
 - The data and cohort stage has not been re-run for publication; its published outputs are the preserved ones.

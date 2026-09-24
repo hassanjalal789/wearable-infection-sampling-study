@@ -1,0 +1,12 @@
+# Era-matched environment for WearableDetection / Alarm (RHR-Diff, CuSum).
+# Needs R packages xts and zoo.  CRAN was unreachable from the Phase-1 container
+# (available.packages() returned 0 rows), which is why Gate A1 -- the only
+# byte-diffable gate in the whole set -- is still BLOCKED.
+FROM rocker/r-ver:4.3.3
+RUN R -e "install.packages(c('zoo','xts'), repos='https://cloud.r-project.org')"
+WORKDIR /work
+# docker run --rm -v "$PWD:/work" upstream-r Rscript -e \
+#   "source('R/detection_fn.R'); library(xts); \
+#    r <- get.stats.fn('data/AHYIJDV_hr.csv','data/AHYIJDV_steps.csv'); str(r)"
+# Then byte-diff against result/RHRDiff_offline_detection.csv and
+# result/CuSum_online_detection.csv.

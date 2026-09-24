@@ -1,0 +1,8 @@
+9e9b592 (HEAD -> master) add final results tables and figures
+c6c9cb4 freeze post-primary sensitivity analysis plan
+83cc8d1 correct Phase2 sparse step semantics before outcome inspection
+d1d5265 freeze primary E3 experiment runner before outcomes
+4023717 freeze pre-outcome modelled energy parameters and budgets
+279d7e4 amend preregistration to modelled energy design
+ee7c110 freeze hardware energy measurement protocol
+990f97e pre-outcome data and reproduction checkpoint

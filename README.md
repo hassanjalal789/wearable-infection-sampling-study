@@ -16,7 +16,7 @@ I compared schedules held to the same modelled energy budget: about 5% of the en
 - **Modelled energy.** Budgets come from a parameterised energy model, not from hardware measurements. No battery saving was measured.
 - **Negative primary finding.** The primary hypothesis (H1) was not rejected, so the fixed testing sequence closed and the remaining contrasts are estimation-only.
 - **Records, not registration.** The protocol files labelled "preregistration" are preserved project records; several are still marked draft. They are not independently timestamped public preregistrations.
-- **Verification status.** The values below were checked against the archived result files during preparation. The test suite has not been rerun and no figure has been regenerated for this publication; those checks are listed in the evidence index as outstanding.
+- **Verification status.** The values below were checked against the archived result files during preparation. The published test suite was run for this publication on 24 September 2026 and passed; the full raw-data analysis has not been re-run and no figure has been regenerated. The [verification log](evidence/VERIFICATION_LOG.md) records each check with its date and outcome.
 
 ## Start here
 
@@ -25,11 +25,12 @@ I compared schedules held to the same modelled energy budget: about 5% of the en
 3. [Methods guide](docs/METHODS_GUIDE.md) — the rules the executed study followed, each traced to the document that set it.
 4. [Data and cohort guide](docs/DATA_AND_COHORT.md) — the exact archives analysed, how each device and cohort decision was made, and what is withheld.
 5. [Energy and schedules guide](docs/ENERGY_AND_SCHEDULES.md) — how the modelled budget became seven ten-minute bursts, and where each schedule places them.
-6. [Research timeline](docs/RESEARCH_TIMELINE.md) — when the design, execution, correction and sensitivity work happened, and which parts came before the result was known.
-7. [Results and limitations](docs/RESULTS_AND_LIMITATIONS.md) — the main result and what constrains it.
-8. [Evidence index](docs/EVIDENCE_INDEX.md) — which file supports which claim, and where the evidence stops.
+6. [Pipeline and tests guide](docs/PIPELINE_AND_TESTS.md) — the detector, calibration, runner and statistics, and what the tests show.
+7. [Research timeline](docs/RESEARCH_TIMELINE.md) — when the design, execution, correction and sensitivity work happened, and which parts came before the result was known.
+8. [Results and limitations](docs/RESULTS_AND_LIMITATIONS.md) — the main result and what constrains it.
+9. [Evidence index](docs/EVIDENCE_INDEX.md) — which file supports which claim, and where the evidence stops.
 
-Reproduction instructions are not yet published. No command is listed here until it has been run successfully for this publication in a documented environment.
+Full reproduction instructions are not yet published, and no command is listed until it has been run successfully for this publication in a documented environment. One has: from the repository root, `python -m pytest tests/ -q` runs the published test suite. The [pipeline and tests guide](docs/PIPELINE_AND_TESTS.md#4-the-test-suite) gives the environment it was run in and the result, and explains why the full raw-data analysis cannot be re-run from this repository.
 
 ## Main result
 
@@ -53,6 +54,7 @@ Published so far:
 ```text
 README.md                        this overview
 CHANGELOG.md                     publication changes by date
+Makefile                         historical build targets (only `make test` re-run here)
 run_phase1.sh                    acquisition, inventory and cohort pipeline
 configs/
   modelled_energy_scenarios.json frozen energy parameters for LOW, CENTRAL and HIGH
@@ -81,6 +83,7 @@ docs/
   RESEARCH_TIMELINE.md           order of design, execution, correction and release
   DATA_AND_COHORT.md             data sources, inventory, device provenance, cohort
   ENERGY_AND_SCHEDULES.md        modelled energy, burst matching, schedule placement
+  PIPELINE_AND_TESTS.md          detector, calibration, runner, statistics, tests
   RESEARCH_SUMMARY.md            plain-language summary
   RESULTS_AND_LIMITATIONS.md     main result and known limitations
   EVIDENCE_INDEX.md              claims mapped to supporting files and evidence limits
@@ -100,6 +103,12 @@ src/
   energy_model.py                modelled schedule-attributable rail-level energy
   modelled_energy_match.py       budget-to-burst matching and feasibility audit
   schedules.py                   the seven sampling schedules and M1 matching
+  tod_z.py                       time-of-day-normalised resting heart-rate detector
+  primary_e3_experiment.py       primary runner, with its execution guard
+  verify_test_equivalence.py     check that the sign test matches a permutation test
+  validate_chronology.py         chronology validator (new code for this repository)
+tests/                           historical test suite, plus tests for the validator
+environment/                     historical environment records and a note on them
 results/
   schema_phase1.json, schema_phase2.json
                                  every CSV member matched a known schema
@@ -118,9 +127,13 @@ evidence/
   PUBLICATION_MANIFEST.csv       disposition of each research artifact group
   TIMELINE_FACTS.md              each chronology fact traced to a preserved record
   EXECUTION_EXCERPTS.md          run configuration, frozen rules, participant counts
+  timeline_facts.json            machine-readable chronology checked by the validator
+  VERIFICATION_LOG.md            checks run for this publication, with dates and outcomes
+  audit/                         archived audit reports from the research
+  scripts/                       confirmatory-statistics and quality-check scripts
 ```
 
-Not yet published: the detector and runner code, tests (`tests/`) and historical environment records (`environment/`), the primary-run and sensitivity results and figures, and the remaining reproducibility and validation records. The [manifest](evidence/PUBLICATION_MANIFEST.csv) lists each group and its status.
+Not yet published: the primary-run and sensitivity results and figures, the sensitivity, figure, power-simulation and upstream-reproduction code, and the remaining reproducibility and validation records. The [manifest](evidence/PUBLICATION_MANIFEST.csv) lists each group and its status.
 
 **Source data.** The study used the public Stanford COVID-19 wearables datasets described by [Mishra et al. (2020)](https://doi.org/10.1038/s41551-020-00640-6) (Phase 1) and [Alavi et al. (2022)](https://doi.org/10.1038/s41591-021-01593-2) (Phase 2). Raw heart-rate and step records are not redistributed here. The [data and cohort guide](docs/DATA_AND_COHORT.md) identifies the exact archives analysed and explains what is withheld.
 

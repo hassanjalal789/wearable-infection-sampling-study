@@ -1,0 +1,6 @@
+commit=0ecad62911b1941012068032160af6214ba59631
+commit_short=0ecad629
+Python 3.11.15
+Linux 6.18.44-fc-v22
+tests=131 passing
+generated_utc=2026-09-01T07:08:59Z

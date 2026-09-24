@@ -1,0 +1,23 @@
+# Local Python/runtime
+.venv/
+.pytest_cache/
+**/__pycache__/
+*.py[cod]
+.DS_Store
+
+# Large raw source archives
+data_raw/
+
+# Temporary/editor files
+*.tmp
+*.swp
+src/upstream/wearable-infection/
+src/upstream/Alarm/
+src/upstream/WearableDetection/
+src/upstream/AnomalyDetect/
+
+# Pre-patch / obsolete local snapshots
+*_before_*.py
+*.pre_reporting_patch
+*.pre_gate_b_backup
+results/gate_a/gate_a_results_PRELIMINARY_DO_NOT_USE.json
