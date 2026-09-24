@@ -1,0 +1,25 @@
+{
+  "status": "SENSITIVITY_ONLY_POST_PRIMARY_OPERATIONALIZATION",
+  "primary_run": "results/primary_e3_run_83cc8d1",
+  "primary_commit": "83cc8d1",
+  "bootstrap_resamples": 10000,
+  "bootstrap_seed_base": 20260904,
+  "p_values_reported": false,
+  "confirmatory_gate_reopened": false,
+  "scenarios": [
+    "alert_budget_B1",
+    "alert_budget_B4",
+    "coarse_calibration_resolution_le_1pm",
+    "common_cohort_all_primary_arms_Cfloor16",
+    "exclude_multiple_episode_rows",
+    "m1_realised_minute_matched",
+    "phase2_only",
+    "rolling_tau_recalibration",
+    "todz_without_time_of_day_normalisation"
+  ],
+  "notes": [
+    "M1 realised-count conditioning equalizes delivered HR-observed minutes per participant-day.",
+    "Discrete-time survival is not executed because the original preregistration under-specified its model/link/estimand.",
+    "LOW/HIGH E3 physiological reruns are unnecessary because frozen E3 schedule masks are N=7,L=10 in all energy scenarios."
+  ]
+}

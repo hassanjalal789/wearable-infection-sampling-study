@@ -51,11 +51,11 @@ The preserved records report the suite at different points: 131 passing in the e
 |---|---|
 | Command | `python -m pytest tests/ -q`, and `make test`, from the repository root |
 | Environment | Fresh virtual environment: Python 3.13.13, NumPy 2.4.4, pandas 3.0.2, SciPy 1.17.1, pytest 9.1.1, Matplotlib 3.10.9, PyArrow 25.0.1, openpyxl 3.1.5, tabulate 0.10.0; Linux x86-64 |
-| Result | **156 passed**, 0 failed, 0 skipped |
-| Of which historical | 134 tests from the 16 historical test modules published here |
+| Result | **161 passed**, 0 failed, 0 skipped |
+| Of which historical | 139 tests from the 17 historical test modules published here |
 | Of which new | 22 tests for the chronology validator |
 
-The other 25 historical tests belong to modules that are not yet published: 13 for the power simulation, 7 for the upstream reproduction checks and 5 for the sensitivity analysis. They will be run when those modules are published. Passing tests show that the published code behaves as its tests expect on synthetic inputs. They do not re-run the analysis on the source data.
+The other 20 historical tests belong to modules that are not yet published: 13 for the power simulation and 7 for the upstream reproduction checks. They will be run when those modules are published. Passing tests show that the published code behaves as its tests expect on synthetic inputs. They do not re-run the analysis on the source data.
 
 ## 5. Environment records
 

@@ -1,0 +1,17 @@
+{
+  "alpha": 0.05,
+  "H1_rejected_two_sided": false,
+  "H1_theta_gt_0_5": false,
+  "stage2_gate_open": false,
+  "M1_tested_confirmatorily": false,
+  "M1_rejected_two_sided_if_tested": null,
+  "M1_theta_gt_0_5": true,
+  "stage3_gate_open": false,
+  "H2_H3_Holm_applied": false,
+  "bootstrap": {
+    "type": "BCa over participants",
+    "resamples": 10000,
+    "seed_base": 20260902,
+    "note": "seed is computational only; gate decisions use exact binomial p-values"
+  }
+}

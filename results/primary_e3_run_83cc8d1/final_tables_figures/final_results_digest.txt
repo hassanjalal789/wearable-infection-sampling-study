@@ -1,0 +1,20 @@
+FINAL RESULTS DIGEST
+
+Primary H1 (S3 nocturnal vs S2 uniform):
+N=30, W/L/T=8/12/10
+theta=0.433, 95% BCa CI 0.300 to 0.583
+exact two-sided p=0.5034
+
+Confirmatory conclusion:
+H1 was not rejected and the fixed-sequence gate closed.
+
+Main interpretation:
+No evidence that nocturnally concentrated HR acquisition improves presymptomatic
+warning over uniform-block acquisition at the tested E3 modelled-energy budget.
+
+Sensitivity interpretation:
+Every reported H1 sensitivity estimate remained <= 0.5. The primary null finding
+was therefore robust to the sensitivity analyses reported in the core runner.
+
+M1/H2/H3:
+Estimation-only after the H1 gate closed; none may be presented as confirmatory.

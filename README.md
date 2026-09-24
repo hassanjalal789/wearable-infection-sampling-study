@@ -16,7 +16,7 @@ I compared schedules held to the same modelled energy budget: about 5% of the en
 - **Modelled energy.** Budgets come from a parameterised energy model, not from hardware measurements. No battery saving was measured.
 - **Negative primary finding.** The primary hypothesis (H1) was not rejected, so the fixed testing sequence closed and the remaining contrasts are estimation-only.
 - **Records, not registration.** The protocol files labelled "preregistration" are preserved project records; several are still marked draft. They are not independently timestamped public preregistrations.
-- **Verification status.** The values below were checked against the archived result files during preparation. The published test suite was run for this publication on 24 September 2026 and passed; the full raw-data analysis has not been re-run and no figure has been regenerated. The [verification log](evidence/VERIFICATION_LOG.md) records each check with its date and outcome.
+- **Verification status.** The values below were checked against the archived result files during preparation. On 24 September 2026 the published test suite was run and passed, and the result tables, digest and figures were regenerated from the published summary files and matched the archived ones. The full raw-data analysis has not been re-run. The [verification log](evidence/VERIFICATION_LOG.md) records each check with its date and outcome.
 
 ## Start here
 
@@ -43,9 +43,13 @@ Each comparison pairs two schedules within the same participants. Schedule A *wi
 | H2 | S3 nighttime vs S5 seeded random | 30 | 10/10/10 | 0.500 | 0.350–0.650 | 1.0000* | Estimation-only (gate closed) |
 | H3 | S3 nighttime vs S4 rest-triggered | 30 | 2/9/19 | 0.383 | 0.283–0.483 | 0.0654* | Estimation-only (gate closed) |
 
-\* Unadjusted values from the archived results table, shown for description only. They are not confirmatory tests, because the testing sequence closed after H1.
+\* Unadjusted values from the archived [results table](results/primary_e3_run_83cc8d1/final_tables_figures/table_primary_confirmatory_results.csv), shown for description only. They are not confirmatory tests, because the testing sequence closed after H1.
 
-Under H1, nighttime sampling produced a presymptomatic alert for 19 of 30 participants and evenly spaced sampling for 20 of 30. Among participants with an alert, the median warning was 13 and 14 days. The aggregate result files and figures are not yet published, so no figure is shown here.
+Under H1, nighttime sampling produced a presymptomatic alert for 19 of 30 participants and evenly spaced sampling for 20 of 30. Among participants with an alert, the median warning was 13 and 14 days.
+
+![Paired effect θ with its 95% BCa interval for H1, M1, H2 and H3, with a dashed line at θ = 0.5 marking no difference. H1 is 0.433 (0.300–0.583), M1 0.533 (0.367–0.683), H2 0.500 (0.350–0.650) and H3 0.383 (0.283–0.483).](results/primary_e3_run_83cc8d1/final_tables_figures/figure_primary_effects.png)
+
+*Archived figure from the corrected run. Points are θ and bars are 95% BCa intervals; only H1 is a confirmatory test.* The post-primary sensitivity analyses, which are estimation-only, are summarised in [results and limitations](docs/RESULTS_AND_LIMITATIONS.md#sensitivity-analyses-after-the-primary-result-estimation-only); the [results note](results/README.md) lists every published output and what was checked.
 
 ## Contents
 
@@ -107,6 +111,8 @@ src/
   primary_e3_experiment.py       primary runner, with its execution guard
   verify_test_equivalence.py     check that the sign test matches a permutation test
   validate_chronology.py         chronology validator (new code for this repository)
+  sensitivity_analysis.py        post-primary sensitivity analyses
+  make_final_tables_figures.py   result tables, digest and figures from the summaries
 tests/                           historical test suite, plus tests for the validator
 environment/                     historical environment records and a note on them
 results/
@@ -120,6 +126,12 @@ results/
   overlap_investigation.json     overlap verdict and why it is undeterminable
   modelled_energy_match_audit.json
                                  burst counts and matching error for every budget and scenario
+  README.md                      which run is authoritative, what is published and withheld
+  primary_e3_run_83cc8d1/        the corrected primary run
+    run_manifest.json            run configuration
+    confirmatory_analysis/       confirmatory summary and gate decisions
+    sensitivity_analysis/        post-primary sensitivity summary and manifest
+    final_tables_figures/        result tables, digest, and figures (PNG and PDF)
 hardware/
   measurement_protocol.md        historical bench protocol, superseded and never executed
   README.md                      why it is published and what it does not show
@@ -133,7 +145,7 @@ evidence/
   scripts/                       confirmatory-statistics and quality-check scripts
 ```
 
-Not yet published: the primary-run and sensitivity results and figures, the sensitivity, figure, power-simulation and upstream-reproduction code, and the remaining reproducibility and validation records. The [manifest](evidence/PUBLICATION_MANIFEST.csv) lists each group and its status.
+Not yet published: the power-simulation and upstream-reproduction code and outputs, the reviewed excerpts from the historical execution record, and the remaining reproducibility and validation records. The [manifest](evidence/PUBLICATION_MANIFEST.csv) lists each group and its status.
 
 **Source data.** The study used the public Stanford COVID-19 wearables datasets described by [Mishra et al. (2020)](https://doi.org/10.1038/s41551-020-00640-6) (Phase 1) and [Alavi et al. (2022)](https://doi.org/10.1038/s41591-021-01593-2) (Phase 2). Raw heart-rate and step records are not redistributed here. The [data and cohort guide](docs/DATA_AND_COHORT.md) identifies the exact archives analysed and explains what is withheld.
 

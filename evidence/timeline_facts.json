@@ -157,7 +157,8 @@
       "sources": [
         "docs/prereg-v1.2-amendment-A6-phase2-sparse-step-semantics.md",
         "docs/prereg-v1.2-amendment-A7-sensitivity-operationalization.md",
-        "evidence/EXECUTION_EXCERPTS.md"
+        "evidence/EXECUTION_EXCERPTS.md",
+        "results/primary_e3_run_83cc8d1/run_manifest.json"
       ],
       "source_category": "audit_trail_order",
       "limitation": "No execution timestamp exists; it followed A6 and preceded A7, which records the primary outcomes as known."
@@ -184,7 +185,8 @@
       "status": "completed",
       "sources": [
         "docs/prereg-v1.2-amendment-A7-sensitivity-operationalization.md",
-        "evidence/EXECUTION_EXCERPTS.md"
+        "evidence/EXECUTION_EXCERPTS.md",
+        "results/primary_e3_run_83cc8d1/confirmatory_analysis/gatekeeping_decisions.json"
       ],
       "source_category": "document_header_date",
       "limitation": "Completion 'by' this date; A7 records the primary outcomes as already known on it."

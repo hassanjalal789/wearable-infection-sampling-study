@@ -25,3 +25,16 @@
 
 - **Command:** `python src/primary_e3_experiment.py --preflight`, in a clean copy of this repository.
 - **Outcome:** stopped as designed with `Energy freeze commit 4023717 is not an ancestor of HEAD`. The full raw-data run cannot be performed from this repository; see the [pipeline and tests guide](../docs/PIPELINE_AND_TESTS.md#3-what-cannot-be-re-run-from-this-repository).
+
+## 24 September 2026 — corrected primary run: published results
+
+- **Hashes:** every file published under [`results/primary_e3_run_83cc8d1/`](../results/primary_e3_run_83cc8d1/) hashed against the version I preserved during the research; all identical.
+- **Arithmetic:** θ = (W + 0.5 × T) / N and the exact two-sided binomial p-value recomputed from the published counts for H1, M1, H2 and H3 (SciPy 1.17.1), and θ recomputed for all 33 sensitivity rows. No discrepancy. Win, loss and tie counts sum to N in every row, detection rates equal detected over evaluable, and every point estimate lies inside its interval. No sensitivity row carries a p-value.
+- **Regeneration:** [`src/make_final_tables_figures.py`](../src/make_final_tables_figures.py), unchanged, run in a temporary home folder that contained only the two published summary files, in the environment above without the optional table library. The regenerated digest, three CSV tables and three plain-text tables were byte-for-byte identical to the archived copies. The regenerated figures matched the archived figures on visual comparison; they are not byte-identical, because the archived figures were drawn with a newer version of the plotting library (Matplotlib 3.11.1, recorded in the files) than the one used here (3.10.9).
+- **Not done:** the BCa intervals were not recomputed, because they need participant-level results that are withheld. Nothing was recomputed from the source data.
+
+## 24 September 2026 — published test suite, after the sensitivity module
+
+- **Command and environment:** as above.
+- **Outcome:** 161 passed, 0 failed, 0 skipped: 139 historical tests from 17 modules and 22 validator tests. The 20 historical tests for the power simulation and upstream reproduction checks await their modules.
+- **Chronology validator:** re-run after the result files were added as sources; 15 events, no unresolved finding.

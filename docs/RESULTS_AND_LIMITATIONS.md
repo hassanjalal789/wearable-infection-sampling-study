@@ -1,6 +1,6 @@
 # Results and limitations
 
-*Initial version, 17 September 2026. Values are transcribed from the archived output of the corrected primary run I executed (`primary_e3_run_83cc8d1`) and were checked against those files during publication preparation. The archived result files are not yet published and linked here; nothing has been rerun yet.*
+*Initial version, 17 September 2026; updated 24 September 2026. Values are transcribed from the archived output of the corrected primary run I executed, now published in [`results/primary_e3_run_83cc8d1/`](../results/primary_e3_run_83cc8d1/). On 24 September 2026 I checked every value against those files, recomputed θ and each exact p-value from the published counts, and regenerated the tables, digest and figures from the published summary files; the [results note](../results/README.md) and the [verification log](../evidence/VERIFICATION_LOG.md) give the details. The analysis itself has not been re-run on the source data.*
 
 ## Primary result (confirmatory)
 
@@ -15,7 +15,11 @@ Paired comparison: 8 wins, 12 losses, and 10 ties for S3; θ = 0.433 (95% BCa bo
 
 θ = (wins + 0.5 × ties) / paired N. A participant counts as a win for schedule A if A alerted in the presymptomatic window (21 days before onset to the day before onset) and B did not, or if both alerted and A's warning was strictly longer. The sign test uses the 20 discordant pairs. θ is a paired comparison statistic, not an accuracy percentage.
 
-**H1 was not rejected, so the fixed testing sequence (H1, then M1, then H2 and H3) closed.** The archived gatekeeping record marks M1, H2, and H3 as not confirmatorily tested.
+**H1 was not rejected, so the fixed testing sequence (H1, then M1, then H2 and H3) closed.** The archived [gatekeeping record](../results/primary_e3_run_83cc8d1/confirmatory_analysis/gatekeeping_decisions.json) marks M1, H2, and H3 as not confirmatorily tested. The full values are in the [confirmatory summary](../results/primary_e3_run_83cc8d1/confirmatory_analysis/confirmatory_comparison_summary.csv) and the [results table](../results/primary_e3_run_83cc8d1/final_tables_figures/table_primary_confirmatory_results.csv).
+
+![Paired effect θ with its 95% BCa interval for H1 (S3 versus S2), M1 (S3r versus S6), H2 (S3 versus S5) and H3 (S3 versus S4), with a dashed line at θ = 0.5. H1 is 0.433 (0.300–0.583), M1 0.533 (0.367–0.683), H2 0.500 (0.350–0.650) and H3 0.383 (0.283–0.483).](../results/primary_e3_run_83cc8d1/final_tables_figures/figure_primary_effects.png)
+
+*Archived figure from the corrected run. Points are θ; bars are 95% BCa intervals; the dashed line is θ = 0.5, no difference. Values below 0.5 favour the second schedule named. Only H1 is a confirmatory test.*
 
 ## Estimation-only contrasts
 
@@ -27,7 +31,35 @@ Paired comparison: 8 wins, 12 losses, and 10 ties for S3; θ = 0.433 (95% BCa bo
 
 \* Reported in the archived table for description only. These are not tests of the hypotheses because the sequence closed after H1, and they are not adjusted for multiple comparisons. S3r and S6 select rest periods using a whole day's step data, so M1 describes a counterfactual, not a deployable schedule.
 
-The archived results digest also states that every reported H1 sensitivity estimate remained at or below 0.5. The sensitivity analysis was operationalised after the primary result was seen (amendment A7), so it cannot reopen the testing sequence; its tables are not yet published.
+## Sensitivity analyses (after the primary result, estimation-only)
+
+These were operationalised in amendment [A7](prereg-v1.2-amendment-A7-sensitivity-operationalization.md) after the primary result was known. They cannot reopen the testing sequence, and no sensitivity p-value was computed. The complete table covers all four comparisons: [`sensitivity_summary.csv`](../results/primary_e3_run_83cc8d1/sensitivity_analysis/sensitivity_summary.csv).
+
+For H1:
+
+| Variation | N | W/L/T | θ (95% BCa) |
+|---|---|---|---|
+| Primary E3 | 30 | 8/12/10 | 0.433 (0.300–0.583) |
+| Phase 2 participants only | 25 | 7/11/7 | 0.420 (0.260–0.580) |
+| Common cohort across all primary arms | 30 | 8/12/10 | 0.433 (0.300–0.583) |
+| Participants with fine calibration resolution only | 18 | 5/7/6 | 0.444 (0.250–0.639) |
+| Excluding participants with more than one onset row | 30 | 8/12/10 | 0.433 (0.300–0.583) |
+| Alert budget 1 per person-month | 30 | 9/10/11 | 0.483 (0.333–0.633) |
+| Alert budget 4 per person-month | 30 | 9/12/9 | 0.450 (0.300–0.600) |
+| Detector without time-of-day normalisation | 30 | 9/12/9 | 0.450 (0.300–0.600) |
+| Rolling threshold recalibration | 30 | 6/13/11 | 0.383 (0.250–0.533) |
+
+No H1 estimate rose above 0.5, and every interval includes 0.5. That describes how the estimate moved under these particular variations. It does not turn the non-rejection into evidence that the schedules perform equally.
+
+Two variations tested nothing new in this cohort. The common-cohort and multiple-episode analyses gave exactly the primary counts in all four comparisons with the same number of participants, so no evaluable participant was removed: all 30 were already evaluable in every arm. A7 specifies that the multiple-episode check is reported as vacuous if no cohort participant has more than one onset row, and the identical result is consistent with that; the onset rows themselves are withheld. The M1 analysis matched on delivered heart-rate minutes is a genuine re-analysis that happened to give the same totals, 13/11/6. Identical totals do not by themselves show that every pair resolved the same way, and its upper interval limit differs slightly (0.700 against 0.683); it also used a different bootstrap seed.
+
+One contrast does move. H3 favours rest-triggered S4 in the primary analysis, θ = 0.383 (0.283–0.483), and under the lower alert budget it becomes 0.517 (0.417–0.617). H3 is estimation-only, and this is reported as found.
+
+![Forest plot of the H1 paired effect θ with 95% BCa intervals for the primary E3 analysis and eight sensitivity variations, with a dashed line at θ = 0.5; all estimates lie between 0.383 and 0.483.](../results/primary_e3_run_83cc8d1/final_tables_figures/figure_h1_sensitivity.png)
+
+*Archived figure. The M1 counterpart is [`figure_m1_sensitivity.png`](../results/primary_e3_run_83cc8d1/final_tables_figures/figure_m1_sensitivity.png).*
+
+The archived [results digest](../results/primary_e3_run_83cc8d1/final_tables_figures/final_results_digest.txt), written when the tables were produced, calls the primary null finding robust to these analyses. The more careful reading is the one above: the estimates stayed at or below 0.5, the intervals stayed wide, and two of the checks were vacuous here.
 
 ## From 38 to 30 participants
 
@@ -54,10 +86,10 @@ These are publication-stage tabulations and code observations made while prepari
 - **Clock window, not sleep.** S3 uses 00:00–06:59 local clock time for everyone, not recorded sleep.
 - **Corrections before inspection.** The first primary run was superseded after a Phase 2 step-data correction (amendment A6), made before scientific outcomes were inspected according to the archived records. The superseded output is kept separate and is not combined with the corrected results.
 - **Timing of the analysis plan.** Protocol files labelled "preregistration" were local documents; v1.1, the v1.2 amendment, A2, and A3 remain marked "DRAFT — NOT FROZEN", and the local repository has no `prereg-v1` tag. According to the archived pre-outcome checkpoint, the local Git repository was initialised after the data, cohort, power, and reproduction preparation work, but before schedule-performance outcomes were inspected. A7 was written after the primary result. Local commit dates are not independent timestamps.
-- **Analyses not run.** The runner amendment (A5) limited outcome analysis to the central E3 budget, so the other energy levels in the budget ladder (E1, E2, E4) have no outcome comparisons. A7 lists planned sensitivity analyses that were not run, with reasons; these will be published with the amendments.
+- **Analyses not run.** The runner amendment (A5) limited outcome analysis to the central E3 budget, so the other energy levels in the budget ladder (E1, E2, E4) have no outcome comparisons. A7 lists the planned analyses that were not run, with reasons, including a discrete-time survival analysis the baseline protocol never specified; see the [methods guide](METHODS_GUIDE.md#9-sensitivity-analyses-operationalised-after-the-result).
 - **Reproduction.** Two upstream algorithms reproduced their reference outputs exactly, two ran but did not reproduce their reference outputs exactly, and two were checked only by smoke or interface tests.
 - **Cohort overlap.** Whether any participant appears in both dataset releases could not be determined from the archives.
 
 ## Pending in this document
 
-Links to the archived tables and figures, the sensitivity analyses, and the reproduction evidence will be added when those files are published.
+Links to the upstream reproduction evidence and the power simulation will be added when those files are published.

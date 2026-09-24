@@ -136,6 +136,7 @@ The last row is the one that constrains interpretation most: an analysis that wa
 
 | Topic | Document |
 |---|---|
-| Aggregate result tables, digests and figures | `results/`, `figures/` |
+| Upstream reproduction checks and the power simulation | `src/`, `results/` |
+| Reviewed excerpts from the historical execution record | `evidence/` |
 
-The detector, runner, statistics and tests are explained in the [pipeline and tests guide](PIPELINE_AND_TESTS.md). This guide is extended as the remaining artifacts appear. No day-by-day publication timetable is published in this repository.
+The detector, runner, statistics and tests are explained in the [pipeline and tests guide](PIPELINE_AND_TESTS.md), and the published results, including the sensitivity analyses, in [results and limitations](RESULTS_AND_LIMITATIONS.md). This guide is extended as the remaining artifacts appear. No day-by-day publication timetable is published in this repository.
