@@ -1,0 +1,41 @@
+[
+  {
+    "population": "A_provenance_resolved_fitbit",
+    "n_participants": 1059,
+    "mean_night_coverage": 0.851169338985839,
+    "mean_day_coverage": 0.8601376630361522,
+    "mean_paired_difference": -0.008968324050313116,
+    "ci95": [
+      -0.019755672789134034,
+      0.0011174630322565494
+    ],
+    "bootstrap_unit": "participant",
+    "interpretation": "positive = night better covered than day"
+  },
+  {
+    "population": "B_pre_calibration_eligible",
+    "n_participants": 49,
+    "mean_night_coverage": 0.9445340498833672,
+    "mean_day_coverage": 0.9240444411488374,
+    "mean_paired_difference": 0.020489608734529593,
+    "ci95": [
+      0.008513332446305266,
+      0.032103742128401724
+    ],
+    "bootstrap_unit": "participant",
+    "interpretation": "positive = night better covered than day"
+  },
+  {
+    "population": "C_final_primary_cohort",
+    "n_participants": 38,
+    "mean_night_coverage": 0.9371865762999249,
+    "mean_day_coverage": 0.9215666767925748,
+    "mean_paired_difference": 0.015619899507350198,
+    "ci95": [
+      0.0006957065595539577,
+      0.029270616004963494
+    ],
+    "bootstrap_unit": "participant",
+    "interpretation": "positive = night better covered than day"
+  }
+]

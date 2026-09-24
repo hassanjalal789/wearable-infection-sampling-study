@@ -1,0 +1,24 @@
+{
+  "n_participants": 49,
+  "chosen_C_min": 28,
+  "retention_at_choice": 0.7755102040816326,
+  "shares": {
+    "28": 0.7755102040816326,
+    "42": 0.6326530612244898,
+    "61": 0.3469387755102041,
+    "91": 0.30612244897959184
+  },
+  "floor": 0.8,
+  "median": 46.0,
+  "iqr": [
+    34.0,
+    112.0
+  ],
+  "minimum": 0.0,
+  "maximum": 407.0,
+  "implied_one_alert_resolution_at_median": 0.662,
+  "note": "availability-only rule; frozen before any outcome inspection; no candidate minimum met the 0.80 retention floor, so the prespecified fallback C_min=28 was invoked",
+  "fallback_invoked": true,
+  "fallback_value": 28,
+  "retention_floor_met": false
+}

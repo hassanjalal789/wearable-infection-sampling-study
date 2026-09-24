@@ -1,0 +1,40 @@
+{
+  "shared_identifiers": [],
+  "n_shared": 0,
+  "date_plausibility": {
+    "phase1": {
+      "phase": "phase1",
+      "plausible": false,
+      "frac_in_window": 0.0,
+      "observed_range": [
+        "2022-01-18",
+        "2030-09-03"
+      ],
+      "published_window": [
+        "2020-01-01",
+        "2021-03-31"
+      ]
+    },
+    "phase2": {
+      "phase": "phase2",
+      "plausible": false,
+      "frac_in_window": 7.537678474373877e-05,
+      "observed_range": [
+        "2021-01-31",
+        "2029-12-31"
+      ],
+      "published_window": [
+        "2020-11-27",
+        "2021-07-20"
+      ]
+    }
+  },
+  "hr_series_check_performed": false,
+  "supplementary_coverage_check_performed": false,
+  "flagged_pairs": [],
+  "supplementary_flagged_pairs": [],
+  "n_pairs_compared": 0,
+  "verdict": "UNDETERMINABLE",
+  "basis": "calendar dates in at least one archive fall outside the published study window, so cross-release date alignment is invalid. No series comparison of any kind was performed. See date_plausibility.",
+  "note": "The Phase-2-only sensitivity analysis runs regardless of this verdict. The verdict changes what Methods says, not what is computed."
+}

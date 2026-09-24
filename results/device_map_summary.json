@@ -1,0 +1,32 @@
+[
+  {
+    "phase": "phase1",
+    "device": "Fitbit",
+    "provenance": "paper_statement_scope",
+    "n": 32
+  },
+  {
+    "phase": "phase1",
+    "device": "UNKNOWN",
+    "provenance": "UNKNOWN",
+    "n": 86
+  },
+  {
+    "phase": "phase2",
+    "device": "AppleWatch",
+    "provenance": "supplementary_table",
+    "n": 35
+  },
+  {
+    "phase": "phase2",
+    "device": "Fitbit",
+    "provenance": "filename_token",
+    "n": 1027
+  },
+  {
+    "phase": "phase2",
+    "device": "UNKNOWN",
+    "provenance": "UNKNOWN",
+    "n": 1060
+  }
+]

@@ -1,0 +1,39 @@
+{
+  "total_participants_in_map": 2240,
+  "total_unknown_or_conflict_all_participants": 1146,
+  "note_on_total": "Reported for transparency only. Unresolved devices among participants who are NOT infection candidates do not block the pipeline.",
+  "n_candidates": 116,
+  "candidates_resolved": 116,
+  "candidates_unresolved": 0,
+  "candidates_absent_from_device_map": [],
+  "n_candidates_absent_from_device_map": 0,
+  "unresolved_candidate_ids": [],
+  "by_phase_device": [
+    {
+      "phase": "phase1",
+      "device": "Fitbit",
+      "n": 32
+    },
+    {
+      "phase": "phase1",
+      "device": "UNKNOWN",
+      "n": 86
+    },
+    {
+      "phase": "phase2",
+      "device": "AppleWatch",
+      "n": 35
+    },
+    {
+      "phase": "phase2",
+      "device": "Fitbit",
+      "n": 1027
+    },
+    {
+      "phase": "phase2",
+      "device": "UNKNOWN",
+      "n": 1060
+    }
+  ],
+  "blocking": false
+}

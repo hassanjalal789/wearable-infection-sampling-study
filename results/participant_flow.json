@@ -1,0 +1,45 @@
+{
+  "per_phase": {
+    "phase1": {
+      "infection_positive": 32,
+      "device_Fitbit_with_provenance": 32,
+      "device_unknown_or_conflict": 0,
+      "of_which_symptomatic": 30,
+      "with_onset_date": 30,
+      "sufficient_baseline": 18,
+      "pre_calibration_eligible": 18
+    },
+    "phase2": {
+      "infection_positive": 84,
+      "device_Fitbit_with_provenance": 49,
+      "device_unknown_or_conflict": 0,
+      "of_which_symptomatic": 37,
+      "with_onset_date": 37,
+      "sufficient_baseline": 31,
+      "pre_calibration_eligible": 31
+    }
+  },
+  "pre_calibration_eligible_total": 49,
+  "calibration_days_distribution": {
+    "median": 46.0,
+    "iqr": [
+      34.0,
+      112.0
+    ],
+    "minimum": 0.0,
+    "maximum": 407.0,
+    "shares": {
+      "28": 0.7755102040816326,
+      "42": 0.6326530612244898,
+      "61": 0.3469387755102041,
+      "91": 0.30612244897959184
+    },
+    "floor": 0.8
+  },
+  "chosen_C_min": 28,
+  "C_min_selection_rule": "availability-only rule; frozen before any outcome inspection",
+  "excluded_for_C_p_below_C_min": 11,
+  "FINAL_ELIGIBLE_N": 38,
+  "budget_used_for_resolution_reporting": 2.0,
+  "one_alert_resolution_at_chosen_C_min": 1.087
+}
