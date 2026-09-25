@@ -75,3 +75,18 @@
 - **Command:** `python src/validate_chronology.py`, from the repository root.
 - **Outcome:** 15 events and 0 additional analyses, no unresolved finding.
 - **Checksums:** [`SHA256SUMS.txt`](SHA256SUMS.txt) lists every file tracked in this repository at this publication, except itself. Verify from the repository root with `sha256sum -c evidence/SHA256SUMS.txt`.
+
+## 25 September 2026 — fresh environment and published-package checks
+
+- **Environment:** a fresh clone and a new virtual environment built with `python -m pip install -r environment/publication-requirements.txt`: Python 3.13.13, NumPy 2.4.4, pandas 3.0.2, SciPy 1.17.1, Matplotlib 3.10.9, PyArrow 25.0.1, openpyxl 3.1.5, pytest 9.1.1, without `tabulate`; Linux x86-64.
+- **Commands and outcomes:** `sha256sum -c evidence/SHA256SUMS.txt`, every file OK; `python -m pytest tests/ -q`, 174 passed; `python src/validate_chronology.py`, no unresolved finding; `python src/check_public_package.py`, every check passed (links, arithmetic, intervals, energy audit, tables); `python src/check_public_package.py power`, all 12 effect-ray cells identical in all 204 recorded fields, in about three minutes.
+- **Gate B:** with the two workbooks supplied and their SHA-256 values checked against my preserved research record, 181 passed, and `python src/gate_b_compute.py` regenerated a file with the SHA-256 of the preserved research version.
+- **Guards:** `python src/primary_e3_experiment.py --preflight` stopped with `Energy freeze commit 4023717 is not an ancestor of HEAD.`; `./run_phase1.sh --preflight` found the scripts and dependencies, reported the archives, onset labels and external device map absent, and computed nothing.
+- **Checker controls:** before relying on `src/check_public_package.py`, I ran it on a scratch copy with deliberate faults: a broken file link, a broken anchor, a changed p-value in the README table, a changed interval limit, a relabelled sensitivity row, a byte appended to a table, a changed energy tolerance, and the `tabulate` package installed. Each was reported as a failure.
+- **Figures:** the regenerated figures were compared with the archived ones side by side and show the same points, intervals and labels; they are not byte-identical, because the archived figures were drawn with Matplotlib 3.11.1.
+
+## 25 September 2026 — correction: bootstrap intervals
+
+- **Finding:** the entry of 24 September says the BCa intervals were not recomputed because they need withheld participant-level results. That reason was wrong. The confirmatory script and the sensitivity script both bootstrap a vector built only from the win, loss and tie counts, with seeds recorded in each script.
+- **Action:** `python src/check_public_package.py intervals` loads the bootstrap function of each published script without running the script, and recomputes every interval from the published counts.
+- **Outcome:** all 4 confirmatory and 33 sensitivity intervals equal the published limits. The entry of 24 September is left as it stood; the correction is recorded here and in the [publication notes](../docs/PUBLICATION_NOTES.md#material-corrections).

@@ -44,15 +44,16 @@ My research folder and the terminal transcript document are retained privately a
 
 ## Portability changes
 
-No archived file has been changed to make it run. One new file supports the test suite: [`conftest.py`](../conftest.py), at the repository root, stops pytest from collecting the Gate B test module when the two supplementary workbooks it reads are absent, and names the missing files in the session header. It changes no test. It was added on 25 September 2026 and checked by running the suite with and without the workbooks; see the [verification log](../evidence/VERIFICATION_LOG.md).
+No archived file has been changed to make it run. One new file supports the test suite: [`conftest.py`](../conftest.py), at the repository root, stops pytest from collecting the Gate B test module when the two supplementary workbooks it reads are absent, and names the missing files in the session header. It changes no test. It was added on 25 September 2026 and checked by running the suite with and without the workbooks; see the [verification log](../evidence/VERIFICATION_LOG.md). Three further new files support verification without changing any archived file: the pinned environment [`environment/publication-requirements.txt`](../environment/publication-requirements.txt), the checker [`src/check_public_package.py`](../src/check_public_package.py), and the automated workflow [`.github/workflows/public-checks.yml`](../.github/workflows/public-checks.yml).
 
 ## Material corrections
 
 - **25 September 2026, [energy scope guide](ENERGY_SCOPE.md).** A paragraph published on 19 September gave the E3 matching-error range for the fixed-time arms only and named only one of the infeasible E4 cells. It now gives the full ranges from the published feasibility audit. No result or rule changed.
+- **25 September 2026, bootstrap intervals.** Notes published on 24 and 25 September said the BCa intervals could not be recomputed because they need withheld participant-level results. That was wrong: the scripts that produced them bootstrap a vector built from each comparison's win, loss and tie counts alone, so the published counts and recorded seeds determine them. All 37 were recomputed and matched exactly; see the [verification report](VERIFICATION_REPORT.md). The statements in the [results note](../results/README.md) and the [evidence index](EVIDENCE_INDEX.md) are corrected. No result changed.
 
 ## Licensing status
 
-No licence has been selected for this project's own files. Until one is chosen, no licence is granted beyond what GitHub's Terms of Service allow for public repositories, such as viewing and forking on GitHub. Datasets and upstream code keep their own terms, which will be documented in the data-availability guide and third-party notices.
+No licence has been selected for this project's own files. Until one is chosen, no licence is granted beyond what GitHub's Terms of Service allow for public repositories, such as viewing and forking on GitHub. Datasets and upstream code keep their own terms; see the [data availability guide](DATA_AVAILABILITY.md) and the [third-party notices](THIRD_PARTY_NOTICES.md).
 
 ## Verification during preparation
 

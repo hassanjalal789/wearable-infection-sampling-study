@@ -82,3 +82,9 @@ PUB-027,Execution log guide,new document,evidence/EXECUTION_LOG_GUIDE.md,publish
 PUB-028,Note on script versions kept before fixes,new document,evidence/historical_code/README.md,published,,new publication document; each described change checked against a diff with the current version,2026-09-25
 PUB-029,Test collection guard,new code,conftest.py,published,,new code for this repository; suite run with and without the source workbooks on 2026-09-25 (174 and 181 passed),2026-09-25
 PUB-030,Checksums of published files,new document,evidence/SHA256SUMS.txt,published,,generated after every other file was final; covers every tracked file except itself,2026-09-25
+PUB-031,Reproducibility guide,new document,docs/REPRODUCIBILITY.md,published,,new publication document; every listed command run in a fresh clone and a new environment on 2026-09-25,2026-09-25
+PUB-032,Data availability guide,new document,docs/DATA_AVAILABILITY.md,published,,new publication document; archive sizes and hashes transcribed from the inventory outputs; workbook hashes checked against the preserved research record,2026-09-25
+PUB-033,Verification report,new document,docs/VERIFICATION_REPORT.md,published,,"new publication document; records each check with its date, environment and outcome",2026-09-25
+PUB-034,Pinned verification environment,new file,environment/publication-requirements.txt,published,,new file for this repository; installed into a new environment on 2026-09-25,2026-09-25
+PUB-035,Public-package checker,new code,src/check_public_package.py,published,,"new code for this repository; run on the published files, and on a scratch copy with deliberate faults, on 2026-09-25",2026-09-25
+PUB-036,Automated public checks,new code,.github/workflows/public-checks.yml,published,,new file for this repository; read-only permissions; run outcomes recorded in docs/VERIFICATION_REPORT.md,2026-09-25

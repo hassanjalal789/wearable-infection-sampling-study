@@ -46,12 +46,14 @@ On 24 September 2026:
 - θ and the exact two-sided p-value were recomputed from the published win, loss and tie counts for all four comparisons, and θ for all 33 sensitivity rows, with no discrepancy; every point estimate lies inside its interval;
 - the result tables and digest were regenerated from the two published summary files with the published script, and matched the archived copies byte for byte;
 - the figures were regenerated the same way and matched the archived ones visually. They are not byte-identical, because the plotting library version differs and image rendering is not bit-stable across versions;
-- the BCa intervals were **not** recomputed: they need the withheld participant-level results.
+- the BCa intervals were not recomputed. The reason given at the time, that they need the withheld participant-level results, was wrong; see 25 September.
 
 On 25 September 2026:
 
 - the 12 effect-ray cells of `power_sim_frozen_n38.json` were re-run with the published script, seed and replicate count and matched in every field; the surface was not re-run;
 - `gate_b_results.json` was regenerated from the two source workbooks, checked against the checksums in my preserved research record, and matched the preserved version byte for byte before the identifier list was removed from the published copy;
-- every other archived file added on this date was hashed against the version I preserved.
+- every other archived file added on this date was hashed against the version I preserved;
+- all 37 BCa intervals, 4 confirmatory and 33 sensitivity, were recomputed from the published win, loss and tie counts with the bootstrap functions and recorded seeds of the scripts that produced them, and matched exactly;
+- the checks above were repeated in a fresh environment, as recorded in the [verification report](../docs/VERIFICATION_REPORT.md).
 
-The [verification log](../evidence/VERIFICATION_LOG.md) gives the environment and commands.
+No output generated during these checks is committed here: regenerated files were written to temporary folders and compared with the archived ones. The [verification log](../evidence/VERIFICATION_LOG.md) gives the environment and commands.
