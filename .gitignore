@@ -25,6 +25,9 @@ data_processed/
 *.tar.gz
 *.parquet
 
+# Supplementary workbooks from the source studies, placed locally to run the Gate B tests
+metadata/
+
 # Local outputs from reruns (publish curated results explicitly instead)
 results/local_*/
 

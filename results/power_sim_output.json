@@ -1,0 +1,358 @@
+{
+  "meta": {
+    "seed": 20261010,
+    "reps": 1600,
+    "alpha": 0.05,
+    "p_B": 0.5,
+    "warning_window_days": [
+      1,
+      21
+    ],
+    "endpoint": "pre-symptomatic = first qualifying alert in [onset-21, onset-1]; warning >= 1 day by construction; same-day alerts are NOT pre-symptomatic",
+    "precision_note": "paired warning-time CI is computed on the detected-under-both subgroup with no zero-imputation",
+    "dependence_note": "cross-schedule dependence is NOT identifiable from the S1 arm; it is swept over this preregistered grid",
+    "test": "exact binomial sign test on hierarchical win/loss",
+    "dependence_grid": {
+      "independent": {
+        "rho_det": 0.0,
+        "rho_lead": 0.0
+      },
+      "low": {
+        "rho_det": 0.25,
+        "rho_lead": 0.25
+      },
+      "moderate": {
+        "rho_det": 0.5,
+        "rho_lead": 0.5
+      },
+      "high": {
+        "rho_det": 0.75,
+        "rho_lead": 0.75
+      }
+    },
+    "numpy": "2.4.4",
+    "script_sha256": "233759b36dc9b4193cecdb80c29ff07ae7049c61720e4f14007e54a708c114ae"
+  },
+  "cells": [
+    {
+      "n": 25,
+      "dependence": "independent",
+      "rho_det": 0.0,
+      "rho_lead": 0.0,
+      "mde": {
+        "delta_p": 0.3,
+        "delta_mu_days": 3.0,
+        "power": 0.926,
+        "theta": 0.79752,
+        "mean_W": 18.296,
+        "mean_L": 3.42,
+        "mean_T": 3.284,
+        "mean_discordant": 21.716,
+        "mean_n_both": 10.032,
+        "ci_hw_theta": 0.13320749999999995,
+        "ci_hw_days_detected_both": 1.5068425480769227,
+        "ci_hw_detect_prop": 0.23835399999999995
+      }
+    },
+    {
+      "n": 25,
+      "dependence": "low",
+      "rho_det": 0.25,
+      "rho_lead": 0.25,
+      "mde": {
+        "delta_p": 0.25,
+        "delta_mu_days": 2.5,
+        "power": 0.85,
+        "theta": 0.76472,
+        "mean_W": 16.708,
+        "mean_L": 3.472,
+        "mean_T": 4.82,
+        "mean_discordant": 20.18,
+        "mean_n_both": 10.394,
+        "ci_hw_theta": 0.13461149999999994,
+        "ci_hw_days_detected_both": 1.3167526667603289,
+        "ci_hw_detect_prop": 0.227029
+      }
+    },
+    {
+      "n": 25,
+      "dependence": "moderate",
+      "rho_det": 0.5,
+      "rho_lead": 0.5,
+      "mde": {
+        "delta_p": 0.2,
+        "delta_mu_days": 2.0,
+        "power": 0.816,
+        "theta": 0.7407999999999999,
+        "mean_W": 15.062,
+        "mean_L": 3.022,
+        "mean_T": 6.916,
+        "mean_discordant": 18.084,
+        "mean_n_both": 10.61,
+        "ci_hw_theta": 0.13130449999999996,
+        "ci_hw_days_detected_both": 1.0732717503493236,
+        "ci_hw_detect_prop": 0.20860899999999996
+      }
+    },
+    {
+      "n": 25,
+      "dependence": "high",
+      "rho_det": 0.75,
+      "rho_lead": 0.75,
+      "mde": {
+        "delta_p": 0.2,
+        "delta_mu_days": 2.0,
+        "power": 0.978,
+        "theta": 0.79012,
+        "mean_W": 15.8,
+        "mean_L": 1.294,
+        "mean_T": 7.906,
+        "mean_discordant": 17.094,
+        "mean_n_both": 11.55,
+        "ci_hw_theta": 0.10936299999999997,
+        "ci_hw_days_detected_both": 0.7674636624566094,
+        "ci_hw_detect_prop": 0.18149999999999994
+      }
+    },
+    {
+      "n": 30,
+      "dependence": "independent",
+      "rho_det": 0.0,
+      "rho_lead": 0.0,
+      "mde": {
+        "delta_p": 0.25,
+        "delta_mu_days": 2.5,
+        "power": 0.816,
+        "theta": 0.7378666666666667,
+        "mean_W": 19.704,
+        "mean_L": 5.432,
+        "mean_T": 4.864,
+        "mean_discordant": 25.136000000000003,
+        "mean_n_both": 11.186,
+        "ci_hw_theta": 0.13465374999999993,
+        "ci_hw_days_detected_both": 1.4550670317090457,
+        "ci_hw_detect_prop": 0.22925499999999993
+      }
+    },
+    {
+      "n": 30,
+      "dependence": "low",
+      "rho_det": 0.25,
+      "rho_lead": 0.25,
+      "mde": {
+        "delta_p": 0.25,
+        "delta_mu_days": 2.5,
+        "power": 0.898,
+        "theta": 0.7609666666666667,
+        "mean_W": 19.892,
+        "mean_L": 4.234,
+        "mean_T": 5.874,
+        "mean_discordant": 24.125999999999998,
+        "mean_n_both": 11.974,
+        "ci_hw_theta": 0.12446374999999997,
+        "ci_hw_days_detected_both": 1.2281791635587491,
+        "ci_hw_detect_prop": 0.21218749999999995
+      }
+    },
+    {
+      "n": 30,
+      "dependence": "moderate",
+      "rho_det": 0.5,
+      "rho_lead": 0.5,
+      "mde": {
+        "delta_p": 0.2,
+        "delta_mu_days": 2.0,
+        "power": 0.858,
+        "theta": 0.7412666666666666,
+        "mean_W": 18.046,
+        "mean_L": 3.57,
+        "mean_T": 8.384,
+        "mean_discordant": 21.616,
+        "mean_n_both": 12.718,
+        "ci_hw_theta": 0.12026958333333332,
+        "ci_hw_days_detected_both": 0.9819113984770387,
+        "ci_hw_detect_prop": 0.19183166666666662
+      }
+    },
+    {
+      "n": 30,
+      "dependence": "high",
+      "rho_det": 0.75,
+      "rho_lead": 0.75,
+      "mde": {
+        "delta_p": 0.15,
+        "delta_mu_days": 1.5,
+        "power": 0.906,
+        "theta": 0.7222000000000001,
+        "mean_W": 15.924,
+        "mean_L": 2.592,
+        "mean_T": 11.484,
+        "mean_discordant": 18.516,
+        "mean_n_both": 13.406,
+        "ci_hw_theta": 0.11105541666666664,
+        "ci_hw_days_detected_both": 0.7029934449108896,
+        "ci_hw_detect_prop": 0.16552999999999995
+      }
+    },
+    {
+      "n": 40,
+      "dependence": "independent",
+      "rho_det": 0.0,
+      "rho_lead": 0.0,
+      "mde": {
+        "delta_p": 0.25,
+        "delta_mu_days": 2.5,
+        "power": 0.92,
+        "theta": 0.7434499999999999,
+        "mean_W": 26.558,
+        "mean_L": 7.082,
+        "mean_T": 6.36,
+        "mean_discordant": 33.64,
+        "mean_n_both": 15.094,
+        "ci_hw_theta": 0.11663593749999997,
+        "ci_hw_days_detected_both": 1.2785700308497978,
+        "ci_hw_detect_prop": 0.19822749999999997
+      }
+    },
+    {
+      "n": 40,
+      "dependence": "low",
+      "rho_det": 0.25,
+      "rho_lead": 0.25,
+      "mde": {
+        "delta_p": 0.2,
+        "delta_mu_days": 2.0,
+        "power": 0.84,
+        "theta": 0.7051999999999999,
+        "mean_W": 23.406,
+        "mean_L": 6.99,
+        "mean_T": 9.604,
+        "mean_discordant": 30.396,
+        "mean_n_both": 15.408,
+        "ci_hw_theta": 0.11567937499999996,
+        "ci_hw_days_detected_both": 1.0935733458604973,
+        "ci_hw_detect_prop": 0.18597624999999995
+      }
+    },
+    {
+      "n": 40,
+      "dependence": "moderate",
+      "rho_det": 0.5,
+      "rho_lead": 0.5,
+      "mde": {
+        "delta_p": 0.2,
+        "delta_mu_days": 2.0,
+        "power": 0.962,
+        "theta": 0.74035,
+        "mean_W": 23.992,
+        "mean_L": 4.764,
+        "mean_T": 11.244,
+        "mean_discordant": 28.756,
+        "mean_n_both": 16.992,
+        "ci_hw_theta": 0.10452093749999998,
+        "ci_hw_days_detected_both": 0.8747896762703837,
+        "ci_hw_detect_prop": 0.16676499999999994
+      }
+    },
+    {
+      "n": 40,
+      "dependence": "high",
+      "rho_det": 0.75,
+      "rho_lead": 0.75,
+      "mde": {
+        "delta_p": 0.15,
+        "delta_mu_days": 1.5,
+        "power": 0.958,
+        "theta": 0.7209249999999999,
+        "mean_W": 21.13,
+        "mean_L": 3.456,
+        "mean_T": 15.414,
+        "mean_discordant": 24.586,
+        "mean_n_both": 18.0,
+        "ci_hw_theta": 0.09686843749999997,
+        "ci_hw_days_detected_both": 0.6186158826534894,
+        "ci_hw_detect_prop": 0.14383374999999995
+      }
+    },
+    {
+      "n": 50,
+      "dependence": "independent",
+      "rho_det": 0.0,
+      "rho_lead": 0.0,
+      "mde": {
+        "delta_p": 0.25,
+        "delta_mu_days": 2.5,
+        "power": 0.954,
+        "theta": 0.73614,
+        "mean_W": 32.716,
+        "mean_L": 9.102,
+        "mean_T": 8.182,
+        "mean_discordant": 41.818,
+        "mean_n_both": 18.594,
+        "ci_hw_theta": 0.10534824999999996,
+        "ci_hw_days_detected_both": 1.1670487643248373,
+        "ci_hw_detect_prop": 0.17901349999999996
+      }
+    },
+    {
+      "n": 50,
+      "dependence": "low",
+      "rho_det": 0.25,
+      "rho_lead": 0.25,
+      "mde": {
+        "delta_p": 0.2,
+        "delta_mu_days": 2.0,
+        "power": 0.924,
+        "theta": 0.7136399999999999,
+        "mean_W": 29.98,
+        "mean_L": 8.616,
+        "mean_T": 11.404,
+        "mean_discordant": 38.596000000000004,
+        "mean_n_both": 19.48,
+        "ci_hw_theta": 0.10317749999999998,
+        "ci_hw_days_detected_both": 0.9989301451905934,
+        "ci_hw_detect_prop": 0.16760849999999994
+      }
+    },
+    {
+      "n": 50,
+      "dependence": "moderate",
+      "rho_det": 0.5,
+      "rho_lead": 0.5,
+      "mde": {
+        "delta_p": 0.15,
+        "delta_mu_days": 1.5,
+        "power": 0.872,
+        "theta": 0.6787799999999999,
+        "mean_W": 25.864,
+        "mean_L": 7.986,
+        "mean_T": 16.15,
+        "mean_discordant": 33.85,
+        "mean_n_both": 19.904,
+        "ci_hw_theta": 0.09999599999999996,
+        "ci_hw_days_detected_both": 0.8004756808771644,
+        "ci_hw_detect_prop": 0.15307599999999996
+      }
+    },
+    {
+      "n": 50,
+      "dependence": "high",
+      "rho_det": 0.75,
+      "rho_lead": 0.75,
+      "mde": {
+        "delta_p": 0.15,
+        "delta_mu_days": 1.5,
+        "power": 0.988,
+        "theta": 0.7210799999999999,
+        "mean_W": 26.326,
+        "mean_L": 4.218,
+        "mean_T": 19.456,
+        "mean_discordant": 30.544,
+        "mean_n_both": 22.236,
+        "ci_hw_theta": 0.08657374999999998,
+        "ci_hw_days_detected_both": 0.5528256608647087,
+        "ci_hw_detect_prop": 0.1298855
+      }
+    }
+  ]
+}

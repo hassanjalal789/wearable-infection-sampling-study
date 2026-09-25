@@ -1,0 +1,15 @@
+# Script versions kept before fixes
+
+*Publication-stage note, written on 25 September 2026. The five files in this folder are earlier versions of project scripts that I kept, during the research, immediately before changing them. Each is byte-identical to the version I preserved. This note is new writing.*
+
+They are published so that each correction can be inspected rather than taken on trust. They are **not** part of the pipeline: nothing imports them, the tests do not exercise them, and the current versions in [`src/`](../../src/) are the ones the research used after each fix. The research project's own ignore rules excluded this naming pattern from its Git history; see [`environment/project.gitignore`](../../environment/project.gitignore).
+
+| File | Kept before | What changed in the current version | Where the change appears in the record |
+|---|---|---|---|
+| [`zip_inventory_before_datetime_fix.py`](zip_inventory_before_datetime_fix.py) | fixing a timestamp-unit conversion | Minute bins and second offsets are computed from explicit nanosecond `datetime64` values, and one conversion names its unit. The earlier version tripped the inventory's own range check on Phase 1. | [execution log §4.1](../historical_execution_log.md#41-timestamp-unit-defect-and-its-fix) |
+| [`zip_inventory_before_quarantine_fix.py`](zip_inventory_before_quarantine_fix.py) | quarantining unreadable files | A heart-rate file that cannot be parsed is recorded in a quarantine list with its reason and skipped. The earlier version stopped the whole Phase 2 inventory on one malformed file. It already contains the timestamp fix. | [§4.2 and §4.3](../historical_execution_log.md#42-malformed-phase-2-file) |
+| [`coverage_diagnostic_before_label_fix.py`](coverage_diagnostic_before_label_fix.py) | relabelling coverage population A | One label: `A_all_fitbit` became `A_provenance_resolved_fitbit`, because the population contains only participants whose Fitbit assignment has a recorded source. Amendment A3 §A3.8 gives the reason. | [§5.3](../historical_execution_log.md#53-coverage-label-clarification-coverage-diagnostic-and-overlap-check) |
+| [`power_sim_before_n38.py`](power_sim_before_n38.py) | writing in the audited cohort size | One line: `AUDITED_N = None` became `AUDITED_N = 38`, which the frozen calculation requires. | [§6.1](../historical_execution_log.md#61-frozen-power-calculation-at-the-audited-n) |
+| [`calibration_resolution.py.pre_reporting_patch`](calibration_resolution.py.pre_reporting_patch) | extending the calibration-minimum record | The written record now states whether the prespecified fallback was invoked, the fallback value, and whether the 0.80 retention floor was met. The rule itself and the chosen minimum of 28 days are unchanged. | [§9.2](../historical_execution_log.md#92-calibration-minimum-reporting-patch) |
+
+To see a change, compare a file here with its counterpart in `src/`, for example `diff evidence/historical_code/power_sim_before_n38.py src/power_sim.py`.

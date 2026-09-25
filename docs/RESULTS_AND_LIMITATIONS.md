@@ -80,16 +80,16 @@ These are publication-stage tabulations and code observations made while prepari
 
 ## Design and interpretation limitations
 
-- **Sample size.** 30 evaluable pairs; intervals are wide. The pre-outcome power simulation was run for the 38-participant cohort, but the primary comparisons had 30 evaluable pairs.
+- **Sample size.** 30 evaluable pairs; intervals are wide. The pre-outcome power simulation was run for the 38-participant cohort, but the primary comparisons had 30 evaluable pairs. At N = 38 it gave 80% power only for large joint effects, roughly 15 to 25 percentage points more detections together with 1.5 to 2.5 more days of warning; see the [power calculation](REPRODUCTION_GATES_AND_POWER.md#4-the-frozen-power-calculation).
 - **Retrospective data.** Consumer-wearable records collected for other studies, with the source studies' infection and onset information. This is not a prospective or clinical evaluation, and nothing here supports diagnostic use.
 - **Modelled energy.** Amendment [A4](prereg-v1.2-amendment-A4-no-hardware.md) replaced the planned bench measurements with a parameterised energy model. The [historical hardware protocol](../hardware/measurement_protocol.md) was not executed; the [energy scope guide](ENERGY_SCOPE.md) sets out what the modelled budget does and does not establish. The budget therefore describes modelled schedule-attributable rail-level energy, not measured battery savings.
 - **Clock window, not sleep.** S3 uses 00:00–06:59 local clock time for everyone, not recorded sleep.
 - **Corrections before inspection.** The first primary run was superseded after a Phase 2 step-data correction (amendment A6), made before scientific outcomes were inspected according to the archived records. The superseded output is kept separate and is not combined with the corrected results.
 - **Timing of the analysis plan.** Protocol files labelled "preregistration" were local documents; v1.1, the v1.2 amendment, A2, and A3 remain marked "DRAFT — NOT FROZEN", and the local repository has no `prereg-v1` tag. According to the archived pre-outcome checkpoint, the local Git repository was initialised after the data, cohort, power, and reproduction preparation work, but before schedule-performance outcomes were inspected. A7 was written after the primary result. Local commit dates are not independent timestamps.
 - **Analyses not run.** The runner amendment (A5) limited outcome analysis to the central E3 budget, so the other energy levels in the budget ladder (E1, E2, E4) have no outcome comparisons. A7 lists the planned analyses that were not run, with reasons, including a discrete-time survival analysis the baseline protocol never specified; see the [methods guide](METHODS_GUIDE.md#9-sensitivity-analyses-operationalised-after-the-result).
-- **Reproduction.** Two upstream algorithms reproduced their reference outputs exactly, two ran but did not reproduce their reference outputs exactly, and two were checked only by smoke or interface tests.
+- **Reproduction.** Two upstream algorithms reproduced their reference outputs exactly, two ran but did not reproduce their reference outputs exactly, and two were checked only by smoke or interface tests. Six published cohort numbers were reconstructed from the source studies' tables; the published alert-day specificity could not be. See the [gates guide](REPRODUCTION_GATES_AND_POWER.md).
 - **Cohort overlap.** Whether any participant appears in both dataset releases could not be determined from the archives.
 
-## Pending in this document
+## Related evidence
 
-Links to the upstream reproduction evidence and the power simulation will be added when those files are published.
+The upstream reproduction checks and the frozen power calculation are set out in [reproduction gates and power](REPRODUCTION_GATES_AND_POWER.md). The commands and output behind the results, including the failed and interrupted steps, are in the [historical execution log](../evidence/historical_execution_log.md).

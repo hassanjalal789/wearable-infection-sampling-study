@@ -132,11 +132,11 @@ A7.6 is the part worth reading closely, because it records what was **not** run 
 
 The last row is the one that constrains interpretation most: an analysis that was named but never specified is left unrun and labelled, rather than reconstructed once the answer was known.
 
-## 10. Still to be published
+## 10. Related guides
 
 | Topic | Document |
 |---|---|
-| Upstream reproduction checks and the power simulation | `src/`, `results/` |
-| Reviewed excerpts from the historical execution record | `evidence/` |
+| Upstream reproduction checks and the frozen power calculation | [Reproduction gates and power](REPRODUCTION_GATES_AND_POWER.md) |
+| The commands and output of the research, in order | [Historical execution log](../evidence/historical_execution_log.md) and its [guide](../evidence/EXECUTION_LOG_GUIDE.md) |
 
-The detector, runner, statistics and tests are explained in the [pipeline and tests guide](PIPELINE_AND_TESTS.md), and the published results, including the sensitivity analyses, in [results and limitations](RESULTS_AND_LIMITATIONS.md). This guide is extended as the remaining artifacts appear. No day-by-day publication timetable is published in this repository.
+The detector, runner, statistics and tests are explained in the [pipeline and tests guide](PIPELINE_AND_TESTS.md), and the published results, including the sensitivity analyses, in [results and limitations](RESULTS_AND_LIMITATIONS.md). No day-by-day publication timetable is published in this repository.

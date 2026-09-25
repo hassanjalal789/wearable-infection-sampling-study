@@ -1,0 +1,25 @@
+{
+  "status": "REAL_PRIMARY_E3_OUTCOMES_GENERATED",
+  "git_commit": "d1d526536ea220be88a5d972c913de940d47aa02",
+  "energy_freeze_commit": "4023717",
+  "scenario": "CENTRAL",
+  "budget": "E3",
+  "N_budget": 7,
+  "burst_minutes": 10,
+  "alert_budget_per_person_month": 2.0,
+  "C_floor": 16,
+  "calibration_stop": "through onset-28 inclusive",
+  "presymptomatic_window": "onset-21 through onset-1 inclusive",
+  "n_frozen_cohort": 38,
+  "input_archives": {
+    "phase1": {
+      "path": "data_raw/COVID-19-Wearables.zip",
+      "bytes": 378380920
+    },
+    "phase2": {
+      "path": "data_raw/COVID-19-Phase2-Wearables.zip",
+      "bytes": 5537624129
+    }
+  },
+  "terminal_policy": "No detection/warning summary printed during generation."
+}

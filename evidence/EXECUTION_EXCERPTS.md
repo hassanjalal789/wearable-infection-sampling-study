@@ -115,4 +115,4 @@ These are diagnostic counts, not results. They describe how the input data was e
 - Win/loss/tie counts, detection rates, warning times, effect sizes, intervals and p-values — these belong to [results and limitations](../docs/RESULTS_AND_LIMITATIONS.md), which reports the corrected run only.
 - Any output of the superseded run.
 - Per-participant records of any kind.
-- Result tables, digests and figures, which are listed in the [publication manifest](PUBLICATION_MANIFEST.csv) as not yet published.
+- Result tables, digests and figures, which are published separately under [`results/`](../results/README.md).

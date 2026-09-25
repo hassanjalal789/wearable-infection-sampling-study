@@ -1,0 +1,116 @@
+{
+  "policy": "Gate A runs upstream code BYTE-IDENTICAL. Where an environment incompatibility blocked execution it was repaired in the ENVIRONMENT (pinned virtualenv, or a documented matplotlib style alias), never in the file. Upstream sha256 is printed before and after every run.",
+  "finding_gate_a_must_be_split": "Only WearableDetection ships committed OUTPUT files (result/RHRDiff_offline_detection.csv, 5 rows; result/CuSum_online_detection.csv, 3 rows). It is therefore the only repository against which the prereg's Gate A ('reproduces its own committed output files exactly') is literally testable -- and it is the one blocked here. Gate A is split into A1 (byte-diff, WearableDetection only) and A2 (executes unmodified and emits the documented artefacts).",
+  "runs": [
+    {
+      "detector": "NightSignal (Fitbit)",
+      "repo": "wearable-infection",
+      "commit": "99b3bd79",
+      "env": "upstream-venv: py3.11, pandas 2.1.4, numpy 1.26.4, matplotlib 3.6.3",
+      "gate": "A2",
+      "status": "PASS",
+      "exit": 0,
+      "artefacts": [
+        "NS-signals.json",
+        "NightSignalResult.pdf"
+      ],
+      "output": {
+        "nights": 197,
+        "green": 170,
+        "yellow": 6,
+        "red": 21,
+        "date_range": [
+          "2025-02-11",
+          "2025-08-28"
+        ]
+      }
+    },
+    {
+      "detector": "NightSignal (Fitbit)",
+      "repo": "wearable-infection",
+      "commit": "99b3bd79",
+      "env": "current env (pandas 3.0.2, matplotlib 3.10) + documented style alias shim",
+      "gate": "A2",
+      "status": "PASS",
+      "exit": 0,
+      "output": {
+        "nights": 197,
+        "green": 170,
+        "yellow": 6,
+        "red": 21
+      },
+      "note": "IDENTICAL to the pinned-venv run -- output is invariant across both environments, which is the strongest evidence available that the shim changes nothing substantive."
+    },
+    {
+      "detector": "NightSignal (AppleWatch)",
+      "repo": "wearable-infection",
+      "commit": "99b3bd79",
+      "env": "shim env",
+      "gate": "A2",
+      "status": "PASS",
+      "exit": 0,
+      "output": {
+        "nights": 108,
+        "green": 75,
+        "yellow": 3,
+        "red": 30,
+        "date_range": [
+          "2026-01-03",
+          "2026-04-25"
+        ]
+      }
+    },
+    {
+      "detector": "Isolation Forest (Fitbit)",
+      "repo": "wearable-infection/isolationforest",
+      "commit": "99b3bd79",
+      "env": "upstream-venv",
+      "gate": "A2",
+      "status": "PASS",
+      "exit": 0,
+      "blocker_on_current_env": "pandas 3.0 removed the '24H' offset alias (resample(\"24H\"))"
+    },
+    {
+      "detector": "HROS-AD offline",
+      "repo": "AnomalyDetect",
+      "commit": "1484183d",
+      "env": "pandas 3.0.2",
+      "gate": "A2",
+      "status": "FAIL",
+      "exit": 1,
+      "error": "pandas.errors.DataError: Cannot aggregate non-numeric type: object (rolling)"
+    },
+    {
+      "detector": "HROS-AD offline",
+      "repo": "AnomalyDetect",
+      "commit": "1484183d",
+      "env": "legacy-venv: pandas 1.5.3",
+      "gate": "A2",
+      "status": "FAIL",
+      "exit": 1,
+      "error": "TypeError: seasonal_decompose() got an unexpected keyword argument 'freq'",
+      "diagnosis": "statsmodels renamed freq -> period; removed in >=0.12. The repo pins statsmodels 0.11.0 and python 3.6.8. Running it unmodified needs a python:3.6 image, not a venv on 3.11.",
+      "remedy": "build hardware/../environment/Dockerfile.upstream-py36 and rerun; do NOT edit the script"
+    },
+    {
+      "detector": "RHR-Diff / CuSum offline",
+      "repo": "WearableDetection",
+      "commit": "38955bc0",
+      "env": "R 4.3.3",
+      "gate": "A1 (byte-diff possible)",
+      "status": "BLOCKED",
+      "error": "requires R packages xts and zoo; CRAN index unreachable from this container (available.packages() returned 0 rows)",
+      "note": "This is the ONLY repository with committed outputs to diff against. Its sample data carries REAL study dates (2020-09/2020-10), unlike wearable-infection's shifted sample dates."
+    },
+    {
+      "detector": "CuSum online",
+      "repo": "Alarm",
+      "commit": "1770dd0d",
+      "env": "R 4.3.3",
+      "gate": "A2",
+      "status": "BLOCKED",
+      "error": "same R dependency blocker; repo ships no sample data"
+    }
+  ],
+  "sample_data_date_finding": "wearable-infection sample files carry shifted/synthetic dates (Fitbit 2025-02..2025-08; AppleWatch 2026-01..2026-04) for a study that ended July 2021. WearableDetection's sample carries real 2020 dates. Absolute dates in the wearable-infection samples must not be used to validate any date-dependent behaviour."
+}

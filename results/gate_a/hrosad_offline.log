@@ -1,0 +1,38 @@
+Traceback (most recent call last):
+  File "<PROJECT_ROOT>/environment/upstream-venv/lib/python3.11/site-packages/pandas/core/window/rolling.py", line 370, in _prep_values
+    values = ensure_float64(values)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/algos_common_helper.pxi", line 42, in pandas._libs.algos.ensure_float64
+ValueError: could not convert string to float: '<participant>'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "<PROJECT_ROOT>/environment/upstream-venv/lib/python3.11/site-packages/pandas/core/window/rolling.py", line 487, in _apply_blockwise
+    arr = self._prep_values(arr)
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "<PROJECT_ROOT>/environment/upstream-venv/lib/python3.11/site-packages/pandas/core/window/rolling.py", line 372, in _prep_values
+    raise TypeError(f"cannot handle this type -> {values.dtype}") from err
+TypeError: cannot handle this type -> object
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/tmp/ad_run/scripts/hrosad_offline.py", line 225, in <module>
+    df2 = model.pre_processing(df1)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ad_run/scripts/hrosad_offline.py", line 102, in pre_processing
+    df1_rom = df_nonas.rolling(400).mean()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<PROJECT_ROOT>/environment/upstream-venv/lib/python3.11/site-packages/pandas/core/window/rolling.py", line 2253, in mean
+    return super().mean(
+           ^^^^^^^^^^^^^
+  File "<PROJECT_ROOT>/environment/upstream-venv/lib/python3.11/site-packages/pandas/core/window/rolling.py", line 1620, in mean
+    return self._apply(window_func, name="mean", numeric_only=numeric_only)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<PROJECT_ROOT>/environment/upstream-venv/lib/python3.11/site-packages/pandas/core/window/rolling.py", line 617, in _apply
+    return self._apply_blockwise(homogeneous_func, name, numeric_only)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<PROJECT_ROOT>/environment/upstream-venv/lib/python3.11/site-packages/pandas/core/window/rolling.py", line 489, in _apply_blockwise
+    raise DataError(
+pandas.errors.DataError: Cannot aggregate non-numeric type: object

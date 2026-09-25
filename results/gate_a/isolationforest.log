@@ -1,0 +1,38 @@
+[gate_a_shim] upstream isolationforest.py sha256=0d472467f6321c8c22eb9606c77a1dfb7d132477cac22aaef244b44ac8b0bcb9
+[gate_a_shim] upstream isolationforest.py sha256=0d472467f6321c8c22eb9606c77a1dfb7d132477cac22aaef244b44ac8b0bcb9 (UNCHANGED)
+Traceback (most recent call last):
+  File "pandas/_libs/tslibs/offsets.pyx", line 6213, in pandas._libs.tslibs.offsets._get_offset
+KeyError: 'H'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "pandas/_libs/tslibs/offsets.pyx", line 6344, in pandas._libs.tslibs.offsets.to_offset
+  File "pandas/_libs/tslibs/offsets.pyx", line 6219, in pandas._libs.tslibs.offsets._get_offset
+  File "pandas/_libs/tslibs/offsets.pyx", line 6137, in pandas._libs.tslibs.offsets.raise_invalid_freq
+ValueError: Invalid frequency: H. Failed to parse with error message: KeyError('H'). Did you mean h?
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/tmp/ns_run/isolationforest/gate_a_shim.py", line 38, in <module>
+    runpy.run_path(str(target), run_name="__main__")
+  File "<frozen runpy>", line 291, in run_path
+  File "<frozen runpy>", line 98, in _run_module_code
+  File "<frozen runpy>", line 88, in _run_code
+  File "isolationforest.py", line 77, in <module>
+    df=df.set_index('Start_Date_Time').resample("24H").mean().reset_index()
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/pandas/core/generic.py", line 9423, in resample
+    return get_resampler(
+           ^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/pandas/core/resample.py", line 2334, in get_resampler
+    tg = TimeGrouper(obj, **kwds)  # type: ignore[arg-type]
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/pandas/core/resample.py", line 2420, in __init__
+    freq = to_offset(freq)
+           ^^^^^^^^^^^^^^^
+  File "pandas/_libs/tslibs/offsets.pyx", line 6229, in pandas._libs.tslibs.offsets.to_offset
+  File "pandas/_libs/tslibs/offsets.pyx", line 6352, in pandas._libs.tslibs.offsets.to_offset
+  File "pandas/_libs/tslibs/offsets.pyx", line 6137, in pandas._libs.tslibs.offsets.raise_invalid_freq
+ValueError: Invalid frequency: 24H. Failed to parse with error message: ValueError("Invalid frequency: H. Failed to parse with error message: KeyError('H'). Did you mean h?")

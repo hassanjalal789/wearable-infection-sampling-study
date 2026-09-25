@@ -1,0 +1,86 @@
+{
+  "gate": "B",
+  "status": "COMPLETE_WITH_ONE_PUBLIC_DATA_LIMITATION",
+  "observed": {
+    "mishra_analysed_cases": 32,
+    "mishra_detected": 26,
+    "mishra_median_lead_days_vs_onset": 4.0,
+    "mishra_detected_at_or_before_onset_of_25": 22,
+    "alavi_confirmed_positives": 84,
+    "alavi_sensitivity_per_person_pct": 79.76190476190476
+  },
+  "mishra_detail": {
+    "analysed_cases": 32,
+    "detected_cases_groups_I_II": 26,
+    "symptom_information_cases_among_detected": 25,
+    "rhrdiff_numeric_symptom_deltas": 24,
+    "detected_at_or_before_onset": 22,
+    "median_lead_days_vs_onset": 4.0,
+    "median_signed_delta_days": -4.0,
+    "source": "phase1_supplementary_data.xlsx::SuppTable13_Fig4abc",
+    "interpretation": "Groups I and II are the 26 detected cases described in the paper. 'NaN' denotes unavailable symptom/diagnosis date; 'miss' denotes an algorithm miss and is therefore not converted into a numeric RHR-Diff delta."
+  },
+  "alavi_detail": {
+    "confirmed_positives": 84,
+    "symptomatic_rows": 66,
+    "asymptomatic_rows": 18,
+    "symptomatic_at_or_before_onset": 53,
+    "asymptomatic_at_or_before_test": 14,
+    "true_positive_participants": 67,
+    "sensitivity_per_person_pct": 79.76190476190476,
+    "fig4_union_matches_positive_cohort": true,
+    "duplicate_alert_ids": [],
+    "source": "phase2_covid_metadata.xlsx::SourceData_COVID19_Positives + SourceData_Fig4A_Presymp + SourceData_Fig4B_Asymp"
+  },
+  "report": {
+    "mishra_analysed_cases": {
+      "status": "PASS",
+      "observed": 32,
+      "published": 32,
+      "tol": 0
+    },
+    "mishra_detected": {
+      "status": "PASS",
+      "observed": 26,
+      "published": 26,
+      "tol": 2
+    },
+    "mishra_median_lead_days_vs_onset": {
+      "status": "PASS",
+      "observed": 4.0,
+      "published": 4,
+      "tol": 1
+    },
+    "mishra_detected_at_or_before_onset_of_25": {
+      "status": "PASS",
+      "observed": 22,
+      "published": 22,
+      "tol": 2
+    },
+    "alavi_confirmed_positives": {
+      "status": "PASS",
+      "observed": 84,
+      "published": 84,
+      "tol": 0
+    },
+    "alavi_sensitivity_per_person_pct": {
+      "status": "PASS",
+      "observed": 79.76190476190476,
+      "published": 80.0,
+      "tol": 5.0,
+      "denominator": "67/84 participants"
+    },
+    "alavi_specificity_per_alert_day_pct": {
+      "status": "NOT_RECONSTRUCTIBLE_PUBLIC_DATA",
+      "published": 87.7,
+      "tol": 2.0,
+      "published_numerator_TN": 87124,
+      "published_denominator_TN_plus_FP": 99310,
+      "published_false_positive_alert_days": 12186,
+      "published_arithmetic_pct": 87.72933239351525,
+      "reason": "The public Source Data workbook supplied here covers COVID-positive participants and alert timing, but does not provide the non-COVID participant-day alert labels and negative-test/untested survey timing needed to independently reconstruct TN=87,124 and FP=12,186. The values are retained as a paper-reported benchmark, not counted as a reproduced statistic."
+    },
+    "_policy": "A failing gate is reported as a finding. Upstream code is NOT modified to close it. Schedule comparisons are then anchored to our own S1 reference arm, which is internally valid regardless. The two Alavi figures are reported with their denominators named and never as a matched sensitivity/specificity pair."
+  },
+  "decision": "Six preregistered quantities are independently reconstructed from participant-level public source tables. Alavi alert-day specificity is not labelled PASS or FAIL because the public source package used here lacks the denominator-level non-COVID alert/survey labels needed for independent reconstruction."
+}

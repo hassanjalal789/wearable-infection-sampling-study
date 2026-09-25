@@ -37,7 +37,7 @@ Three kinds of number sit in the [parameter provenance record](modelled_energy_p
 
 LOW and HIGH are engineering sensitivity scenarios, not statistical confidence limits, and the record says so.
 
-**Checked during publication, 19 September 2026.** All eleven derived parameters in §5 of the provenance record were compared against the frozen scenario configuration the analysis reads — 33 comparisons in total, across LOW, CENTRAL and HIGH — and every value matched exactly. The configuration file itself is not yet published; once it is, this check can be repeated from inside the repository.
+**Checked during publication, 19 September 2026.** All eleven derived parameters in §5 of the provenance record were compared against the frozen scenario configuration the analysis reads — 33 comparisons in total, across LOW, CENTRAL and HIGH — and every value matched exactly. The configuration file is published as [`configs/modelled_energy_scenarios.json`](../configs/modelled_energy_scenarios.json), so the check can be repeated from inside the repository.
 
 ## The budget ladder and the discrete-burst rule
 
@@ -45,7 +45,9 @@ The relative ladder is E1 = 20%, E2 = 10%, **E3 = 5% (the confirmatory primary b
 
 Schedules keep the preregistered 10-minute burst length. For each scenario and budget the burst count is the integer `N` minimizing the absolute relative deviation from the target, with ties going to the lower-energy solution. A cell counts as energy-matched only when that deviation is within ±5%; otherwise it is labelled `DISCRETE_GRANULARITY_INFEASIBLE` and neither the tolerance nor the burst length is changed to rescue it.
 
-Transcribed from the archived pre-outcome feasibility audit (a result file that is not yet published): at E3 the recorded deviations lie between −2.8% and −2.1% in the three scenarios, all within tolerance; the exploratory E4 cell in the HIGH scenario is recorded as `DISCRETE_GRANULARITY_INFEASIBLE` at +5.6%, and the tolerance was not relaxed to absorb it.
+From the pre-outcome feasibility audit, published as [`results/modelled_energy_match_audit.json`](../results/modelled_energy_match_audit.json): at E3 every arm is within tolerance in all three scenarios, with deviations from −2.8% to +2.3%. The fixed-time arms S2, S3 and S5 lie between −2.8% and −2.1%, and the rest-conditional arms S4, S3r and S6 between −1.8% and +2.3%. The exploratory E4 budget is recorded as `DISCRETE_GRANULARITY_INFEASIBLE` for the rest-conditional arms in LOW and CENTRAL and for every arm in HIGH, where the fixed-time arms miss by +5.6%; the tolerance was not relaxed to absorb it.
+
+*Corrected on 25 September 2026. The earlier version of this paragraph gave the E3 range for the fixed-time arms only and named only the HIGH E4 cell as infeasible.*
 
 ## What A4 planned, and what was actually run
 
@@ -57,7 +59,7 @@ This is the distinction most likely to be misread, so it is stated bluntly.
 
 **What is therefore not claimed.** Separate LOW and HIGH *outcome* analyses were never performed, and no result from such runs exists or is reported anywhere in this repository. "The same schedules would have been produced under LOW and HIGH" is a statement about the energy model; it is weaker than "the finding reproduced under three energy parameterizations", which is not claimed. A reader who wants the stronger claim should treat it as untested.
 
-A5 is not yet published; the account above was checked against the archived amendment and will link to it once that document is in the repository.
+The account above was checked against amendment [A5](prereg-v1.2-amendment-A5-runner-operationalization.md).
 
 ## Claims amendment A4 rules out
 
@@ -83,4 +85,4 @@ The bench protocol those prohibitions replaced is published unchanged at [`hardw
 | Freeze gate before outcomes were inspected | A4.11 |
 | Integer 10-minute burst matching and the ±5% feasibility rule | A4.13; provenance record §6 |
 | Derived parameter values | provenance record §5 |
-| Confirmatory execution cell actually run | A5 (not yet published) |
+| Confirmatory execution cell actually run | [A5](prereg-v1.2-amendment-A5-runner-operationalization.md) |

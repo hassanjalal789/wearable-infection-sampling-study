@@ -55,7 +55,11 @@ The preserved records report the suite at different points: 131 passing in the e
 | Of which historical | 139 tests from the 17 historical test modules published here |
 | Of which new | 22 tests for the chronology validator |
 
-The other 20 historical tests belong to modules that are not yet published: 13 for the power simulation and 7 for the upstream reproduction checks. They will be run when those modules are published. Passing tests show that the published code behaves as its tests expect on synthetic inputs. They do not re-run the analysis on the source data.
+The other 20 historical tests belonged to modules published on 25 September 2026: 13 for the power simulation and 7 for the upstream reproduction checks.
+
+**Run again on 25 September 2026,** in the same environment, after those modules were added: **174 passed**, 0 failed, 0 skipped. That is 152 historical tests and the 22 validator tests. The 7 Gate B tests in `tests/test_reproduction.py` read two supplementary workbooks from the source studies, which are not redistributed, so the new root [`conftest.py`](../conftest.py) leaves that module uncollected when the workbooks are absent and names them in the session header. With the two workbooks in `metadata/`, checked first against the checksums in my preserved research record, the suite gave **181 passed**. The [gates guide](REPRODUCTION_GATES_AND_POWER.md#5-what-was-re-run-for-this-publication) describes that run.
+
+Passing tests show that the published code behaves as its tests expect on synthetic inputs, published aggregates and, for Gate B, the source studies' published tables. They do not re-run the analysis on the source data.
 
 ## 5. Environment records
 

@@ -1,0 +1,112 @@
+{
+  "gate": "A",
+  "status": "COMPLETE_WITH_MIXED_REPRODUCTION",
+  "generated_utc": "2026-09-01T12:28:08.736761+00:00",
+  "authoritative": true,
+  "preliminary_record": "results/gate_a/gate_a_results_PRELIMINARY_DO_NOT_USE.json",
+  "repositories": {
+    "WearableDetection": {
+      "commit": "38955bc09e14b446452c01e87e6f525e99e8be6e",
+      "git_clean": true
+    },
+    "Alarm": {
+      "commit": "1770dd0d2f620940e93ec82f8a5ba48b9fde9658",
+      "git_clean": true
+    },
+    "AnomalyDetect": {
+      "commit": "1484183d203ffd1ffce6974a0dbdc66a7c9e0bf3",
+      "git_clean": true
+    },
+    "wearable-infection": {
+      "commit": "99b3bd7937e72d42c2670c7a259d9f9f8728dc06",
+      "git_clean": true
+    }
+  },
+  "environments": {
+    "R": {
+      "version": "4.5.1",
+      "xts": "0.14.1",
+      "zoo": "1.8.14"
+    },
+    "anomalydetect_legacy_docker": {
+      "image": "rq1-anomalydetect:py36",
+      "image_id_observed": "sha256:a2d3329d2f4af3862fbaa83ca06fe08b643f095f7eec7ba6633aff91e4942c55",
+      "python": "3.6.8",
+      "numpy": "1.18.5",
+      "pandas": "1.0.4",
+      "scipy": "1.4.1",
+      "statsmodels": "0.11.0",
+      "scikit_learn": "0.23.1",
+      "matplotlib": "3.1.0",
+      "seaborn": "0.10.0"
+    }
+  },
+  "detectors": [
+    {
+      "detector": "RHR-Diff",
+      "repo": "WearableDetection",
+      "gate": "A1",
+      "execution": "PASS",
+      "exact_reproduction": "PASS",
+      "reference_rows": 5,
+      "generated_rows": 5,
+      "reference_sha256": "15228e284e9a51d2f8b193bac60ea7e59e1dc4ed42f4a4678b9860ace7c5da74",
+      "generated_sha256": "15228e284e9a51d2f8b193bac60ea7e59e1dc4ed42f4a4678b9860ace7c5da74"
+    },
+    {
+      "detector": "CuSum",
+      "repo": "WearableDetection",
+      "gate": "A1",
+      "execution": "PASS",
+      "exact_reproduction": "PASS",
+      "reference_rows": 3,
+      "generated_rows": 3,
+      "reference_sha256": "6b11ee451a06980d28a18d1ce8926e63e56dc708fd9379bda9db3d4c209cac63",
+      "generated_sha256": "6b11ee451a06980d28a18d1ce8926e63e56dc708fd9379bda9db3d4c209cac63"
+    },
+    {
+      "detector": "HROS-AD",
+      "repo": "AnomalyDetect",
+      "gate": "A1",
+      "execution": "PASS",
+      "exact_reproduction": "FAIL",
+      "reference_rows": 456,
+      "generated_rows": 22,
+      "generated_rows_present_in_reference": 0,
+      "generated_rows_compared": 22
+    },
+    {
+      "detector": "RHRAD",
+      "repo": "AnomalyDetect",
+      "gate": "A1",
+      "execution": "PASS",
+      "exact_reproduction": "FAIL",
+      "reference_rows": 617,
+      "generated_rows": 22,
+      "generated_rows_present_in_reference": 20,
+      "generated_rows_compared": 22
+    },
+    {
+      "detector": "NightSignal Fitbit",
+      "repo": "wearable-infection",
+      "gate": "A2",
+      "execution": "PASS",
+      "exact_reference_available": false,
+      "nights": 197,
+      "artefacts": [
+        "results/gate_a/nightsignal_fitbit/NS-signals.json",
+        "results/gate_a/nightsignal_fitbit/NightSignalResult.pdf"
+      ]
+    },
+    {
+      "detector": "Alarm online CuSum",
+      "repo": "Alarm",
+      "gate": "A2",
+      "execution": "PASS",
+      "exact_reference_available": false,
+      "test": "implementation load/interface smoke test",
+      "evidence": "results/gate_a/alarm/load_interface.log"
+    }
+  ],
+  "interpretation": "Gate A is complete with mixed reproducibility. WearableDetection reproduced exactly; AnomalyDetect executed in the declared legacy environment but its committed outputs did not reproduce exactly; NightSignal and Alarm passed A2 smoke/interface tests where complete machine-readable reference pairs were unavailable."
+}

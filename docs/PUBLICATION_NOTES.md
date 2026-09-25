@@ -19,23 +19,24 @@ The project records referred to above are preserved local records, not an indepe
 ## Privacy edits
 
 - Personal filesystem paths, computer account names, host names, machine identifiers, and shell prompts are removed from published copies, along with incidental personal details that are not part of the research record.
-- In copied narrative logs, the project-root path is replaced by the placeholder `<PROJECT_ROOT>`. In historical terminal excerpts, the account and host prompt is replaced by `$`, and a header states that this was done.
+- In copied narrative logs, the project-root path is replaced by the placeholder `<PROJECT_ROOT>`. In historical terminal excerpts, the account and host prompt is replaced by `$`, the download folder's path by `<DOWNLOADS>`, the account name in file listings by `<user>`, and dataset participant identifiers by `<participant>`; the log's header and its [guide](../evidence/EXECUTION_LOG_GUIDE.md#4-conventions) state that this was done.
 - Executable code will use relative paths or explicit arguments instead of placeholder text that would break execution.
-- Copies edited this way are marked `published-sanitized` in the manifest. They are not byte-identical to the versions I preserved during the research. Checksums of the published files will be provided separately from the private record of the preserved versions' checksums.
+- Copies edited this way are marked `published-sanitized` in the manifest. They are not byte-identical to the versions I preserved during the research. Checksums of every published file are in [`evidence/SHA256SUMS.txt`](../evidence/SHA256SUMS.txt); the checksums of the preserved versions are kept privately.
 - A detailed redaction record is kept privately with the research evidence.
-- Nothing published so far is a sanitized derivative: the archived documents in this repository are byte-identical to the versions I preserved during the research process, and I have not retrospectively edited them for publication; the explanatory documents were written later for this repository and are labelled as new writing. The first sanitized copies will be the transcript excerpts, and they will be marked `published-sanitized` in the manifest.
+- Three published files are sanitized derivatives, each marked `published-sanitized` in the manifest: the [historical execution log](../evidence/historical_execution_log.md); the Gate A log [`results/gate_a/hrosad_offline.log`](../results/gate_a/hrosad_offline.log), in which a private project path and a participant identifier are replaced; and the Gate B result [`results/gate_b_results.json`](../results/gate_b_results.json), from which a list of 32 participant identifiers is removed. Every other archived file in this repository is byte-identical to the version I preserved during the research process, and I have not retrospectively edited it for publication. The explanatory documents were written later for this repository and are labelled as new writing.
 
 ## Excluded material
 
 The following are not published:
 
 - the virtual environment, installed packages, caches, bytecode, and operating-system metadata files;
-- the Git metadata of my local research repository (to be summarised instead in a research timeline, which is not yet published);
+- the Git metadata of my local research repository, which is summarised instead in the [research timeline](RESEARCH_TIMELINE.md) and the archived [Git log report](../evidence/audit/audit_git_log.txt);
 - raw dataset archives and bulk raw data, which are available from the source studies;
 - participant-level outputs, onset dates, and source workbooks, until a specific publication-rights and privacy review establishes a basis for release;
-- full copies of bundled upstream repositories, which will be referenced by source and commit pin instead;
+- full copies of bundled upstream repositories, which are referenced by source and commit pin instead, and the outputs generated from their sample participants;
+- the Gate B audit files and table extracts, which print participant-level rows of the source studies' supplementary tables;
 - private notes, credentials, unrelated files, and duplicate copies;
-- my unredacted terminal transcript, of which a reviewed and sanitized derivative is planned.
+- my unredacted terminal transcript, of which a reviewed and sanitized derivative is published as the [historical execution log](../evidence/historical_execution_log.md).
 
 ## Preservation of the research evidence
 
@@ -43,13 +44,19 @@ My research folder and the terminal transcript document are retained privately a
 
 ## Portability changes
 
-None so far. Any change needed to run the published code will be listed here with its reason and verification, separately from the archived original.
+No archived file has been changed to make it run. One new file supports the test suite: [`conftest.py`](../conftest.py), at the repository root, stops pytest from collecting the Gate B test module when the two supplementary workbooks it reads are absent, and names the missing files in the session header. It changes no test. It was added on 25 September 2026 and checked by running the suite with and without the workbooks; see the [verification log](../evidence/VERIFICATION_LOG.md).
+
+## Material corrections
+
+- **25 September 2026, [energy scope guide](ENERGY_SCOPE.md).** A paragraph published on 19 September gave the E3 matching-error range for the fixed-time arms only and named only one of the infeasible E4 cells. It now gives the full ranges from the published feasibility audit. No result or rule changed.
 
 ## Licensing status
 
 No licence has been selected for this project's own files. Until one is chosen, no licence is granted beyond what GitHub's Terms of Service allow for public repositories, such as viewing and forking on GitHub. Datasets and upstream code keep their own terms, which will be documented in the data-availability guide and third-party notices.
 
 ## Verification during preparation
+
+*This section records the checks made for the first publication on 19 September 2026. Later checks, with their dates, are in the [verification log](../evidence/VERIFICATION_LOG.md).*
 
 - Reported values in the README, research summary, and results document were checked against the archived results digest, results table, comparison summary, gatekeeping record, and run manifest.
 - Publication-stage tabulations (continuous-sampling detections, threshold distribution, calibration-floor counts) were computed read-only from archived participant-level output that is not published.

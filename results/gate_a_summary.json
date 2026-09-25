@@ -1,0 +1,32 @@
+{
+  "gate": "A",
+  "status": "COMPLETE_WITH_MIXED_REPRODUCTION",
+  "wearable_detection": {
+    "rhr_diff": "EXACT_PASS",
+    "cusum": "EXACT_PASS"
+  },
+  "anomaly_detect": {
+    "hrosad": {
+      "execution": "PASS",
+      "exact_reproduction": "FAIL",
+      "generated_rows": 22,
+      "reference_rows": 456,
+      "generated_rows_in_reference": 0
+    },
+    "rhrad": {
+      "execution": "PASS",
+      "exact_reproduction": "FAIL",
+      "generated_rows": 22,
+      "reference_rows": 617,
+      "generated_rows_in_reference": 20
+    }
+  },
+  "night_signal": {
+    "test": "A2_SMOKE",
+    "status": "PASS"
+  },
+  "alarm": {
+    "test": "A2_LOAD_INTERFACE",
+    "status": "PASS"
+  }
+}

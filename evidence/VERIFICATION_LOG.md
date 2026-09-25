@@ -38,3 +38,40 @@
 - **Command and environment:** as above.
 - **Outcome:** 161 passed, 0 failed, 0 skipped: 139 historical tests from 17 modules and 22 validator tests. The 20 historical tests for the power simulation and upstream reproduction checks await their modules.
 - **Chronology validator:** re-run after the result files were added as sources; 15 events, no unresolved finding.
+
+## 25 September 2026 — archived files added on this date
+
+- **Action:** every archived file published on this date was hashed and compared with the SHA-256 list in my preserved research record: the Gate A and Gate B code, the power simulation and its outputs and logs, the two test modules, the superseded run's manifest, the Gate A records and logs, and the five script versions kept before fixes.
+- **Outcome:** all matched, except the three files published as sanitized copies, whose changes are described in the [gates guide](../docs/REPRODUCTION_GATES_AND_POWER.md) and the [execution log guide](EXECUTION_LOG_GUIDE.md). The source workbooks and the terminal record were also checked against the values in that record before use.
+
+## 25 September 2026 — frozen power calculation, effect-ray cells
+
+- **Command:** the published `src/power_sim.py`, unchanged, called for the 12 effect-ray cells in the order the script uses (N = 38; baseline 0.40, 0.50, 0.60; four dependence levels), with seed 20261010 and 4,000 replicates per candidate cell.
+- **Environment:** as below.
+- **Outcome:** all 12 cells identical to the `ray_cells` of the archived [`power_sim_frozen_n38.json`](../results/power_sim_frozen_n38.json), in every one of 144 recorded fields. The archived file was produced with NumPy 2.5.2; this run used 2.4.4.
+- **Not done:** the 432-cell power surface was not re-run.
+
+## 25 September 2026 — Gate B
+
+- **Inputs:** the two supplementary workbooks of the source studies, placed under `metadata/` in a temporary copy of this repository after their SHA-256 values were checked against my preserved research record. They are not committed.
+- **Commands:** `python -m pytest tests/test_reproduction.py -q`, then `python src/gate_b_compute.py`.
+- **Outcome:** 7 passed. The regenerated `results/gate_b_results.json` was byte-for-byte identical to the preserved version. The published copy differs from both only by the removal of the participant-identifier list.
+
+## 25 September 2026 — published test suite
+
+- **Command:** `python -m pytest tests/ -q`, from the repository root.
+- **Environment:** fresh virtual environment, Python 3.13.13, NumPy 2.4.4, pandas 3.0.2, SciPy 1.17.1, pytest 9.1.1, Matplotlib 3.10.9, PyArrow 25.0.1, openpyxl 3.1.5, tabulate 0.10.0; Linux x86-64.
+- **Outcome:** **174 passed**, 0 failed, 0 skipped: 152 historical tests from 18 modules and 22 validator tests. `tests/test_reproduction.py` was not collected, because the source workbooks are absent; without `-q`, the session header names the missing files. With the workbooks supplied, as above: **181 passed**.
+- **Not covered:** the tests use synthetic data, published aggregates and published tables. They do not re-run the analysis on the source data.
+
+## 25 September 2026 — historical execution log
+
+- **Action:** 40 excerpts, 1,819 of the record's lines, selected and sanitized as the [guide](EXECUTION_LOG_GUIDE.md) describes. The resulting file was scanned for account names, host names, private paths, e-mail addresses and every participant identifier that occurs in the record.
+- **Outcome:** no match. Every omission is marked in place.
+- **Limit:** the log is a curated excerpt of a preserved record, not an independently timestamped log.
+
+## 25 September 2026 — chronology validator and checksums
+
+- **Command:** `python src/validate_chronology.py`, from the repository root.
+- **Outcome:** 15 events and 0 additional analyses, no unresolved finding.
+- **Checksums:** [`SHA256SUMS.txt`](SHA256SUMS.txt) lists every file tracked in this repository at this publication, except itself. Verify from the repository root with `sha256sum -c evidence/SHA256SUMS.txt`.

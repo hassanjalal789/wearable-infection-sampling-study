@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/tmp/ad_run/scripts/hrosad_offline.py", line 228, in <module>
+    data_seasnCorec = model.seasonality_correction(sdHR, sdSteps)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/ad_run/scripts/hrosad_offline.py", line 114, in seasonality_correction
+    sdHR_decomposition = seasonal_decompose(sdHR, model='additive', freq=1)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: seasonal_decompose() got an unexpected keyword argument 'freq'

@@ -16,7 +16,7 @@ I compared schedules held to the same modelled energy budget: about 5% of the en
 - **Modelled energy.** Budgets come from a parameterised energy model, not from hardware measurements. No battery saving was measured.
 - **Negative primary finding.** The primary hypothesis (H1) was not rejected, so the fixed testing sequence closed and the remaining contrasts are estimation-only.
 - **Records, not registration.** The protocol files labelled "preregistration" are preserved project records; several are still marked draft. They are not independently timestamped public preregistrations.
-- **Verification status.** The values below were checked against the archived result files during preparation. On 24 September 2026 the published test suite was run and passed, and the result tables, digest and figures were regenerated from the published summary files and matched the archived ones. The full raw-data analysis has not been re-run. The [verification log](evidence/VERIFICATION_LOG.md) records each check with its date and outcome.
+- **Verification status.** The values below were checked against the archived result files during preparation. On 24 September 2026 the published test suite was run and passed, and the result tables, digest and figures were regenerated from the published summary files and matched the archived ones. On 25 September 2026 the suite was run again with the power-simulation tests added, and the frozen power calculation's effect-ray cells and the Gate B reconstruction were re-run and matched their archived outputs. The full raw-data analysis has not been re-run. The [verification log](evidence/VERIFICATION_LOG.md) records each check with its date and outcome.
 
 ## Start here
 
@@ -29,8 +29,10 @@ I compared schedules held to the same modelled energy budget: about 5% of the en
 7. [Research timeline](docs/RESEARCH_TIMELINE.md) — when the design, execution, correction and sensitivity work happened, and which parts came before the result was known.
 8. [Results and limitations](docs/RESULTS_AND_LIMITATIONS.md) — the main result and what constrains it.
 9. [Evidence index](docs/EVIDENCE_INDEX.md) — which file supports which claim, and where the evidence stops.
+10. [Reproduction gates and power](docs/REPRODUCTION_GATES_AND_POWER.md) — how far the upstream algorithms and published cohort numbers were reproduced, and what the frozen power calculation could detect.
+11. [Historical execution log](evidence/historical_execution_log.md) — reviewed excerpts from the terminal record of the research, with a [guide](evidence/EXECUTION_LOG_GUIDE.md) to what they cover and what was left out.
 
-Full reproduction instructions are not yet published, and no command is listed until it has been run successfully for this publication in a documented environment. One has: from the repository root, `python -m pytest tests/ -q` runs the published test suite. The [pipeline and tests guide](docs/PIPELINE_AND_TESTS.md#4-the-test-suite) gives the environment it was run in and the result, and explains why the full raw-data analysis cannot be re-run from this repository.
+Full reproduction instructions are not yet published, and no command is listed until it has been run successfully for this publication in a documented environment. One has: from the repository root, `python -m pytest tests/ -q` runs the published test suite. The [pipeline and tests guide](docs/PIPELINE_AND_TESTS.md#4-the-test-suite) gives the environment it was run in and the result, and explains why the full raw-data analysis cannot be re-run from this repository. The seven Gate B tests also need two supplementary workbooks from the source studies, which are not redistributed; without them that module is skipped, as the [gates guide](docs/REPRODUCTION_GATES_AND_POWER.md#6-running-these-checks-yourself) explains.
 
 ## Main result
 
@@ -59,6 +61,7 @@ Published so far:
 README.md                        this overview
 CHANGELOG.md                     publication changes by date
 Makefile                         historical build targets (only `make test` re-run here)
+conftest.py                      skips the Gate B tests when the source workbooks are absent (new)
 run_phase1.sh                    acquisition, inventory and cohort pipeline
 configs/
   modelled_energy_scenarios.json frozen energy parameters for LOW, CENTRAL and HIGH
@@ -94,6 +97,8 @@ docs/
   CONTRIBUTIONS.md               confirmed contributions and assistance
   PUBLICATION_NOTES.md           how this archive is being published
   THIRD_PARTY_NOTICES.md         upstream repositories, datasets and licences
+  REPRODUCTION_GATES_AND_POWER.md
+                                 upstream reproduction, published-number checks, power
 src/
   zip_inventory.py               archive inventory: checksums, schemas, native resolution
   phase1_inventory.py            per-file schema discovery and minute-bin coverage
@@ -113,6 +118,11 @@ src/
   validate_chronology.py         chronology validator (new code for this repository)
   sensitivity_analysis.py        post-primary sensitivity analyses
   make_final_tables_figures.py   result tables, digest and figures from the summaries
+  power_sim.py                   paired-design power simulation
+  gate_reproduction.py           upstream pins and the Gate B tolerances
+  gate_a_shim.py, gate_a_anomalydetect_compat.py
+                                 wrappers that run upstream scripts without editing them
+  gate_b_compute.py              published cohort numbers rebuilt from source tables
 tests/                           historical test suite, plus tests for the validator
 environment/                     historical environment records and a note on them
 results/
@@ -126,12 +136,21 @@ results/
   overlap_investigation.json     overlap verdict and why it is undeterminable
   modelled_energy_match_audit.json
                                  burst counts and matching error for every budget and scenario
+  gate_a/                        Gate A records, summaries and logs
+  gate_a_summary.json            Gate A outcome by detector
+  gate_b_results.json            Gate B reconstruction (identifier list removed)
+  power_sim_frozen_n38.json      frozen power calculation at N = 38
+  power_sim_output.json, power_surface_PLANNING_demo.json,
+  power_planning.log, power_sim_run.log
+                                 earlier, non-binding planning runs
   README.md                      which run is authoritative, what is published and withheld
   primary_e3_run_83cc8d1/        the corrected primary run
     run_manifest.json            run configuration
     confirmatory_analysis/       confirmatory summary and gate decisions
     sensitivity_analysis/        post-primary sensitivity summary and manifest
     final_tables_figures/        result tables, digest, and figures (PNG and PDF)
+  primary_e3_run_d1d5265/
+    run_manifest.json            configuration of the superseded first run
 hardware/
   measurement_protocol.md        historical bench protocol, superseded and never executed
   README.md                      why it is published and what it does not show
@@ -143,9 +162,13 @@ evidence/
   VERIFICATION_LOG.md            checks run for this publication, with dates and outcomes
   audit/                         archived audit reports from the research
   scripts/                       confirmatory-statistics and quality-check scripts
+  historical_execution_log.md    reviewed excerpts from the terminal record
+  EXECUTION_LOG_GUIDE.md         what the excerpts cover, omit and can establish
+  historical_code/               script versions kept before fixes
+  SHA256SUMS.txt                 checksums of every published file
 ```
 
-Not yet published: the power-simulation and upstream-reproduction code and outputs, the reviewed excerpts from the historical execution record, and the remaining reproducibility and validation records. The [manifest](evidence/PUBLICATION_MANIFEST.csv) lists each group and its status.
+Not yet published: a reproducibility guide that sets out each level of reproduction with verified commands, citation metadata, and a final verification report. Every research artifact group now has a published location or a stated reason for exclusion; the [manifest](evidence/PUBLICATION_MANIFEST.csv) lists each one.
 
 **Source data.** The study used the public Stanford COVID-19 wearables datasets described by [Mishra et al. (2020)](https://doi.org/10.1038/s41551-020-00640-6) (Phase 1) and [Alavi et al. (2022)](https://doi.org/10.1038/s41591-021-01593-2) (Phase 2). Raw heart-rate and step records are not redistributed here. The [data and cohort guide](docs/DATA_AND_COHORT.md) identifies the exact archives analysed and explains what is withheld.
 
@@ -156,7 +179,7 @@ Not yet published: the power-simulation and upstream-reproduction code and outpu
 - **Schedule definitions.** S3 is a fixed clock window, not each person's sleep. The evenly spaced schedule S2 starts at midnight, so 3 of its 7 bursts also fall inside 00:00–06:59; H1 therefore compares 7 nighttime bursts with 3 nighttime plus 4 daytime bursts. S3r and S6 use a whole day's step data and could not run in real time.
 - **Unresolved signal question.** Continuous sampling produced alerts for 19 of the same 30 participants, no more than the sparse schedules, and no negative-control analysis was run. How far the alerts reflect infection rather than chance under the alert budget is unresolved.
 - **Timing of the analysis plan.** Several protocol files remain marked draft, and the sensitivity-analysis details were operationalised after the primary result was seen; amendment A7 carries that label in its own header. The analysis also ran twice: a first execution was superseded by a Phase-2 step-encoding correction made before any outcome was inspected, and only the corrected run is reported. See the [research timeline](docs/RESEARCH_TIMELINE.md).
-- **Other uncertainty.** Reproduction of upstream algorithms was mixed, and overlap between participants in the two dataset releases could not be determined.
+- **Other uncertainty.** Reproduction of upstream algorithms was mixed (see the [gates guide](docs/REPRODUCTION_GATES_AND_POWER.md)), and overlap between participants in the two dataset releases could not be determined.
 
 Details and sources: [results and limitations](docs/RESULTS_AND_LIMITATIONS.md).
 
