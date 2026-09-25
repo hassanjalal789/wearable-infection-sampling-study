@@ -13,7 +13,7 @@ I carried out this project on my own; informal advice is acknowledged below.
 ## Advice received (not authorship)
 
 - Informal feedback from an IT teacher on the early direction of the project.
-- General project guidance from a senior master's student in the United States.
+- General project guidance from a master's student.
 
 Both were advisory discussions only. The research question, project direction, and final decisions were mine.
 
