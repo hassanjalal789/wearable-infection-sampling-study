@@ -49,3 +49,23 @@ No new scientific analysis was carried out for this publication. Nothing here ch
 **Corrections made.** The [methods guide](METHODS_GUIDE.md) described two A1 reporting items as carried out; it now says they were not produced. The research timeline said the baseline protocol is undated; its header states a revision date of 31 August 2026. Status statements written before later material was published were brought up to date, among them the contribution statement's note on third-party notices, changed with my specific approval. The [publication notes](PUBLICATION_NOTES.md#material-corrections) list the material corrections.
 
 **Readability, figures and links.** The three published figures have alt text that states their values; each was compared with its image. Every relative link and anchor resolves. A one-page [overview](OVERVIEW.md) and citation metadata, [`CITATION.cff`](../CITATION.cff), validated against the Citation File Format 1.2.0 schema, were added. No PDF was produced: the Markdown overview is the one-page summary, and an unchecked binary would add nothing.
+
+## 3. Package audit, 25 September 2026
+
+This audit was run on the revision with the subject `docs: finalize method traceability and research overview`, as published on GitHub, and on my preserved research records.
+
+| Area | What was checked | Outcome |
+|---|---|---|
+| Source integrity | My preserved research folder compared in full with its own SHA-256 manifest, prepared before publication began; the terminal record document compared with the hash recorded when preparation began | All 17,358 listed files matched. Unlisted: the manifest itself, a size summary and four operating-system folder metadata files, one more than at the start, as the [manifest](../evidence/PUBLICATION_MANIFEST.csv) records. The terminal record matched |
+| Published revision | A fresh clone from GitHub compared with the revision I prepared; `sha256sum -c evidence/SHA256SUMS.txt` | Identical file tree; every listed file OK |
+| Automated checks | The first run of [`.github/workflows/public-checks.yml`](../.github/workflows/public-checks.yml), on that revision: [run 36105138928](https://github.com/hassanjalal789/wearable-infection-sampling-study/actions/runs/36105138928), GitHub-hosted Ubuntu runner, Python 3.13.15 | Succeeded: checksums, chronology validator, every `check_public_package.py` group, and 174 tests passed |
+| Chronology | `python src/validate_chronology.py` | No unresolved finding |
+| Contribution statement | The published statement compared with the text I approved | Unchanged except the one sentence I approved on 25 September 2026 |
+| Privacy | Every published file and every commit of the public history (20 commits, 261 file versions, 170 paths) scanned for personal names, personal paths, account and host names, e-mail addresses, machine identifiers and credentials | Every match reviewed. In published files the only matches are generic temporary-folder paths in archived Gate A logs and in example commands |
+| Manifest coverage | Each tracked file matched to a manifest row; each row's status and reason | 92 rows; every tracked file is covered by a published row; every excluded group states its reason; no row is pending |
+| Checksums | [`SHA256SUMS.txt`](../evidence/SHA256SUMS.txt) regenerated after every other file was final | Covers every tracked file except itself |
+| Navigation | README reading route and contents list; every relative link and anchor; a sample of anchors confirmed on the pages as GitHub renders them | All resolve. GitHub reads [`CITATION.cff`](../CITATION.cff) and offers "Cite this repository" |
+
+**Visual review.** I also read the README, the overview, the reproducibility guide and the traceability review as GitHub renders them: tables, figures, alt text and code blocks display as intended. This is a reader's check of presentation, separate from the factual checks above. One duplicated heading line in the README contents section was removed as a result.
+
+**Not audited.** The source studies' archives were not downloaded again, and their public addresses were not re-checked. No check here can show that the withheld participant-level results are correct.

@@ -57,14 +57,12 @@ Under H1, nighttime sampling produced a presymptomatic alert for 19 of 30 partic
 
 ## Contents
 
-Contents:
-
 ```text
 README.md                        this overview
 CHANGELOG.md                     publication changes by date
 CITATION.cff                     citation metadata (new)
 Makefile                         historical build targets (only `make test` re-run here)
-conftest.py                      leaves the Gate B tests uncollected when the source workbooks are absent (new)
+conftest.py                      Gate B tests not collected without the workbooks (new)
 .github/workflows/
   public-checks.yml              automated checks on the published files (new)
 run_phase1.sh                    acquisition, inventory and cohort pipeline

@@ -97,3 +97,11 @@
 - **Documents:** every publication-stage document compared with the repository's contents and with the published result files. Stale status statements and two material errors were corrected, as the [publication notes](../docs/PUBLICATION_NOTES.md#material-corrections) record. No quoted value differed from its result file.
 - **Citation metadata:** `CITATION.cff` validated with `cffconvert --validate` against schema 1.2.0.
 - **Chronology:** after the baseline protocol's date was added to the fact file, `python src/validate_chronology.py` reported no unresolved finding.
+
+## 25 September 2026 — package audit
+
+- **Source integrity:** `sha256sum -c` against the SHA-256 manifest of my preserved research folder: all 17,358 listed files OK, none missing. The terminal record document matched its recorded hash.
+- **Published revision:** a fresh clone of `docs: finalize method traceability and research overview` from GitHub had the prepared file tree, and `sha256sum -c evidence/SHA256SUMS.txt` passed.
+- **Automated checks:** [workflow run 36105138928](https://github.com/hassanjalal789/wearable-infection-sampling-study/actions/runs/36105138928) on that revision succeeded, with Python 3.13.15: checksums, validator, every `check_public_package.py` group, and 174 passed.
+- **Privacy:** every file and the complete public history scanned; every match reviewed; no change needed.
+- **Manifest and navigation:** every tracked file covered by a manifest row, no pending row; links and anchors resolve, including a sample confirmed on GitHub's rendered pages.

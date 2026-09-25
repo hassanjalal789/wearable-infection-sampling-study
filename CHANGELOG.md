@@ -2,6 +2,14 @@
 
 Publication changes by date (Asia/Karachi). These are publication dates. The research chronology is described in the documentation, not here.
 
+## 2026-09-25 — Package audit
+
+- **Published:** the results of an audit of the complete package, added to the [verification report](docs/VERIFICATION_REPORT.md) and the [verification log](evidence/VERIFICATION_LOG.md).
+- **Purpose:** check the package as a whole before its final release: source integrity, the published revision, the automated checks, chronology, the contribution statement, privacy, manifest coverage, checksums and navigation.
+- **Validation:** all 17,358 files of my preserved research folder matched its SHA-256 manifest; a fresh clone of the published revision matched the prepared one; the first automated run on GitHub succeeded, with 174 tests passed; no chronology finding; the contribution statement unchanged apart from the approved sentence; every file and the full public history scanned for private information; every tracked file covered by the manifest.
+- **Changes:** a duplicated line in the README contents section removed, and one line of the contents list shortened. No archived file changed.
+- **Limitations:** the source archives were not downloaded again. The visual review of rendered pages is a check of presentation, not of facts.
+
 ## 2026-09-25 — Method traceability, overview and citation metadata
 
 - **Published:** a [method traceability review](docs/METHOD_TRACEABILITY.md) that checks each executed rule against its amendment and the code; a one-page [research overview](docs/OVERVIEW.md); citation metadata in [`CITATION.cff`](CITATION.cff).
