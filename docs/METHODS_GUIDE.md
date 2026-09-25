@@ -1,6 +1,6 @@
 # Methods guide
 
-*Publication-stage guide, written on 18 September 2026 and extended on 19 September 2026, for research I designed and conducted. It states the rules the executed study actually followed and names the document I wrote that established each one. The protocol and amendments themselves are published unchanged; this guide is new explanatory writing and is not part of the historical record.*
+*Publication-stage guide, written on 18 September 2026 and extended on 19, 20, 24 and 25 September 2026, for research I designed and conducted. It states the rules the executed study actually followed and names the document I wrote that established each one. The protocol and amendments themselves are published unchanged; this guide is new explanatory writing and is not part of the historical record.*
 
 ## How to read the amendment chain
 
@@ -17,13 +17,15 @@
 
 All of these are local design documents, not an external registration; several are still marked draft. Nothing here changes the archived results.
 
+The [method traceability review](METHOD_TRACEABILITY.md) checks each rule below against the published code. Where the executed code did not carry out a rule as written, this guide says so and the review gives the detail.
+
 ## 1. Pre-symptomatic endpoint
 
-**Final rule.** Pre-symptomatic detection is a first qualifying alert on a day in **[onset − 21, onset − 1]**, so a warning is at least one day. An alert on the onset day itself is *same-day detection*: it does not count toward the primary endpoint and is tabulated separately. For comparison with the source studies, an at-or-before statistic over [onset − 21, onset] is reported, explicitly labelled as such. Warning time is measured from the earliest qualifying alert to onset, and a participant with no qualifying alert is a non-detection handled by the paired comparison rather than by imputing a zero warning.
+**Final rule.** Pre-symptomatic detection is a first qualifying alert on a day in **[onset − 21, onset − 1]**, so a warning is at least one day. An alert on the onset day itself is *same-day detection*: it does not count toward the primary endpoint. A1 requires it to be tabulated separately, and an at-or-before statistic over [onset − 21, onset] to be reported for comparison with the source studies. The runner records both for each participant and schedule, but no published output reports them (finding F3 of the [traceability review](METHOD_TRACEABILITY.md#2-findings)). Warning time is measured from the earliest qualifying alert to onset, and a participant with no qualifying alert is a non-detection handled by the paired comparison rather than by imputing a zero warning.
 
 **Where it comes from.** A1, "Replaces §9 — Primary endpoint". v1.1 §9 had used the onset-inclusive window [onset − 21, onset], which admits a zero-day "pre-symptomatic" warning; A1 records that as the reason for the change. The runner specification [A5](prereg-v1.2-amendment-A5-runner-operationalization.md) §A5.6 implements the narrowed window and evaluates the onset day separately as a descriptive at-or-before endpoint, and both archived run manifests record the same window — see the [execution excerpts](../evidence/EXECUTION_EXCERPTS.md).
 
-**Also from A1.** The paired difference in warning days is estimated on the detected-under-both subgroup only, with its interval bootstrapped over that subgroup, and is treated as descriptive: it is an outcome-dependent subgroup, so the confirmatory quantity remains θ from the hierarchical comparison, which uses every evaluable paired participant.
+**Also from A1.** A1 defines a paired difference in warning days on the detected-under-both subgroup only, with its interval bootstrapped over that subgroup, to be treated as descriptive: it is an outcome-dependent subgroup, so the confirmatory quantity remains θ from the hierarchical comparison, which uses every evaluable paired participant. The executed scripts did not compute this estimate, and no published output reports it (finding F2).
 
 ## 2. Source-defined cohort
 
@@ -36,7 +38,7 @@ Device is never inferred to satisfy a downstream filter: `device_map.csv` record
 
 `C_p^src` counts analysable source days strictly before onset − 28 that fall outside **every** infection exclusion window, using the onset date where present and the diagnosis date for asymptomatic episodes (A2.1, A3.5). "Analysable" is the source-level definition from v1.1 §3.1 — at least two hours of observed minutes in each of the night and day windows — and depends only on the archive, never on a schedule.
 
-**What this produced.** A source-defined cohort of 38 participants (10 Phase 1, 28 Phase 2). The archived rule record shows the pre-specified 0.80 retention floor was not met at any candidate minimum and that the fallback minimum of 28 days was used. Both that rule record and the participant-flow counts are quoted in the [execution excerpts](../evidence/EXECUTION_EXCERPTS.md); the underlying files are listed in the [publication manifest](../evidence/PUBLICATION_MANIFEST.csv). See [results and limitations](RESULTS_AND_LIMITATIONS.md) for the step from 38 participants to the 30 evaluable pairs.
+**What this produced.** A source-defined cohort of 38 participants (10 Phase 1, 28 Phase 2). The archived rule record shows the pre-specified 0.80 retention floor was not met at any candidate minimum and that the fallback minimum of 28 days was used. Both that rule record and the participant-flow counts are quoted in the [execution excerpts](../evidence/EXECUTION_EXCERPTS.md) and published as [`calibration_rule.json`](../results/calibration_rule.json) and [`participant_flow.json`](../results/participant_flow.json). See [results and limitations](RESULTS_AND_LIMITATIONS.md) for the step from 38 participants to the 30 evaluable pairs.
 
 The code, aggregate outputs and data sources behind this stage are set out in the [data and cohort guide](DATA_AND_COHORT.md).
 
@@ -95,7 +97,7 @@ The [energy scope guide](ENERGY_SCOPE.md) sets out what that quantity is, what i
 
 ## 7. Testing hierarchy
 
-Unchanged from v1.1 §2 and §11: a fixed sequence H1 → M1 → {H2, H3 under Holm} at α = 0.05, each stage tested only if the previous one rejected in the nocturnally-favouring direction; the estimand is θ from the hierarchical paired win/loss/tie comparison; the test is an exact sign test on the discordant pairs, with bootstrap intervals.
+Unchanged from v1.1 §2 and §11: a fixed sequence H1 → M1 → {H2, H3 under Holm} at α = 0.05, each stage tested only if the previous one rejected in the nocturnally-favouring direction; the estimand is θ from the hierarchical paired win/loss/tie comparison; the test is an exact sign test on the discordant pairs, with bootstrap intervals. Part of the reporting set in v1.1 §11.3–11.4 was not produced, among it a Clopper–Pearson interval for W/(W + L), the paired detection-proportion difference with McNemar counts, and the realised alert burden per schedule (finding F4).
 
 A1 replaces §15: cross-schedule dependence is not identifiable from a single continuous arm and is therefore not estimated from one. A pre-specified sensitivity grid over within-participant dependence (0, 0.25, 0.50, 0.75) is swept instead, and the minimum detectable effect and expected precision are reported across the whole grid; the continuous arm may inform only the marginal baseline detection probability, logged before any comparison is inspected.
 
@@ -138,5 +140,6 @@ The last row is the one that constrains interpretation most: an analysis that wa
 |---|---|
 | Upstream reproduction checks and the frozen power calculation | [Reproduction gates and power](REPRODUCTION_GATES_AND_POWER.md) |
 | The commands and output of the research, in order | [Historical execution log](../evidence/historical_execution_log.md) and its [guide](../evidence/EXECUTION_LOG_GUIDE.md) |
+| Each rule checked against the code, and where they differ | [Method traceability review](METHOD_TRACEABILITY.md) |
 
 The detector, runner, statistics and tests are explained in the [pipeline and tests guide](PIPELINE_AND_TESTS.md), and the published results, including the sensitivity analyses, in [results and limitations](RESULTS_AND_LIMITATIONS.md). No day-by-day publication timetable is published in this repository.

@@ -18,7 +18,7 @@ No date in this file is derived from file modification times, and none is inferr
 
 | Document | Recorded date | Status marker carried in the document |
 |---|---|---|
-| [`prereg-v1.1.md`](../docs/prereg-v1.1.md) | None stated | `DRAFT — NOT FROZEN`; the `prereg-v1` tag required by its own §0.2 was never created |
+| [`prereg-v1.1.md`](../docs/prereg-v1.1.md) | Revised 31 August 2026 | `DRAFT — NOT FROZEN`; the `prereg-v1` tag required by its own §0.2 was never created |
 | [A1](../docs/prereg-v1.2-amendment.md) | Issued 31 August 2026 | `DRAFT — NOT FROZEN` |
 | [A2](../docs/prereg-v1.2-amendment-A2.md) | Issued 31 August 2026 | `DRAFT — NOT FROZEN` |
 | [A3](../docs/prereg-v1.2-amendment-A3.md) | Issued 31 August 2026, with a correction dated 1 September 2026 | `DRAFT — NOT FROZEN` |
@@ -99,13 +99,12 @@ Pre-calibration eligible across both phases: 49. No participant was excluded for
 | Phase-2 step semantics recorded | Not recorded | Recorded explicitly, per A6 |
 | Eligible for confirmatory inference | **No** | **Yes** |
 
-The only recorded difference between the two manifests is the Phase-2 step-semantics rule. Everything the two runs hold in common — cohort, scenario, budget, burst structure, alert budget, calibration floor, calibration stop and endpoint window — is identical, which is what makes the correction a data-encoding fix rather than a change of design. Both manifests record that no detection or warning summary was printed during generation.
+Apart from each run's own commit identifier, the only recorded difference between the two manifests is the Phase-2 step-semantics rule. Everything the two runs hold in common — cohort, scenario, budget, burst structure, alert budget, calibration floor, calibration stop and endpoint window — is identical, which is what makes the correction a data-encoding fix rather than a change of design. Both manifests record that no detection or warning summary was printed during generation.
 
 ## Unestablished from the preserved records
 
 These are named rather than estimated:
 
 - **A wall-clock time for either execution.** The audit trail records order and the manifests record configuration; neither carries an execution timestamp.
-- **A date for the baseline protocol.** `prereg-v1.1.md` states no date in its header.
 - **A date on which each outcome was first read.** The manifests record that no scientific summary was printed during generation, but nothing records when the outputs were subsequently inspected.
 - **Overlap between participants in the two source releases.** Recorded as undetermined in the research materials; it is not resolved here.

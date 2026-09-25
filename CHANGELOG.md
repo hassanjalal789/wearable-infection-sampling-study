@@ -2,6 +2,15 @@
 
 Publication changes by date (Asia/Karachi). These are publication dates. The research chronology is described in the documentation, not here.
 
+## 2026-09-25 — Method traceability, overview and citation metadata
+
+- **Published:** a [method traceability review](docs/METHOD_TRACEABILITY.md) that checks each executed rule against its amendment and the code; a one-page [research overview](docs/OVERVIEW.md); citation metadata in [`CITATION.cff`](CITATION.cff).
+- **Purpose:** let a reader see exactly where each rule is implemented and tested, and where the executed code did not do what a document says.
+- **Provenance:** new writing and a new metadata file. No archived file changed.
+- **Corrections:** the [methods guide](docs/METHODS_GUIDE.md) no longer says that same-day detection, the at-or-before statistic and the paired warning-time difference were reported, because no published output reports them. The baseline protocol's date is now given as the 31 August 2026 revision date in its header, in the [research timeline](docs/RESEARCH_TIMELINE.md), the [timeline fact file](evidence/TIMELINE_FACTS.md) and the machine-readable chronology. Status notes written before later material was published are updated, including one sentence of the [contribution statement](docs/CONTRIBUTIONS.md), changed with my specific approval.
+- **Validation:** every cited function and line checked; the published numbers quoted in the documents compared with the result files; `CITATION.cff` validated; links, arithmetic and the chronology validator rerun with no finding.
+- **Limitations:** the review found planned rules and reporting items that were not carried out, including the exclusion of daylight-saving transition days. Their effect on the result cannot be measured from the published files, and nothing was re-run to find out.
+
 ## 2026-09-25 — Reproducibility guide, fresh verification and automated checks
 
 - **Published:** a [reproducibility guide](docs/REPRODUCIBILITY.md) that sets out each level of reproduction with commands I ran and their results; a [data availability guide](docs/DATA_AVAILABILITY.md); a [verification report](docs/VERIFICATION_REPORT.md); the pinned verification environment [`environment/publication-requirements.txt`](environment/publication-requirements.txt); a checker for the published package, [`src/check_public_package.py`](src/check_public_package.py); and an automated workflow, [`.github/workflows/public-checks.yml`](.github/workflows/public-checks.yml), that runs the public checks on GitHub.

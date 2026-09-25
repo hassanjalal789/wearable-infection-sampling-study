@@ -25,4 +25,4 @@ Both were advisory discussions only. The research question, project direction, a
 ## Credited work by others
 
 - **Datasets:** the Stanford study teams that released the Phase 1 and Phase 2 wearable datasets ([Mishra et al., 2020](https://doi.org/10.1038/s41551-020-00640-6); [Alavi et al., 2022](https://doi.org/10.1038/s41591-021-01593-2)). They did not contribute to this project.
-- **Upstream software:** authors of the open-source code used for reproduction checks. Their repositories, commit pins, and licences will be credited in third-party notices, which are not yet published.
+- **Upstream software:** authors of the open-source code used for reproduction checks. Their repositories, commit pins, and licences are credited in the [third-party notices](THIRD_PARTY_NOTICES.md), published on 24 September 2026.

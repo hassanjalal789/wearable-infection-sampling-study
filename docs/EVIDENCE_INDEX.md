@@ -1,10 +1,10 @@
 # Evidence index
 
-*Publication-stage guide, written on 19 September 2026 for research I designed and conducted. It maps the claims this repository makes to the files that support them, and says where the support stops. It is extended as further material is published.*
+*Publication-stage guide, written on 19 September 2026 and extended with each publication through 25 September 2026, for research I designed and conducted. It maps the claims this repository makes to the files that support them, and says where the support stops.*
 
 ## How to read this index
 
-A claim is **supported** when a published file in this repository contains the evidence for it. It is **supported privately** when the evidence exists in the preserved project records but the file is not yet published or is not eligible for publication. It is **outstanding** when the check has not been performed for this publication. Nothing below is an independent verification of the research by a third party.
+A claim is **supported** when a published file in this repository contains the evidence for it. It is **supported privately** when the evidence exists in the preserved project records but the file is not eligible for publication. It is **outstanding** when the check has not been performed for this publication. Nothing below is an independent verification of the research by a third party.
 
 ## Study design and executed rules
 
@@ -15,6 +15,7 @@ A claim is **supported** when a published file in this repository contains the e
 | The calibration floor of 16 z-defined days, cohort construction and device provenance | [`prereg-v1.2-amendment-A2.md`](prereg-v1.2-amendment-A2.md) | Supplements A1 and takes precedence where both touch a section. |
 | The corrected single-pass baseline, the 90-day lookback, exact M1 matching | [`prereg-v1.2-amendment-A3.md`](prereg-v1.2-amendment-A3.md) | Includes a correction dated 1 September 2026. Measured effects quoted there are on synthetic records, not participant data. |
 | Which document set each final rule | [`METHODS_GUIDE.md`](METHODS_GUIDE.md), [`PROTOCOL_INDEX.md`](PROTOCOL_INDEX.md) | Publication-stage writing, checked against the amendments; not itself historical evidence. |
+| Which code implements each rule, and where the executed code departs from a rule | [`METHOD_TRACEABILITY.md`](METHOD_TRACEABILITY.md) | Publication-stage review of the published code, carried out on 25 September 2026. The effect of two findings on individual thresholds or alerts cannot be measured without withheld participant-level inputs. |
 | The runner specification, including evaluability and the executed window | [`prereg-v1.2-amendment-A5-runner-operationalization.md`](prereg-v1.2-amendment-A5-runner-operationalization.md) | Prospective by its own header: written before any schedule-performance outcome was generated. Still marked a project record, not a registration. |
 | The Phase-2 step-data correction and why the first run is superseded | [`prereg-v1.2-amendment-A6-phase2-sparse-step-semantics.md`](prereg-v1.2-amendment-A6-phase2-sparse-step-semantics.md) | The diagnostic counts it reports are input-encoding diagnostics, not results. The superseded run's outputs are not published and appear in no table here. |
 | The post-primary sensitivity operationalisation, and which planned analyses were not run | [`prereg-v1.2-amendment-A7-sensitivity-operationalization.md`](prereg-v1.2-amendment-A7-sensitivity-operationalization.md) | **Written after the primary result was known**, and labelled so in its own header. Sensitivity-only; it cannot reopen the closed gate. The sensitivity outputs are listed under Results below. |
@@ -78,7 +79,7 @@ A claim is **supported** when a published file in this repository contains the e
 | Detection counts and warning-time medians | [`confirmatory_comparison_summary.csv`](../results/primary_e3_run_83cc8d1/confirmatory_analysis/confirmatory_comparison_summary.csv), [`RESULTS_AND_LIMITATIONS.md`](RESULTS_AND_LIMITATIONS.md) | Warning-time statistics are computed among detected participants only, a different denominator from the paired comparison. |
 | The result tables, digest and figures follow from the two published summary files | [`make_final_tables_figures.py`](../src/make_final_tables_figures.py), [`final_tables_figures/`](../results/primary_e3_run_83cc8d1/final_tables_figures/), [`VERIFICATION_LOG.md`](../evidence/VERIFICATION_LOG.md) | Regenerated on 24 September 2026: tables and digest byte-identical; figures matched visually, not byte for byte, because the plotting library version differs. |
 | No H1 sensitivity estimate exceeded 0.5, and every H1 interval includes 0.5 | [`sensitivity_summary.csv`](../results/primary_e3_run_83cc8d1/sensitivity_analysis/sensitivity_summary.csv), [`sensitivity_manifest.json`](../results/primary_e3_run_83cc8d1/sensitivity_analysis/sensitivity_manifest.json), [`sensitivity_analysis.py`](../src/sensitivity_analysis.py) | Operationalised after the primary result (A7) and estimation-only. Two of the variations were vacuous in this cohort. The per-participant sensitivity outputs are withheld. |
-| The authoritative outputs are the corrected run; an earlier run is superseded | [`METHODS_GUIDE.md`](METHODS_GUIDE.md) §8, [`prereg-v1.2-amendment-A6-phase2-sparse-step-semantics.md`](prereg-v1.2-amendment-A6-phase2-sparse-step-semantics.md), [`../evidence/EXECUTION_EXCERPTS.md`](../evidence/EXECUTION_EXCERPTS.md) | The two run manifests differ only in the Phase-2 step-semantics field. The superseded run's outputs are not mixed into any table here and are not published; the corrected run's aggregate outputs are, in [`results/primary_e3_run_83cc8d1/`](../results/primary_e3_run_83cc8d1/). |
+| The authoritative outputs are the corrected run; an earlier run is superseded | [`METHODS_GUIDE.md`](METHODS_GUIDE.md) §8, [`prereg-v1.2-amendment-A6-phase2-sparse-step-semantics.md`](prereg-v1.2-amendment-A6-phase2-sparse-step-semantics.md), [`../evidence/EXECUTION_EXCERPTS.md`](../evidence/EXECUTION_EXCERPTS.md) | Apart from each run's own commit identifier, the two [run](../results/primary_e3_run_d1d5265/run_manifest.json) [manifests](../results/primary_e3_run_83cc8d1/run_manifest.json) differ only in the Phase-2 step-semantics field. The superseded run's outputs are not mixed into any table here and are not published; the corrected run's aggregate outputs are, in [`results/primary_e3_run_83cc8d1/`](../results/primary_e3_run_83cc8d1/). |
 
 ## Reproduction gates and power
 
@@ -94,10 +95,11 @@ A claim is **supported** when a published file in this repository contains the e
 | Claim | Supporting file | Limit |
 |---|---|---|
 | Roles, advice received, and AI assistance | [`CONTRIBUTIONS.md`](CONTRIBUTIONS.md) | The roles listed are as I confirmed them. The preserved records document what was run; they cannot establish who performed each step. |
+| Which data were used, where they come from, and what each stage needs | [`DATA_AVAILABILITY.md`](DATA_AVAILABILITY.md) | The download addresses were not re-checked for this publication. |
 | What is published, what is excluded, and how privacy is handled | [`PUBLICATION_NOTES.md`](PUBLICATION_NOTES.md), [`../evidence/PUBLICATION_MANIFEST.csv`](../evidence/PUBLICATION_MANIFEST.csv) | Detailed redaction mappings are kept privately with the research evidence. |
-| Every archived document here is byte-identical to the version I preserved during the research | Publication check, 19 September 2026: seven documents compared byte for byte | The check establishes content identity with the version I preserved; it does not by itself date when I wrote that version. |
+| Every archived file here is byte-identical to the version I preserved during the research, except three sanitized copies | Hashed against my preserved checksum list at each publication, as the [verification log](../evidence/VERIFICATION_LOG.md) records; the sanitized copies are named in the [publication notes](PUBLICATION_NOTES.md#privacy-edits) | The check establishes content identity with the version I preserved; it does not by itself date when I wrote that version. |
 
-## Outstanding for this publication
+## Limits of the checks for this publication
 
 - The published test suite passes (174 tests on 25 September 2026; 181 with the two source workbooks supplied for the Gate B tests).
 - The result tables, digest and figures were regenerated from the published summary files, and the BCa intervals were recomputed from the published counts and recorded seeds. No aggregate has been recomputed from the source data.

@@ -20,7 +20,7 @@ It is therefore a preserved local design document, not an independently timestam
 
 ## What later documents replaced
 
-The amendments published so far are linked in the table below; the detailed crosswalk is in the [methods guide](METHODS_GUIDE.md).
+All seven amendments, A1 to A7, are published; the table below links them, the detailed crosswalk is in the [methods guide](METHODS_GUIDE.md).
 
 | Rule in `prereg-v1.1.md` | Replaced or constrained by | Effect |
 |---|---|---|

@@ -28,7 +28,7 @@ The data belong to the study teams. The Gate B check counts rows in the papers' 
 
 ## Software libraries
 
-The published scripts use Python with NumPy, pandas and SciPy, and some also use pyarrow, openpyxl and matplotlib; the Gate A records name R and the Python 3.6 container environment used for AnomalyDetect. None is bundled. The versions used for the publication test runs are in the [pipeline and tests guide](PIPELINE_AND_TESTS.md#4-the-test-suite), and the historical environment records are in [`environment/`](../environment/).
+The published scripts use Python with NumPy, pandas and SciPy, and some also use pyarrow, openpyxl and matplotlib; the Gate A records name R and the Python 3.6 container environment used for AnomalyDetect. None is bundled. The versions used for the publication checks are pinned in [`environment/publication-requirements.txt`](../environment/publication-requirements.txt), and the historical environment records are in [`environment/`](../environment/). The [data availability guide](DATA_AVAILABILITY.md) sets out the datasets and what is not redistributed.
 
 ## This project's own files
 

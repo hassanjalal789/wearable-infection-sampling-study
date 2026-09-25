@@ -69,7 +69,7 @@ The full per-phase flow is tabulated in the [execution excerpts](../evidence/EXE
 
 | Population | Participants | Night coverage | Day coverage | Night minus day (95% CI) |
 |---|---|---|---|---|
-| All Fitbit participants | 1,059 | 0.851 | 0.860 | −0.009 (−0.020 to 0.001) |
+| Fitbit participants with a recorded device source | 1,059 | 0.851 | 0.860 | −0.009 (−0.020 to 0.001) |
 | Pre-calibration eligible | 49 | 0.945 | 0.924 | 0.020 (0.009 to 0.032) |
 | Final cohort | 38 | 0.937 | 0.922 | 0.016 (0.001 to 0.029) |
 
@@ -89,10 +89,10 @@ Whether any participant appears in both releases **could not be determined**. [`
 | Onset labels, device maps, cohort membership, per-participant calibration days and coverage, per-file inventories and manifests, native-resolution tables, quarantine list, a Phase 2 timestamp audit | Withheld: each names participants |
 | The two archives and the papers' supplementary workbooks | Not redistributed; identified above |
 | Upstream repositories used in reproduction checks | Not redistributed; see [third-party notices](THIRD_PARTY_NOTICES.md) |
-| Earlier versions of some of these scripts, kept before fixes | Not published here; listed separately in the [manifest](../evidence/PUBLICATION_MANIFEST.csv) |
+| Earlier versions of some of these scripts, kept before fixes | Published, byte-identical, in [`evidence/historical_code/`](../evidence/historical_code/README.md) |
 
 ## 8. Re-running this stage
 
-[`run_phase1.sh`](../run_phase1.sh) runs the stage from the repository root, and `./run_phase1.sh --preflight` checks inputs and commands without computing anything. A full run needs the two archives, the onset-label file and, for Phase 1, the external device map; the last two are withheld here and would have to be rebuilt from the papers' supplementary material by the procedures above. The scripts need Python with NumPy and pandas; the environment records are not yet published.
+[`run_phase1.sh`](../run_phase1.sh) runs the stage from the repository root, and `./run_phase1.sh --preflight` checks inputs and commands without computing anything. A full run needs the two archives, the onset-label file and, for Phase 1, the external device map; the last two are withheld here and would have to be rebuilt from the papers' supplementary material by the procedures above. The scripts need Python with NumPy and pandas; the historical environment records are in [`environment/`](../environment/README.md). The [data availability guide](DATA_AVAILABILITY.md) lists what each stage needs.
 
 I have not re-run this stage for publication. Every number in this guide is transcribed from the preserved outputs linked beside it.

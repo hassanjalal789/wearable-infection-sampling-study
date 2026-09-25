@@ -90,3 +90,10 @@
 - **Finding:** the entry of 24 September says the BCa intervals were not recomputed because they need withheld participant-level results. That reason was wrong. The confirmatory script and the sensitivity script both bootstrap a vector built only from the win, loss and tie counts, with seeds recorded in each script.
 - **Action:** `python src/check_public_package.py intervals` loads the bootstrap function of each published script without running the script, and recomputes every interval from the published counts.
 - **Outcome:** all 4 confirmatory and 33 sensitivity intervals equal the published limits. The entry of 24 September is left as it stood; the correction is recorded here and in the [publication notes](../docs/PUBLICATION_NOTES.md#material-corrections).
+
+## 25 September 2026 — method and document review
+
+- **Methods:** each executed rule checked against its amendment and the published code, with every cited function and line confirmed; results in the [method traceability review](../docs/METHOD_TRACEABILITY.md).
+- **Documents:** every publication-stage document compared with the repository's contents and with the published result files. Stale status statements and two material errors were corrected, as the [publication notes](../docs/PUBLICATION_NOTES.md#material-corrections) record. No quoted value differed from its result file.
+- **Citation metadata:** `CITATION.cff` validated with `cffconvert --validate` against schema 1.2.0.
+- **Chronology:** after the baseline protocol's date was added to the fact file, `python src/validate_chronology.py` reported no unresolved finding.

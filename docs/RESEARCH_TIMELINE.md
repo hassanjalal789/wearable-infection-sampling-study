@@ -12,7 +12,7 @@ One distinction runs through the whole chronology and matters for how the result
 
 | When | What | Outcome status |
 |---|---|---|
-| Undated baseline | [`prereg-v1.1.md`](prereg-v1.1.md), the baseline protocol, fixing the question, endpoint, hypotheses and fixed-sequence gate, cohort rules, detector, schedules and estimand. Header still reads "DRAFT, NOT FROZEN"; the `prereg-v1` tag its own §0.2 requires before analysis was never created. | Before outcomes |
+| 31 August 2026 (revision date in its header) | [`prereg-v1.1.md`](prereg-v1.1.md), the baseline protocol, fixing the question, endpoint, hypotheses and fixed-sequence gate, cohort rules, detector, schedules and estimand. Header still reads "DRAFT, NOT FROZEN"; the `prereg-v1` tag its own §0.2 requires before analysis was never created. | Before outcomes |
 | 31 August 2026 | Amendments [A1](prereg-v1.2-amendment.md), [A2](prereg-v1.2-amendment-A2.md) and [A3](prereg-v1.2-amendment-A3.md), issued together after a Phase-0 correction and an implementation audit. A1 narrows the presymptomatic window to [onset − 21, onset − 1] and replaces the calibration-minimum rule; A2 adds the paired calibration floor `C_floor = 16` and the two-phase cohort construction; A3 corrects the baseline definition and several implementation rules. | Before outcomes |
 | 1 September 2026 | The baseline-rule correction recorded in A3.1, removing a nested burn-in in which two 28-day requirements had been stacked. | Before outcomes |
 

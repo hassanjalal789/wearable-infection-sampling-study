@@ -1,6 +1,6 @@
 # Execution excerpts
 
-*Publication-stage record, written on 20 September 2026. It reproduces the parts of the preserved execution records that can be published as they stand: run configuration, the frozen selection rules, and aggregate participant counts. The records are quoted exactly; the surrounding explanation is new writing. Result tables, figures and per-participant files are not included here — they are listed in the [publication manifest](PUBLICATION_MANIFEST.csv) with their current status.*
+*Publication-stage record, written on 20 September 2026. It reproduces the parts of the preserved execution records that can be published as they stand: run configuration, the frozen selection rules, and aggregate participant counts. The records are quoted exactly; the surrounding explanation is new writing. Result tables and figures are published under [`results/`](../results/README.md), and per-participant files are withheld; the [publication manifest](PUBLICATION_MANIFEST.csv) gives each status. The manifest blocks below are abridged; the full files are the two [`run_manifest.json`](../results/primary_e3_run_83cc8d1/run_manifest.json) files under `results/`.*
 
 ## What is eligible, and why
 
@@ -51,7 +51,7 @@ This run is superseded. Amendment [A6](../docs/prereg-v1.2-amendment-A6-phase2-s
 }
 ```
 
-This is the authoritative run. The only field that differs between the two manifests is `phase2_step_semantics`, which the corrected run records explicitly and the superseded run does not carry at all.
+This is the authoritative run. Apart from each run's own `git_commit`, the only field that differs between the two manifests is `phase2_step_semantics`, which the corrected run records explicitly and the superseded run does not carry at all.
 
 Both manifests also record the same frozen energy commit as the ancestor the execution guard required, and both record the same two input archives by relative path and byte size. The guard conditions themselves are set out in [A5](../docs/prereg-v1.2-amendment-A5-runner-operationalization.md) §A5.9: the runner had to be committed before execution, the working tree clean, the energy-freeze commit an ancestor, the frozen cohort verified at 38, E3 feasibility verified at N = 7 across all three energy scenarios, output written to a commit-versioned directory, and any existing real-run directory left untouched rather than overwritten.
 
@@ -95,7 +95,7 @@ Counts only, by phase:
 
 Pre-calibration eligible across both phases: **49**. Applying `C_p^src ≥ C_min = 28` gives the source-defined cohort of **38**. Of those, **30** had an evaluable pair in every primary comparison; the step from 38 to 30 is explained in [results and limitations](../docs/RESULTS_AND_LIMITATIONS.md).
 
-No participant was dropped for an unknown or conflicting device, because the device map resolved every participant in both phases. The cohort builder imports nothing from the schedule or detector code, so no schedule-performance quantity could reach the selection.
+No participant was dropped for an unknown or conflicting device, because the device map resolved all 116 infection-positive candidates in both phases. The cohort builder imports nothing from the schedule or detector code, so no schedule-performance quantity could reach the selection.
 
 ## Quality-control audit that triggered the correction
 

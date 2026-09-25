@@ -1,0 +1,51 @@
+cff-version: 1.2.0
+message: >-
+  If you use these research materials, please cite them as below, and also
+  cite the two dataset papers listed under references.
+title: "Wearable Infection Detection: Sampling Schedules Under Modelled Energy Budgets"
+abstract: >-
+  Research materials and results of a retrospective study that compared sparse
+  wearable heart-rate sampling schedules, held to the same modelled energy
+  budget, on two public COVID-19 wearable datasets. The primary analysis did
+  not support an advantage for fixed-clock nighttime sampling over evenly
+  spaced sampling. The repository contains the protocol and amendments, the
+  analysis code and tests, aggregate results, documented limitations and the
+  verification carried out for publication.
+authors:
+  - family-names: Jalal
+    given-names: Hassan
+repository-code: "https://github.com/hassanjalal789/wearable-infection-sampling-study"
+url: "https://github.com/hassanjalal789/wearable-infection-sampling-study"
+keywords:
+  - wearables
+  - heart rate
+  - sampling schedules
+  - energy budget
+  - infection detection
+  - COVID-19
+  - reproducibility
+references:
+  - type: article
+    title: "Pre-symptomatic detection of COVID-19 from smartwatch data"
+    authors:
+      - family-names: Mishra
+        given-names: T.
+      - name: "et al."
+    journal: "Nature Biomedical Engineering"
+    volume: 4
+    start: 1208
+    end: 1220
+    year: 2020
+    doi: "10.1038/s41551-020-00640-6"
+  - type: article
+    title: "Real-time alerting system for COVID-19 and other stress events using wearable data"
+    authors:
+      - family-names: Alavi
+        given-names: A.
+      - name: "et al."
+    journal: "Nature Medicine"
+    volume: 28
+    start: 175
+    end: 184
+    year: 2022
+    doi: "10.1038/s41591-021-01593-2"

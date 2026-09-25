@@ -25,7 +25,7 @@ The baseline for a day reads only data from before that day. A day with no heart
 The statistics were computed by a separate step after the runner had written its outputs. The script is published in [`evidence/scripts/`](../evidence/scripts/) together with a quality-check script that inspects the corrected run's manifest, table structure, Phase-2 step semantics, calibration and evaluability without reporting any detection result. Both were kept alongside the project rather than inside it.
 
 - **Effect:** θ = (wins + 0.5 × ties) / paired N, over every evaluable pair.
-- **Test:** an exact two-sided binomial sign test on wins against losses, at α = 0.05. [`src/verify_test_equivalence.py`](../src/verify_test_equivalence.py) checks, on constructed win-loss-tie counts, that a within-participant sign-flip permutation test on θ gives the same answer.
+- **Test:** an exact two-sided binomial sign test on wins against losses, at α = 0.05. [`src/verify_test_equivalence.py`](../src/verify_test_equivalence.py) compares the two on constructed win-loss-tie counts with a within-participant sign-flip permutation test on θ, and prints the differences; it asserts nothing.
 - **Interval:** a 95% BCa bootstrap over participants, with 10,000 resamples and a recorded seed. The seed affects only the interval, never a testing decision.
 - **Gate:** H1 first; M1 only if H1 rejects in favour of nighttime sampling; H2 and H3, with a Holm correction, only if M1 then also rejects in favour of nighttime sampling. H1 did not reject, so the gate closed and every later comparison is estimation-only.
 
@@ -45,27 +45,27 @@ The reveal and quality-check scripts expect the project in a folder named `rq1` 
 
 The preserved records report the suite at different points: 131 passing in the environment record [`environment/provenance.txt`](../environment/provenance.txt), 140 at the [pre-outcome checkpoint](PRE_OUTCOME_CHECKPOINT.md), and 159 in the archived report [`evidence/audit/audit_pytest.txt`](../evidence/audit/audit_pytest.txt). Those are historical results.
 
-**Run for this publication, 24 September 2026:**
+**Latest run for this publication, 25 September 2026:**
 
 | Item | Value |
 |---|---|
-| Command | `python -m pytest tests/ -q`, and `make test`, from the repository root |
-| Environment | Fresh virtual environment: Python 3.13.13, NumPy 2.4.4, pandas 3.0.2, SciPy 1.17.1, pytest 9.1.1, Matplotlib 3.10.9, PyArrow 25.0.1, openpyxl 3.1.5, tabulate 0.10.0; Linux x86-64 |
-| Result | **161 passed**, 0 failed, 0 skipped |
-| Of which historical | 139 tests from the 17 historical test modules published here |
+| Command | `python -m pytest tests/ -q`, from the repository root |
+| Environment | Fresh virtual environment built from [`environment/publication-requirements.txt`](../environment/publication-requirements.txt): Python 3.13.13, NumPy 2.4.4, pandas 3.0.2, SciPy 1.17.1, pytest 9.1.1, Matplotlib 3.10.9, PyArrow 25.0.1, openpyxl 3.1.5; Linux x86-64 |
+| Result | **174 passed**, 0 failed, 0 skipped; **181 passed** with the two Gate B workbooks supplied |
+| Of which historical | 152 tests from the 18 historical test modules, plus 7 Gate B tests when the workbooks are present |
 | Of which new | 22 tests for the chronology validator |
 
-The other 20 historical tests belonged to modules published on 25 September 2026: 13 for the power simulation and 7 for the upstream reproduction checks.
+Earlier runs: on 24 September 2026, `python -m pytest tests/ -q` and `make test` gave 156 and then 161 passed, in an environment that also had tabulate 0.10.0 installed, before the power-simulation and reproduction modules were published. The [verification log](../evidence/VERIFICATION_LOG.md) records each run.
 
-**Run again on 25 September 2026,** in the same environment, after those modules were added: **174 passed**, 0 failed, 0 skipped. That is 152 historical tests and the 22 validator tests. The 7 Gate B tests in `tests/test_reproduction.py` read two supplementary workbooks from the source studies, which are not redistributed, so the new root [`conftest.py`](../conftest.py) leaves that module uncollected when the workbooks are absent and names them in the session header. With the two workbooks in `metadata/`, checked first against the checksums in my preserved research record, the suite gave **181 passed**. The [gates guide](REPRODUCTION_GATES_AND_POWER.md#5-what-was-re-run-for-this-publication) describes that run.
+**On 25 September 2026,** after those modules were added, the suite gave **174 passed**, 0 failed, 0 skipped. That is 152 historical tests and the 22 validator tests. The 7 Gate B tests in `tests/test_reproduction.py` read two supplementary workbooks from the source studies, which are not redistributed, so the new root [`conftest.py`](../conftest.py) leaves that module uncollected when the workbooks are absent and names them in the session header. With the two workbooks in `metadata/`, checked first against the checksums in my preserved research record, the suite gave **181 passed**. The [gates guide](REPRODUCTION_GATES_AND_POWER.md#5-what-was-re-run-for-this-publication) describes that run.
 
 Passing tests show that the published code behaves as its tests expect on synthetic inputs, published aggregates and, for Gate B, the source studies' published tables. They do not re-run the analysis on the source data.
 
 ## 5. Environment records
 
-[`environment/`](../environment/) keeps the historical records unchanged; [its README](../environment/README.md) describes each file. They are not a tested installation recipe. The main lock file is a full package listing of a general-purpose environment rather than a minimal specification, the three Dockerfiles belong to the upstream reproduction checks, and the records report different Python versions at different points. The environment I actually used for the publication run is the one in the table above.
+[`environment/`](../environment/) keeps the historical records unchanged; [its README](../environment/README.md) describes each file. They are not a tested installation recipe. The main lock file is a full package listing of a general-purpose environment rather than a minimal specification, the three Dockerfiles belong to the upstream reproduction checks, and the records report different Python versions at different points. The environment I actually used for the publication runs is pinned in [`environment/publication-requirements.txt`](../environment/publication-requirements.txt), and the [reproducibility guide](REPRODUCIBILITY.md#1-environment) shows how to install it.
 
-The [`Makefile`](../Makefile) and the original ignore rules, [`environment/project.gitignore`](../environment/project.gitignore), are also published unchanged. Of the Makefile targets, only `make test` was run for this publication.
+The [`Makefile`](../Makefile) and the original ignore rules, [`environment/project.gitignore`](../environment/project.gitignore), are also published unchanged. Of the Makefile targets, only `make test` was run for this publication. The [reproducibility guide](REPRODUCIBILITY.md) gives the commands that were run for every other check.
 
 ## 6. The chronology validator
 
@@ -80,6 +80,6 @@ The [`Makefile`](../Makefile) and the original ignore rules, [`environment/proje
 - the authoritative real-data run is not relabelled as setup output;
 - any later analysis carries its own plan, execution evidence and results, and leaves the primary analysis unchanged.
 
-Its tests build synthetic chronologies that are each wrong in one way, and check that each is rejected for that reason alone, plus one genuine later analysis that must pass. On 24 September 2026, `python src/validate_chronology.py` reported **15 events, no unresolved finding**.
+Its tests build synthetic chronologies that are each wrong in one way, and check that each is rejected for that reason alone, plus one genuine later analysis that must pass. On 24 and 25 September 2026, `python src/validate_chronology.py` reported **15 events, no unresolved finding**.
 
 The validator checks that claims are supported and consistent. It cannot establish that a cited record is true, date an event more precisely than its source, or certify authorship, research ethics or clinical validity. File times, Git dates and a passing check are not treated as evidence that a historical event happened.

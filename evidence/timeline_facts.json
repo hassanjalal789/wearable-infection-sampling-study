@@ -29,14 +29,13 @@
       "id": "EV-01",
       "type": "protocol",
       "summary": "Baseline protocol v1.1 written; still marked draft",
-      "date": null,
-      "date_status": "unestablished",
+      "date": "2026-08-31",
       "status": "historical",
       "sources": [
         "docs/prereg-v1.1.md"
       ],
       "source_category": "document_header_date",
-      "limitation": "The protocol states no date in its header."
+      "limitation": "The date is the revision date written in the protocol's own header, not an independent timestamp. The document is still marked draft, and the prereg-v1 tag its own section 0.2 requires was never created."
     },
     {
       "id": "EV-02",
