@@ -2,6 +2,14 @@
 
 Publication changes by date (Asia/Karachi). These are publication dates. The research chronology is described in the documentation, not here.
 
+## 2026-09-25 — Completion of the evidence package
+
+- **Published:** the completion statement in the [overview](README.md), the [publication notes](docs/PUBLICATION_NOTES.md), the [research overview](docs/OVERVIEW.md) and the [research timeline](docs/RESEARCH_TIMELINE.md); the final verification, in the [verification report](docs/VERIFICATION_REPORT.md#4-final-verification-25-september-2026); version 1.0.0 in [`CITATION.cff`](CITATION.cff).
+- **Purpose:** report completion only after the package's deliverables and checks were finished and verified, as the timeline paragraph states.
+- **Chronology:** the publication phase and the two targets are marked completed on 25 September 2026 in the [machine-readable chronology](evidence/timeline_facts.json), with the completion evidence named.
+- **Validation:** the audited revision cloned fresh from GitHub and matched; its automated run succeeded; this revision checked in a fresh clone with every command of the [reproducibility guide](docs/REPRODUCIBILITY.md) except the power calculation, with no failure.
+- **Limitations:** unchanged. The raw-data analysis was not re-run and cannot be from this repository; the remaining scientific limitations are listed in the verification report.
+
 ## 2026-09-25 — Package audit
 
 - **Published:** the results of an audit of the complete package, added to the [verification report](docs/VERIFICATION_REPORT.md) and the [verification log](evidence/VERIFICATION_LOG.md).

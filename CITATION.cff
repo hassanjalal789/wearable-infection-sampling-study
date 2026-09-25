@@ -16,6 +16,8 @@ authors:
     given-names: Hassan
 repository-code: "https://github.com/hassanjalal789/wearable-infection-sampling-study"
 url: "https://github.com/hassanjalal789/wearable-infection-sampling-study"
+version: 1.0.0
+date-released: 2026-09-25
 keywords:
   - wearables
   - heart rate

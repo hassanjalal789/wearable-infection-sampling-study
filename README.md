@@ -1,8 +1,10 @@
 # Wearable Infection Detection: Sampling Schedules Under Modelled Energy Budgets
 
-I conducted a retrospective study of wearable heart-rate sampling schedules under modelled energy budgets: I designed the study, wrote the protocol and the amendments that governed it, and ran the analysis. The primary comparison did not demonstrate an advantage for fixed-clock nighttime sampling over evenly spaced sampling. I am publishing the research materials and results here, in stages.
+I conducted a retrospective study of wearable heart-rate sampling schedules under modelled energy budgets: I designed the study, wrote the protocol and the amendments that governed it, and ran the analysis. The primary comparison did not demonstrate an advantage for fixed-clock nighttime sampling over evenly spaced sampling. The research materials and results are published here.
 
 The initial research and primary E3 analysis were completed by 4 September 2026, as documented in the project records. Formal evidence preparation, documentation, reproducibility verification, and public release began on 19 September 2026. The target is to complete the evidence package by 28 September, with final verification and handoff by 29 September. Any further analysis is documented with its actual dates, methods, and results. Completion will be reported after verification.
+
+**Completion.** The evidence package was completed on 25 September 2026, ahead of the 28 September target, and its final verification was carried out the same day. The [verification report](docs/VERIFICATION_REPORT.md) records what was checked, what could not be, and why. No further analysis is under way.
 
 ## Research question
 
@@ -198,7 +200,7 @@ Details and sources: [results and limitations](docs/RESULTS_AND_LIMITATIONS.md).
 
 Citation metadata is in [`CITATION.cff`](CITATION.cff). Please cite:
 
-> Hassan Jalal. *Wearable Infection Detection: Sampling Schedules Under Modelled Energy Budgets* (research materials and results). GitHub, 2026. https://github.com/hassanjalal789/wearable-infection-sampling-study
+> Hassan Jalal. *Wearable Infection Detection: Sampling Schedules Under Modelled Energy Budgets* (research materials and results), version 1.0.0. GitHub, 2026. https://github.com/hassanjalal789/wearable-infection-sampling-study
 
 Please also cite the dataset papers:
 

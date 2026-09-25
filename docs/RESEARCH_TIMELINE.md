@@ -54,7 +54,8 @@ A7 is the one document in the chain written after the result was seen, and it is
 | When | What |
 |---|---|
 | By 4 September 2026 | The initial research and the primary E3 analysis were complete, as documented in the project records. |
-| From 19 September 2026 | Formal evidence preparation, documentation, reproducibility verification and public release. The [changelog](../CHANGELOG.md) records what was published on each date. |
+| 19–25 September 2026 | Formal evidence preparation, documentation, reproducibility verification and public release. The [changelog](../CHANGELOG.md) records what was published on each date. |
+| 25 September 2026 | The evidence package was completed and its final verification carried out, ahead of the 28 and 29 September targets. The [verification report](VERIFICATION_REPORT.md) records the checks and their limits. |
 
 I prioritized SAT preparation before beginning the formal evidence-documentation phase on 19 September. That is personal context for the gap between the two blocks above, not a technical finding.
 

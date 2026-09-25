@@ -6,9 +6,11 @@ This repository presents research that I designed and conducted. I wrote the pro
 
 The initial research and primary E3 analysis were completed by 4 September 2026, as documented in the project records. Formal evidence preparation, documentation, reproducibility verification, and public release began on 19 September 2026. The target is to complete the evidence package by 28 September, with final verification and handoff by 29 September. Any further analysis is documented with its actual dates, methods, and results. Completion will be reported after verification.
 
+**Completion.** The evidence package was completed on 25 September 2026, ahead of the 28 September target, and its final verification was carried out the same day. The [verification report](VERIFICATION_REPORT.md) records what was checked, what could not be, and why. No further analysis is under way.
+
 I prioritized SAT preparation before beginning the formal evidence-documentation phase on 19 September.
 
-The project records referred to above are preserved local records, not an independently timestamped public preregistration. Files are added here in stages, so a file's upload date is not the date the research was done, and the public commit history records publication and subsequent verification rather than the research itself.
+The project records referred to above are preserved local records, not an independently timestamped public preregistration. Files were added here in stages between 19 and 25 September 2026, so a file's upload date is not the date the research was done, and the public commit history records publication and subsequent verification rather than the research itself.
 
 ## How the archive is being published
 
@@ -40,7 +42,7 @@ The following are not published:
 
 ## Preservation of the research evidence
 
-My research folder and the terminal transcript document are retained privately and are not modified by publication work. Before preparation began, the folder was checked against its own pre-existing SHA-256 manifest. All 17,358 listed files matched except one Git metadata cache file (the index), which a status command had rewritten during an earlier AI-assisted review on 16 September 2026. That file was restored byte-for-byte from a preserved copy of the archive and then matched; research files were unaffected. Five files present in the folder are not listed in the manifest: the manifest itself, a size summary, and three operating-system folder metadata files. The same check will be repeated at the end of the publication window.
+My research folder and the terminal transcript document are retained privately and are not modified by publication work. Before preparation began, the folder was checked against its own pre-existing SHA-256 manifest. All 17,358 listed files matched except one Git metadata cache file (the index), which a status command had rewritten during an earlier AI-assisted review on 16 September 2026. That file was restored byte-for-byte from a preserved copy of the archive and then matched; research files were unaffected. Five files present in the folder are not listed in the manifest: the manifest itself, a size summary, and three operating-system folder metadata files. The check was repeated on 25 September 2026, at the end of the publication work: all 17,358 listed files matched, and the terminal transcript matched its recorded hash.
 
 ## Portability changes
 

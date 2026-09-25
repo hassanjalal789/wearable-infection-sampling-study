@@ -105,3 +105,8 @@
 - **Automated checks:** [workflow run 36105138928](https://github.com/hassanjalal789/wearable-infection-sampling-study/actions/runs/36105138928) on that revision succeeded, with Python 3.13.15: checksums, validator, every `check_public_package.py` group, and 174 passed.
 - **Privacy:** every file and the complete public history scanned; every match reviewed; no change needed.
 - **Manifest and navigation:** every tracked file covered by a manifest row, no pending row; links and anchors resolve, including a sample confirmed on GitHub's rendered pages.
+
+## 25 September 2026 — final verification
+
+- **Audited revision on GitHub:** fresh clone identical to the prepared tree; checksums OK; [workflow run 36105955733](https://github.com/hassanjalal789/wearable-infection-sampling-study/actions/runs/36105955733) succeeded, 174 passed.
+- **Completion revision, before pushing:** in a fresh clone and the pinned environment, `sha256sum -c evidence/SHA256SUMS.txt`, `python src/check_public_package.py`, `python -m pytest tests/ -q` (174 passed; 181 with the Gate B workbooks), `python src/gate_b_compute.py`, `python src/validate_chronology.py`, both preflights and `cffconvert --validate`, all with the outcomes stated in the [verification report](../docs/VERIFICATION_REPORT.md#4-final-verification-25-september-2026).

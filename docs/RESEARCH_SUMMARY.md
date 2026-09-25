@@ -2,7 +2,7 @@
 
 *Hassan Jalal · initial version, 17 September 2026 · drafted with AI assistance ([contributions](CONTRIBUTIONS.md))*
 
-This summary describes a study I designed and conducted, written for readers without statistical training. The study is complete; I am publishing its supporting files in stages.
+This summary describes a study I designed and conducted, written for readers without statistical training. The study is complete, and its supporting files are published in this repository.
 
 ## The question
 

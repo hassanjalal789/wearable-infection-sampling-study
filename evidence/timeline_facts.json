@@ -195,39 +195,51 @@
       "type": "publication_phase",
       "summary": "Formal evidence preparation, documentation, reproducibility verification and public release",
       "start": "2026-09-19",
-      "status": "active",
+      "end": "2026-09-25",
+      "status": "completed",
       "sources": [
         "CHANGELOG.md",
-        "docs/PUBLICATION_NOTES.md"
+        "docs/PUBLICATION_NOTES.md",
+        "docs/VERIFICATION_REPORT.md"
       ],
       "source_category": "publication_record",
-      "limitation": "The start date is the designated formal phase; it does not mean no preparatory review happened earlier."
+      "limitation": "The start date is the designated formal phase; it does not mean no preparatory review happened earlier. The end date is the day the package was completed and verified."
     },
     {
       "id": "EV-14",
       "type": "target",
       "summary": "Evidence package completion",
       "target_date": "2026-09-28",
-      "status": "planned",
+      "date": "2026-09-25",
+      "status": "completed",
+      "completion_evidence": [
+        "docs/VERIFICATION_REPORT.md",
+        "evidence/PUBLICATION_MANIFEST.csv",
+        "evidence/SHA256SUMS.txt"
+      ],
       "completion_phrases": [
         "evidence package is complete",
         "evidence package has been completed",
         "evidence package was completed"
       ],
-      "limitation": "A target, not a completion claim."
+      "limitation": "Completed on 25 September 2026, before the target date. The completion evidence is the verification report, the manifest and the checksum list of the completed package."
     },
     {
       "id": "EV-15",
       "type": "target",
       "summary": "Final verification and handoff",
       "target_date": "2026-09-29",
-      "status": "planned",
+      "date": "2026-09-25",
+      "status": "completed",
+      "completion_evidence": [
+        "docs/VERIFICATION_REPORT.md"
+      ],
       "completion_phrases": [
         "handoff is complete",
         "handoff has been completed",
         "handoff was completed"
       ],
-      "limitation": "A target, not a completion claim."
+      "limitation": "Final verification completed on 25 September 2026, before the target date, and recorded in the verification report. The checks of the final revision on GitHub are recorded with the release made from it."
     }
   ],
   "ordering": [
