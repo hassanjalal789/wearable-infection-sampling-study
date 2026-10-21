@@ -2,6 +2,12 @@
 
 Publication changes by date (Asia/Karachi). These are publication dates. The research chronology is described in the documentation, not here.
 
+## 2026-10-21 — Coauthor attribution clarified
+
+- **Updated:** the contribution statement, overview, research summary, README and citation metadata to name Dr M. Usman Riaz as a coauthor and record that he and Hassan Jalal worked on the analysis and interpreted the findings together, as confirmed by Hassan Jalal.
+- **Scope:** documentation and citation metadata only. The original research records, code, results, and research chronology are unchanged.
+- **Context:** the earlier sole-author wording reflected the information recorded when the evidence package was released; this entry records the later authorship clarification rather than changing the historical publication dates.
+
 ## 2026-09-25 — Completion of the evidence package
 
 - **Published:** the completion statement in the [overview](README.md), the [publication notes](docs/PUBLICATION_NOTES.md), the [research overview](docs/OVERVIEW.md) and the [research timeline](docs/RESEARCH_TIMELINE.md); the final verification, in the [verification report](docs/VERIFICATION_REPORT.md#4-final-verification-25-september-2026); version 1.0.0 in [`CITATION.cff`](CITATION.cff).

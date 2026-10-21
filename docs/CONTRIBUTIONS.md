@@ -1,14 +1,15 @@
 # Contribution statement
 
-*Updated 19 September 2026. Roles below are as I confirmed them. The preserved research records document what was run; they cannot on their own establish who performed each step.*
+*Updated 21 October 2026. The roles below reflect Hassan Jalal's account. The preserved research records document what was run; they cannot on their own establish who performed each step.*
 
 ## Research and publication
 
 | Contributor | Role |
 |---|---|
-| Hassan Jalal | Formed the research question, after first discussing the general idea with an IT teacher. Directed the protocol and its amendments and the analysis workflow; ran or directed the analyses; interpreted the results; wrote up the findings; and is preparing and maintaining this public evidence archive. Made the research decisions and takes responsibility for the final claims. |
+| Hassan Jalal | Formed the research question, after first discussing the general idea with an IT teacher. Led the protocol, its amendments, the analysis workflow and the public evidence archive; carried out the analysis with Dr M. Usman Riaz; jointly interpreted the findings and wrote up the results. Made the research decisions and takes responsibility for the final claims. |
+| Dr M. Usman Riaz | Worked with Hassan Jalal on the analysis and jointly interpreted the findings. Coauthor of the research paper. |
 
-I carried out this project on my own; informal advice is acknowledged below.
+Hassan Jalal led the study, and Dr M. Usman Riaz collaborated on its analysis and findings. Informal advice from others is acknowledged below.
 
 ## Advice received (not authorship)
 
@@ -19,7 +20,7 @@ Both were advisory discussions only. The research question, project direction, a
 
 ## AI assistance
 
-- **Original research.** AI tools were used as assistants for drafting, editing, coding support, debugging, organising research materials, and planning the project roadmap, under my direction. I reviewed the work, made the research decisions, ran or verified the analyses, and interpreted the results. AI tools are not authors or researchers.
+- **Original research.** AI tools were used as assistants for drafting, editing, coding support, debugging, organising research materials, and planning the project roadmap, under my direction. I reviewed the work, made the research decisions, ran or verified the analyses, and interpreted the results with Dr M. Usman Riaz. AI tools are not authors or researchers.
 - **Publication.** Claude (Anthropic), used through the Claude desktop app from 16 September 2026, reviewed the archived study and is assisting with this publication under my direction: integrity and privacy checks, drafting documentation, and preparing the repository. Documented values are taken from the archived files and checked against them; observations added during publication are labelled as publication-stage work.
 
 ## Credited work by others

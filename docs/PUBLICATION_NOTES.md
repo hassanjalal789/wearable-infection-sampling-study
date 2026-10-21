@@ -2,7 +2,9 @@
 
 ## Disclosure
 
-This repository presents research that I designed and conducted. I wrote the protocol and the amendments that governed the analysis, ran the analysis, and am now publishing the research materials and results here. — Hassan Jalal
+This repository presents research that I designed and led. I wrote the protocol and the amendments that governed the analysis, worked on the analysis with Dr M. Usman Riaz, and published the research materials and results here. — Hassan Jalal
+
+**Authorship clarification, 21 October 2026.** Hassan Jalal confirmed that he and Dr M. Usman Riaz worked on the analysis and interpreted the findings together; Dr M. Usman Riaz is a coauthor of the research paper. This clarification updates the author descriptions and citation metadata; it does not change any preserved protocol, analysis code, result, or research date.
 
 The initial research and primary E3 analysis were completed by 4 September 2026, as documented in the project records. Formal evidence preparation, documentation, reproducibility verification, and public release began on 19 September 2026. The target is to complete the evidence package by 28 September, with final verification and handoff by 29 September. Any further analysis is documented with its actual dates, methods, and results. Completion will be reported after verification.
 

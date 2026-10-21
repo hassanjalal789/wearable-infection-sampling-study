@@ -1,10 +1,10 @@
 # Research overview
 
-*Hassan Jalal · one-page overview, written on 25 September 2026 · new writing, drafted with AI assistance ([contribution statement](CONTRIBUTIONS.md))*
+*Hassan Jalal · one-page overview, written on 25 September 2026; authorship wording revised 21 October 2026 · new writing, drafted with AI assistance ([contribution statement](CONTRIBUTIONS.md))*
 
 This project examined whether the timing of sparse wearable heart-rate sampling affected retrospective infection warning under modelled energy constraints. The primary analysis did not support an advantage for fixed-clock nighttime sampling over evenly spaced sampling.
 
-**Author.** Hassan Jalal. I formed the research question, after first discussing the general idea with an IT teacher, directed the protocol, its amendments and the analysis workflow, ran or directed the analyses, and interpreted the results. Informal advice and AI assistance are recorded in the [contribution statement](CONTRIBUTIONS.md). The work has not been peer reviewed.
+**Authors.** Hassan Jalal and Dr M. Usman Riaz. I formed the research question, after first discussing the general idea with an IT teacher, and directed the protocol, its amendments and the analysis workflow. Dr M. Usman Riaz and I worked on the analysis and interpreted the findings together. Informal advice and AI assistance are recorded in the [contribution statement](CONTRIBUTIONS.md). The work has not been peer reviewed.
 
 **Timeline.** The initial research and primary E3 analysis were completed by 4 September 2026, as documented in the project records. Formal evidence preparation, documentation, reproducibility verification, and public release began on 19 September 2026. The target is to complete the evidence package by 28 September, with final verification and handoff by 29 September. Any further analysis is documented with its actual dates, methods, and results. Completion will be reported after verification. The evidence package was completed on 25 September 2026, and its final verification was carried out the same day; see the [verification report](VERIFICATION_REPORT.md). The [research timeline](RESEARCH_TIMELINE.md) gives the dated milestones.
 

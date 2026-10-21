@@ -1,6 +1,6 @@
 # Wearable Infection Detection: Sampling Schedules Under Modelled Energy Budgets
 
-I conducted a retrospective study of wearable heart-rate sampling schedules under modelled energy budgets: I designed the study, wrote the protocol and the amendments that governed it, and ran the analysis. The primary comparison did not demonstrate an advantage for fixed-clock nighttime sampling over evenly spaced sampling. The research materials and results are published here.
+I designed and led a retrospective study of wearable heart-rate sampling schedules under modelled energy budgets and wrote the protocol and its amendments. Dr M. Usman Riaz and I worked on the analysis and interpreted the findings together. The primary comparison did not demonstrate an advantage for fixed-clock nighttime sampling over evenly spaced sampling. The research materials and results are published here.
 
 The initial research and primary E3 analysis were completed by 4 September 2026, as documented in the project records. Formal evidence preparation, documentation, reproducibility verification, and public release began on 19 September 2026. The target is to complete the evidence package by 28 September, with final verification and handoff by 29 September. Any further analysis is documented with its actual dates, methods, and results. Completion will be reported after verification.
 
@@ -200,7 +200,7 @@ Details and sources: [results and limitations](docs/RESULTS_AND_LIMITATIONS.md).
 
 Citation metadata is in [`CITATION.cff`](CITATION.cff). Please cite:
 
-> Hassan Jalal. *Wearable Infection Detection: Sampling Schedules Under Modelled Energy Budgets* (research materials and results), version 1.0.0. GitHub, 2026. https://github.com/hassanjalal789/wearable-infection-sampling-study
+> Hassan Jalal and M. Usman Riaz. *Wearable Infection Detection: Sampling Schedules Under Modelled Energy Budgets* (research materials and results), version 1.0.0. GitHub, 2026. https://github.com/hassanjalal789/wearable-infection-sampling-study
 
 Please also cite the dataset papers:
 
@@ -209,7 +209,7 @@ Please also cite the dataset papers:
 
 ## Credits
 
-- **Research and publication:** Hassan Jalal. See the [contribution statement](docs/CONTRIBUTIONS.md), which also records informal advice and AI assistance.
+- **Research and publication:** Hassan Jalal led the study; Dr M. Usman Riaz worked with him on the analysis and they interpreted the findings together. See the [contribution statement](docs/CONTRIBUTIONS.md), which also records informal advice and AI assistance.
 - **Data:** the Stanford study teams behind the Phase 1 and Phase 2 datasets cited above. Their use here does not imply affiliation with or endorsement by those teams.
 - **Upstream software:** code used for reproduction checks keeps its own authors and licences; see the [third-party notices](docs/THIRD_PARTY_NOTICES.md).
 - **Licence:** no licence has been selected for this project's own files yet. See [licensing status](docs/PUBLICATION_NOTES.md#licensing-status).

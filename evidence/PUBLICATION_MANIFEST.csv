@@ -1,10 +1,10 @@
 artifact_id,artifact,source_description,public_destination_or_external_source,status,exclusion_reason,verification_status,publication_date
-PUB-001,Repository overview,new document,README.md,published,,new publication document; reported values checked against the archived outputs; approved timeline paragraph reproduced exactly; privacy and link checks before commit,2026-09-19
+PUB-001,Repository overview,new document,README.md,published,,new publication document; reported values checked against the archived outputs; approved timeline paragraph reproduced exactly; privacy and link checks before commit; coauthor attribution clarified 2026-10-21,2026-09-19
 PUB-002,Changelog,new document,CHANGELOG.md,published,,new publication document; privacy and link checks before commit,2026-09-19
-PUB-003,Research summary,new document,docs/RESEARCH_SUMMARY.md,published,,new publication document; values checked against the archived outputs; privacy scan before commit,2026-09-19
+PUB-003,Research summary,new document,docs/RESEARCH_SUMMARY.md,published,,new publication document; values checked against the archived outputs; privacy scan before commit; coauthor attribution clarified 2026-10-21,2026-09-19
 PUB-004,Results and limitations,new document,docs/RESULTS_AND_LIMITATIONS.md,published,,"new publication document; values checked against the archived digest, results table, comparison summary, gatekeeping record and run manifest; privacy scan before commit",2026-09-19
-PUB-005,Contribution statement,new document,docs/CONTRIBUTIONS.md,published,,"published exactly as I confirmed it; verified byte-identical to the approved text; privacy scan before commit; on 2026-09-25 one sentence on third-party credit updated with my specific approval, all other wording unchanged",2026-09-19
-PUB-006,Publication notes,new document,docs/PUBLICATION_NOTES.md,published,,new publication document; approved timeline paragraph reproduced exactly; privacy scan before commit,2026-09-19
+PUB-005,Contribution statement,new document,docs/CONTRIBUTIONS.md,published,,"published as originally confirmed; one sentence on third-party credit updated 2026-09-25 with specific approval; coauthor role updated 2026-10-21 as confirmed by Hassan Jalal",2026-09-19
+PUB-006,Publication notes,new document,docs/PUBLICATION_NOTES.md,published,,new publication document; approved timeline paragraph reproduced exactly; privacy scan before commit; authorship clarification added 2026-10-21,2026-09-19
 PUB-007,Publication manifest,new document,evidence/PUBLICATION_MANIFEST.csv,published,,privacy scan before commit,2026-09-19
 PUB-008,Ignore rules for the public repository,new document,.gitignore,published,,privacy scan before commit,2026-09-19
 PUB-009,Protocol index,new document,docs/PROTOCOL_INDEX.md,published,,new publication document; supersession table checked against the archived amendments; privacy and link checks before commit,2026-09-19
@@ -88,6 +88,6 @@ PUB-033,Verification report,new document,docs/VERIFICATION_REPORT.md,published,,
 PUB-034,Pinned verification environment,new file,environment/publication-requirements.txt,published,,new file for this repository; installed into a new environment on 2026-09-25,2026-09-25
 PUB-035,Public-package checker,new code,src/check_public_package.py,published,,"new code for this repository; run on the published files, and on a scratch copy with deliberate faults, on 2026-09-25",2026-09-25
 PUB-036,Automated public checks,new code,.github/workflows/public-checks.yml,published,,new file for this repository; read-only permissions; run outcomes recorded in docs/VERIFICATION_REPORT.md,2026-09-25
-PUB-037,One-page research overview,new document,docs/OVERVIEW.md,published,,new publication document; values checked by src/check_public_package.py; contribution wording checked against the contribution statement,2026-09-25
+PUB-037,One-page research overview,new document,docs/OVERVIEW.md,published,,new publication document; values checked by src/check_public_package.py; contribution wording checked against the contribution statement; coauthor attribution clarified 2026-10-21,2026-09-25
 PUB-038,Method traceability review,new document,docs/METHOD_TRACEABILITY.md,published,,"new publication document; every cited file, function and line checked against the published code on 2026-09-25",2026-09-25
-PUB-039,Citation metadata,new file,CITATION.cff,published,,new file for this repository; validated against the Citation File Format 1.2.0 schema; version 1.0.0 added on 2026-09-25,2026-09-25
+PUB-039,Citation metadata,new file,CITATION.cff,published,,new file for this repository; validated against the Citation File Format 1.2.0 schema; version 1.0.0 added on 2026-09-25; coauthor metadata corrected 2026-10-21,2026-09-25

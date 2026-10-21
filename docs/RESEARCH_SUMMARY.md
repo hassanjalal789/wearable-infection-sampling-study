@@ -1,6 +1,6 @@
 # Research summary
 
-*Hassan Jalal · initial version, 17 September 2026 · drafted with AI assistance ([contributions](CONTRIBUTIONS.md))*
+*Hassan Jalal · initial version, 17 September 2026; authorship wording revised 21 October 2026 · drafted with AI assistance ([contributions](CONTRIBUTIONS.md))*
 
 This summary describes a study I designed and conducted, written for readers without statistical training. The study is complete, and its supporting files are published in this repository.
 
@@ -57,4 +57,4 @@ More detail is in [Results and limitations](RESULTS_AND_LIMITATIONS.md).
 
 ## Role
 
-I formed the research question after discussing the general idea with an IT teacher, directed the protocol, its amendments, and the analysis workflow, ran or directed the analyses, interpreted the results, and wrote up the findings. AI tools assisted with drafting, editing, coding, debugging, and organising materials under my direction. See the [contribution statement](CONTRIBUTIONS.md) for details.
+I formed the research question after discussing the general idea with an IT teacher and directed the protocol, its amendments and the analysis workflow. Dr M. Usman Riaz and I worked on the analysis and interpreted the findings together. I wrote up the results, and he is a coauthor of the research paper. AI tools assisted with drafting, editing, coding, debugging, and organising materials under my direction. See the [contribution statement](CONTRIBUTIONS.md) for details.
